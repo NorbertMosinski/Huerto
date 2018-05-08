@@ -1,0 +1,8 @@
+All:
+-lower letter
+-camel case
+-english
+
+Buttons: -> img/buttons
+
+

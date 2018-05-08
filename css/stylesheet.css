@@ -1,0 +1,3135 @@
+                                                              /*CSS APP HUERTO*/
+                                        /*--------------------CONVENCIONES FIJAS--------------------*/
+/*FONDO*/
+.fondo_color_plano
+{
+  background : #C2F2C7;
+  background : rgba(194, 242, 199, 1);
+  position : absolute ;
+  left : 1px;
+  top : 0px;
+  width : 479px;
+  height : 801px;
+}
+.fondo_patron
+{
+  background-image : url('../img/Pantallazos de la app/patron.png');
+  background-color: #C2F2C7;
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  /*opacity : 0.2;*/
+  position : absolute ;
+  left : 0px;
+  top : 0px;
+  width : 480px;
+  height : 800px;
+  filter: alpha(opacity=20) progid:DXImageTransform.Microsoft.Alpha(opacity=20) ;
+}
+
+/*CABEZOTE GENERAL*/
+.cabezote_general_icono_informacion
+{
+  background-image : url(cabezote_general_icono_informacion.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 413px;
+  top : 15px;
+  width : 49px;
+  height : 48px;
+}
+.cabezote_general_icono_volver
+{
+  background-image : url(cabezote_general_icono_volver.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 15px;
+  top : 15px;
+  width : 24px;
+  height : 48px;
+}
+.cabezote_general_titulo
+{
+  font-family : Rokkitt;
+  font-weight : bold;
+  font-size : 24px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+
+/*CABEZOTES POP UPS*/
+.cabezote_popup_icono_cerrar
+{
+  background-image : url(cabezote_popup_icono_cerrar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 398px;
+  top : 42px;
+  width : 49px;
+  height : 48px;
+}
+
+/*CABEZOTES AVISOS*/
+.cabezote_aviso_icono_cerrar
+{
+  background-image : url(cabezote_aviso_icono_cerrar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 2415px;
+  top : -867px;
+  width : 49px;
+  height : 47px;
+}
+
+
+/*BARRA MENU*/
+.barra_menu_contenedor
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : -1999px;
+  top : -123px;
+  width : 480px;
+  height : 60px;
+}
+
+.barra_menu_icono_publicar
+{
+  background-image : url(barra_menu_icono_publicar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1842px;
+  top : -117px;
+  width : 49px;
+  height : 48px;
+}
+
+.barra_menu_icono_perfil
+{
+  background-image : url(barra_menu_icono_perfil.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1610px;
+  top : -117px;
+  width : 49px;
+  height : 47px;
+}
+.barra_menu_icono_buscar
+{
+  background-image : url(img/barra_menu_icono_buscar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1726px;
+  top : -115px;
+  width : 49px;
+  height : 48px;
+}
+.barra_menu_icono_inicio
+{
+  background-image : url(barra_menu_icono_inicio.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1957px;
+  top : -117px;
+  width : 49px;
+  height : 48px;
+}
+
+
+
+                                        /*--------------------CONVENCIONES GENERALES--------------------*/
+/*----AVISOS----*/
+
+                              /*AVISO PANTALLA DE CARGA*/
+.aviso_pantalla_de_carga_barra_carga_relleno
+{
+  background : #FFED83;
+  background : rgba(255, 237, 131, 1);
+  border-radius : 5px;
+  -moz-border-radius : 5px;
+  -webkit-border-radius : 5px;
+}
+.aviso_pantalla_de_carga_barra_carga_linea
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  border-radius : 5px;
+  -moz-border-radius : 5px;
+  -webkit-border-radius : 5px;
+}
+.aviso_pantalla_de_carga_logo
+{
+  background-image : url(aviso_pantalla_de_carga_logo.png);
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 124px;
+  top : 197px;
+  width : 230px;
+  height : 230px;
+}
+.texto_avisos
+{
+  font-family : Rokkitt;
+  font-weight : bold;
+  font-size : 22px;
+  line-height : 24.47px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+
+                              /*AVISO AGRADECIMIENTO RETO*/
+
+.aviso_agradecimiento_reto_logo
+{
+  background-image : url(aviso_agradecimiento_reto_logo.png);
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 124px;
+  top : 197px;
+  width : 230px;
+  height : 230px;
+}
+.texto_avisos
+{
+  font-family : Rokkitt;
+  font-weight : bold;
+  font-size : 22px;
+  line-height : 24.47px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+
+                              /*AVISO AGRADECIMIENTO PUBLICACIÓN*/
+
+.texto_avisos
+{
+  font-family : Rokkitt;
+  font-weight : bold;
+  font-size : 22px;
+  line-height : 24.47px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+.aviso_agradecimiento_publicacion_logo
+{
+  background-image : url(aviso_agradecimiento_publicacion_logo.png);
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 124px;
+  top : 197px;
+  width : 230px;
+  height : 230px;
+}
+
+                              /*AVISO ERROR*/
+
+.aviso_error_logo
+{
+  background-image : url(aviso_error_logo.png);
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 124px;
+  top : 197px;
+  width : 230px;
+  height : 230px;
+}
+.texto_avisos
+{
+  font-family : Rokkitt;
+  font-weight : bold;
+  font-size : 22px;
+  line-height : 24.47px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+
+
+/*----OTROS----*/
+/*REGISTRO E INICIO DE SESIÓN*/
+
+                    /*INICIAR SESION*/
+.iniciar_sesion_linea_division_registrarse
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 0px;
+  position : absolute ;
+  left : -3176px;
+  top : 733px;
+  width : 281px;
+  height : 0px;
+}
+.iniciar_sesion_boton_contenedor_inciar_sesion
+{
+  background : #3D2004;
+  background : rgba(61, 32, 4, 1);
+  position : absolute ;
+  left : -3184px;
+  top : 511px;
+  width : 297px;
+  height : 37px;
+  border-radius : 5px;
+  -moz-border-radius : 5px;
+  -webkit-border-radius : 5px;
+}
+.texto_formulario
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+  opacity : 0.7;
+  filter: alpha(opacity=70) progid:DXImageTransform.Microsoft.Alpha(opacity=70) ;
+}
+.subtitulos_cafe_semibold
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+.iniciar_sesion_logo
+{
+  background-image : url(iniciar_sesion_logo.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -3203px;
+  top : 33px;
+  width : 336px;
+  height : 336px;
+}
+.iniciar_sesion_linea_derecha
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -2927px;
+  top : 618px;
+  width : 70px;
+  height : 0px;
+}
+.iniciar_sesion_linea_izquierda
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -3214px;
+  top : 618px;
+  width : 71px;
+  height : 0px;
+}
+.iniciar_sesion_linea_division_redes_sociales
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 0px;
+  position : absolute ;
+  left : -3035px;
+  top : 658px;
+  width : 0px;
+  height : 37px;
+}
+.titulos_cafes
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+}
+.texto_usuarios
+{
+  font-family : Montserrat;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+.tituloblanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 22px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.iniciar_sesion_linea_formulario_contrasea
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -3209px;
+  top : 475px;
+  width : 347px;
+  height : 0px;
+}
+.iniciar_sesion_linea_formulario_usuario
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -3209px;
+  top : 412px;
+  width : 347px;
+  height : 0px;
+}
+
+                    /*REGISTRARME*/ 
+.registrarse_logo
+{
+  background-image : url(registrarse_logo.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -2605px;
+  top : 33px;
+  width : 182px;
+  height : 182px;
+}
+.texto_formulario
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+  opacity : 0.7;
+  filter: alpha(opacity=70) progid:DXImageTransform.Microsoft.Alpha(opacity=70) ;
+}
+.registrarse_linea_formulario_confirmar_contrasea
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -2688px;
+  top : 629px;
+  width : 347px;
+  height : 0px;
+}
+.registrarse_linea_division_conocenuestros
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 0px;
+  position : absolute ;
+  left : -2655px;
+  top : 720px;
+  width : 281px;
+  height : 0px;
+}
+.registrarse_boton_contenedor_registrarse
+{
+  background : #3D2004;
+  background : rgba(61, 32, 4, 1);
+  position : absolute ;
+  left : -2663px;
+  top : 656px;
+  width : 297px;
+  height : 37px;
+  border-radius : 5px;
+  -moz-border-radius : 5px;
+  -webkit-border-radius : 5px;
+}
+.registrarse_linea_formulario_bio
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -2688px;
+  top : 439px;
+  width : 347px;
+  height : 0px;
+}
+.registrarse_linea_formulario_contrasea
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -2688px;
+  top : 564px;
+  width : 347px;
+  height : 0px;
+}
+.registrarse_linea_formulario_correo
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -2688px;
+  top : 251px;
+  width : 347px;
+  height : 0px;
+}
+.registrarse_linea_formulario_nombre
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -2688px;
+  top : 313px;
+  width : 347px;
+  height : 0px;
+}
+.registrarse_linea_formulario_usuario
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -2688px;
+  top : 502px;
+  width : 347px;
+  height : 0px;
+}
+.registrarse_linea_formulario_fecha
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -2688px;
+  top : 376px;
+  width : 347px;
+  height : 0px;
+}
+.titulos_cafes
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+}
+.texto_usuarios
+{
+  font-family : Montserrat;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+
+.tituloblanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 22px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+
+                    /*OLVIDÉ CONTRASEÑA*/ 
+.Estilodecarcternormal
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+.texto_formulario
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+  opacity : 0.7;
+  filter: alpha(opacity=70) progid:DXImageTransform.Microsoft.Alpha(opacity=70) ;
+}
+.subtitulos_cafe_semibold
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+.olvide_contrasea_boton_contenedor_enviar
+{
+  background : #3D2004;
+  background : rgba(61, 32, 4, 1);
+  position : absolute ;
+  left : -2131px;
+  top : 484px;
+  width : 297px;
+  height : 37px;
+  border-radius : 5px;
+  -moz-border-radius : 5px;
+  -webkit-border-radius : 5px;
+}
+.olvide_contrasea_linea_izquierda_o
+{
+  border-style : Dashed;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 0px;
+  position : absolute ;
+  left : -2079px;
+  top : 391px;
+  width : 84px;
+  height : 0px;
+}
+.olvide_contrasea_linea_derecha_o
+{
+  border-style : Dashed;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 0px;
+  position : absolute ;
+  left : -1965px;
+  top : 391px;
+  width : 79px;
+  height : 0px;
+}
+.olvide_contrasea_linea_formulario_usuario
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -2156px;
+  top : 333px;
+  width : 347px;
+  height : 0px;
+}
+.olvide_contrasea_linea_formulario_email
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -2156px;
+  top : 459px;
+  width : 347px;
+  height : 0px;
+}
+.tituloblanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 22px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.olvide_contrasea_logo
+{
+  background-image : url(olvide_contrasea_logo.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -2073px;
+  top : 33px;
+  width : 182px;
+  height : 182px;
+}
+.texto_corrido_cafe
+{
+  font-family : Montserrat;
+  font-size : 16px;
+  line-height : 20px;
+}
+
+
+/*POLÍTICA DE PRIVACIDAD*/
+.titulo_blanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 22px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.politica_privacidad_linea_division
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 58px;
+  top : 114px;
+  width : 364px;
+  height : 0px;
+}
+.politica_privacidad_icono_cerrar
+{
+  background-image : url(politica_privacidad_icono_cerrar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 399px;
+  top : 41px;
+  width : 49px;
+  height : 47px;
+}
+.politica_privacidad_contenedor
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : 16px;
+  top : 26px;
+  width : 448px;
+  height : 5211px;
+  border-radius : 9px;
+  -moz-border-radius : 9px;
+  -webkit-border-radius : 9px;
+}
+.texto_corrido_terminos
+{
+  font-family : Montserrat;
+  font-size : 15px;
+  line-height : 18px;
+}
+
+
+/*TÉRMINOS Y CONDICIONES*/
+.titulo_blanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 22px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.terminos_condiciones_contenedor
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : 557px;
+  top : 26px;
+  width : 448px;
+  height : 10376px;
+  border-radius : 9px;
+  -moz-border-radius : 9px;
+  -webkit-border-radius : 9px;
+}
+.texto_corrido_terminos
+{
+  font-family : Montserrat;
+  font-size : 15px;
+  line-height : 18px;
+}
+.terminos_condiciones_linea_division
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 599px;
+  top : 114px;
+  width : 364px;
+  height : 0px;
+}
+.terminos_condiciones_icono_cerrar
+{
+  background-image : url(terminos_condiciones_icono_cerrar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 940px;
+  top : 41px;
+  width : 49px;
+  height : 47px;
+}
+
+
+/*CONVENCIONES E INFORMACIÓN*/
+.texto_subtitulo_terminos
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 15px;
+  line-height : 18px;
+}
+.convensiones_icono_configuracion
+{
+  background-image : url(convensiones_icono_configuracion.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1228px;
+  top : 301px;
+  width : 38px;
+  height : 37px;
+}
+.convencion_linea_division_2_
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 1201px;
+  top : 917px;
+  width : 364px;
+  height : 0px;
+}
+.convencion_linea_division_1_
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 1201px;
+  top : 423px;
+  width : 364px;
+  height : 0px;
+}
+.texto_corrido_blanco
+{
+  font-family : Montserrat;
+  font-size : 16px;
+  line-height : 20px;
+}
+.convencion_linea_division_6_
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 1201px;
+  top : 2101px;
+  width : 364px;
+  height : 0px;
+}
+.convensiones_icono_like
+{
+  background-image : url(convensiones_icono_like.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1222px;
+  top : 136px;
+  width : 48px;
+  height : 37px;
+}
+.convencion_linea_division_5_
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 1201px;
+  top : 1543px;
+  width : 364px;
+  height : 0px;
+}
+.convensiones_contenedor
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : 1159px;
+  top : 27px;
+  width : 448px;
+  height : 2179px;
+  border-radius : 9px;
+  -moz-border-radius : 9px;
+  -webkit-border-radius : 9px;
+}
+.convensiones_icono_informacion
+{
+  background-image : url(convensiones_icono_informacion.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1411px;
+  top : 136px;
+  width : 38px;
+  height : 37px;
+}
+.convencion_linea_division_4_
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 1201px;
+  top : 1344px;
+  width : 364px;
+  height : 0px;
+}
+.convencion_linea_division
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 1201px;
+  top : 115px;
+  width : 364px;
+  height : 0px;
+}
+.tituloblanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 22px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.convensiones_icono_logro
+{
+  background-image : url(convensiones_icono_logro.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1512px;
+  top : 136px;
+  width : 19px;
+  height : 36px;
+}
+.convensiones_icono_reto
+{
+  background-image : url(convensiones_icono_reto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1320px;
+  top : 137px;
+  width : 37px;
+  height : 34px;
+}
+.convenciones_icono_cerrar
+{
+  background-image : url(convenciones_icono_cerrar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1540px;
+  top : 41px;
+  width : 49px;
+  height : 48px;
+}
+.convensiones_icono_cerrar
+{
+  background-image : url(convensiones_icono_cerrar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1228px;
+  top : 218px;
+  width : 38px;
+  height : 37px;
+}
+.convensiones_icono_inicio
+{
+  background-image : url(convensiones_icono_inicio.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1319px;
+  top : 218px;
+  width : 38px;
+  height : 37px;
+}
+.convensiones_icono_publicar
+{
+  background-image : url(convensiones_icono_publicar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1502px;
+  top : 218px;
+  width : 38px;
+  height : 37px;
+}
+.convensiones_icono_guardar
+{
+  background-image : url(convensiones_icono_guardar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1328px;
+  top : 303px;
+  width : 33px;
+  height : 32px;
+}
+.convensiones_icono_consejo
+{
+  background-image : url(convensiones_icono_consejo.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1410px;
+  top : 301px;
+  width : 39px;
+  height : 36px;
+}
+.convensiones_icono_perfil
+{
+  background-image : url(convensiones_icono_perfil.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1411px;
+  top : 218px;
+  width : 38px;
+  height : 37px;
+}
+.convensiones_icono_buscar
+{
+  background-image : url(convensiones_icono_buscar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1502px;
+  top : 301px;
+  width : 38px;
+  height : 37px;
+}
+.convencion_linea_division_3_
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 1201px;
+  top : 1144px;
+  width : 364px;
+  height : 0px;
+}
+.convensiones_icono_intermedio
+{
+  background-image : url(convensiones_icono_intermedio.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1208px;
+  top : 646px;
+  width : 56px;
+  height : 84px;
+}
+.convensiones_icono_medio
+{
+  background-image : url(convensiones_icono_medio.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1215px;
+  top : 768px;
+  width : 42px;
+  height : 86px;
+}
+.convensiones_icono_amateur
+{
+  background-image : url(convensiones_icono_amateur.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1201px;
+  top : 480px;
+  width : 70px;
+  height : 74px;
+}
+
+
+/*----SECCIONES MENU----*/
+/*SECCION INICIO*/
+.incio_articulo1_boton_contenedor_reto
+{
+  background-image : url(incio_articulo1_boton_contenedor_reto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1333px;
+  top : -468px;
+  width : 116px;
+  height : 48px;
+}
+.incio_articulo3_boton_contenedor_consejo
+{
+  background-image : url(incio_articulo3_boton_contenedor_consejo.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1333px;
+  top : 389px;
+  width : 116px;
+  height : 48px;
+}
+.texto_corrido_blanco
+{
+  font-family : Montserrat;
+  font-size : 16px;
+  line-height : 20px;
+}
+.incio_articulo2_boton_contenedor_logro
+{
+  background-image : url(incio_articulo2_boton_contenedor_logro.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1333px;
+  top : -4px;
+  width : 116px;
+  height : 48px;
+}
+.tituloblanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 22px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.inicio_boton_contenedor_publicarlogro
+{
+  background : #3D2004;
+  background : rgba(61, 32, 4, 1);
+  position : absolute ;
+  left : -1589px;
+  top : -404px;
+  width : 297px;
+  height : 37px;
+  border-radius : 5px;
+  -moz-border-radius : 5px;
+  -webkit-border-radius : 5px;
+}
+.incio_articulo1_sombreado_img1_1_
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : -1665px;
+  top : -794px;
+  width : 448px;
+  height : 308px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.incio_articulo1_icono_guardar_1_
+{
+  background-image : url(incio_articulo1_icono_guardar_1_.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1582px;
+  top : -469px;
+  width : 51px;
+  height : 48px;
+}
+.texto_boton_cafe_categoria
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 16px;
+  line-height : 8.85px;
+  letter-spacing : 3.2px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+.incio_articulo2_icono_guardar
+{
+  background-image : url(incio_articulo2_icono_guardar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1582px;
+  top : -4px;
+  width : 51px;
+  height : 48px;
+}
+.incio_articulo2_foto
+{
+  background-image : url(incio_articulo2_foto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1647px;
+  top : -128px;
+  width : 50px;
+  height : 75px;
+}
+.incio_articulo2_foto_1_
+{
+  background-image : url(incio_articulo2_foto_1_.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1647px;
+  top : 266px;
+  width : 50px;
+  height : 75px;
+}
+.incio_articulo1_foto
+{
+  background-image : url(incio_articulo1_foto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1647px;
+  top : -593px;
+  width : 50px;
+  height : 75px;
+}
+.incio_articulo2_img2
+{
+  background-image : url(incio_articulo2_img2.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1765px;
+  top : -351px;
+  width : 568px;
+  height : 357px;
+}
+.inicio_linea_division_articulo2
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -1622px;
+  top : -351px;
+  width : 363px;
+  height : 0px;
+}
+.incio_articulo3_sombreado_img3
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : -1665px;
+  top : 58px;
+  width : 448px;
+  height : 314px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.incio_articulo3_icono_guardar
+{
+  background-image : url(incio_articulo3_icono_guardar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1582px;
+  top : 389px;
+  width : 51px;
+  height : 48px;
+}
+.incio_articulo2_sombreado_img2
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : -1665px;
+  top : -335px;
+  width : 448px;
+  height : 314px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.incio_articulo2_icono_like
+{
+  background-image : url(incio_articulo2_icono_like.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1665px;
+  top : -5px;
+  width : 62px;
+  height : 48px;
+}
+.texto_boton_cafe_categoria1
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 16px;
+  line-height : 8.85px;
+  letter-spacing : 3.2px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+.incio_articulo3_icono_like
+{
+  background-image : url(incio_articulo3_icono_like.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1665px;
+  top : 388px;
+  width : 62px;
+  height : 47px;
+}
+.incio_articulo3_img3
+{
+  background-image : url(incio_articulo3_img3.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1733px;
+  top : 24px;
+  width : 574px;
+  height : 421px;
+}
+.incio_articulo1_icono_like
+{
+  background-image : url(incio_articulo1_icono_like.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1665px;
+  top : -470px;
+  width : 62px;
+  height : 47px;
+}
+.incio_articulo1_img1
+{
+  background-image : url(incio_articulo1_img1.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1688px;
+  top : -833px;
+  width : 625px;
+  height : 369px;
+}
+
+                    /*ARTICULO LOGRO*/ 
+.texto_corrido_blanco
+{
+  font-family : Montserrat;
+  font-size : 16px;
+  line-height : 20px;
+}
+.articulo_logro_linea_division_iconos
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 0px;
+  position : absolute ;
+  left : -902px;
+  top : -1227px;
+  width : 0px;
+  height : 45px;
+}
+.articulo_logro_boton_contenedor_logro
+{
+  background-image : url(articulo_logro_boton_contenedor_logro.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -808px;
+  top : -1538px;
+  width : 116px;
+  height : 48px;
+}
+.texto_icono
+{
+  font-family : Montserrat;
+  font-size : 14px;
+  line-height : 22px;
+}
+.tituloblanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 22px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.articulo_logro_linea_division
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 0px;
+  position : absolute ;
+  left : -1097px;
+  top : -1146px;
+  width : 393px;
+  height : 0px;
+}
+.articulo_logro_img
+{
+  background-image : url(articulo_logro_img.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1225px;
+  top : -1569px;
+  width : 568px;
+  height : 357px;
+}
+.articulo_logor_sombreado_img
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : -1125px;
+  top : -1553px;
+  width : 448px;
+  height : 314px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.articulo_logro_contenedor
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : -1125px;
+  top : -1553px;
+  width : 448px;
+  height : 932px;
+  border-radius : 9px;
+  -moz-border-radius : 9px;
+  -webkit-border-radius : 9px;
+}
+.articulo_logro_foto
+{
+  background-image : url(articulo_logro_foto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -1087px;
+  top : -1312px;
+  width : 50px;
+  height : 75px;
+}
+.articulo_logro_icono_guardar
+{
+  background-image : url(articulo_logro_icono_guardar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -988px;
+  top : -1228px;
+  width : 62px;
+  height : 48px;
+}
+.texto_boton_blanco_categoria
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 16px;
+  line-height : 8.85px;
+  letter-spacing : 3.2px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.articulo_logro_icono_guardar_1_
+{
+  background-image : url(articulo_logro_icono_guardar_1_.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -873px;
+  top : -1228px;
+  width : 51px;
+  height : 48px;
+}
+
+                    /*ARTICULO CONSEJO*/ 
+.texto_corrido_blanco
+{
+  font-family : Montserrat;
+  font-size : 16px;
+  line-height : 20px;
+}
+.articulo_consejo_icono_guardar_1_
+{
+  background-image : url(articulo_consejo_icono_guardar_1_.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -332px;
+  top : -1230px;
+  width : 51px;
+  height : 48px;
+}
+.articulo_consejo_linea_division_iconos
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 0px;
+  position : absolute ;
+  left : -361px;
+  top : -1229px;
+  width : 0px;
+  height : 45px;
+}
+.articulo_consejo_boton_contenedor_logro
+{
+  background-image : url(articulo_consejo_boton_contenedor_logro.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -276px;
+  top : -1540px;
+  width : 125px;
+  height : 48px;
+}
+.texto_icono
+{
+  font-family : Montserrat;
+  font-size : 14px;
+  line-height : 22px;
+}
+.tituloblanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 22px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.articulo_consejo_foto
+{
+  background-image : url(articulo_consejo_foto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -545px;
+  top : -1314px;
+  width : 50px;
+  height : 75px;
+}
+.articulo_consejo_img
+{
+  background-image : url(articulo_consejo_img.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -652px;
+  top : -1590px;
+  width : 574px;
+  height : 421px;
+}
+.articulo_consejo_linea_division
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 0px;
+  position : absolute ;
+  left : -556px;
+  top : -1148px;
+  width : 393px;
+  height : 0px;
+}
+.articulo_consejo_contenedor
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : -583px;
+  top : -1555px;
+  width : 448px;
+  height : 932px;
+  border-radius : 9px;
+  -moz-border-radius : 9px;
+  -webkit-border-radius : 9px;
+}
+.articulo_consejo_icono_guardar
+{
+  background-image : url(articulo_consejo_icono_guardar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -447px;
+  top : -1230px;
+  width : 62px;
+  height : 48px;
+}
+.articulo_consejo_sombreado_img
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : -583px;
+  top : -1555px;
+  width : 448px;
+  height : 314px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.texto_boton_blanco_categoria
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 16px;
+  line-height : 8.85px;
+  letter-spacing : 3.2px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+
+                    /*ARTÍCULO RETO*/
+.articulo_reto_foto_participante1_1_
+{
+  background-image : url(articulo_reto_foto_participante1_1_.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 73px;
+  top : 1221px;
+  width : 50px;
+  height : 75px;
+}
+.articulo_reto_foto_participante2
+{
+  background-image : url(articulo_reto_foto_participante2.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 73px;
+  top : 1422px;
+  width : 50px;
+  height : 75px;
+}
+.articulo_reto_icono_guardar
+{
+  background-image : url(articulo_reto_icono_guardar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 321px;
+  top : 405px;
+  width : 51px;
+  height : 48px;
+}
+.articulo_reto_img_participante1
+{
+  background-image : url(articulo_reto_img_participante1.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1px;
+  top : 1078px;
+  width : 516px;
+  height : 321px;
+}
+.articulo_reto_img_participante2
+{
+  background-image : url(articulo_reto_img_participante2.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 51px;
+  top : 1301px;
+  width : 381px;
+  height : 202px;
+}
+.articulo_reto_sombreado_img
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 16px;
+  top : 81px;
+  width : 448px;
+  height : 306px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.articulo_reto_linea_division_1_
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 57px;
+  top : 1087px;
+  width : 364px;
+  height : 0px;
+}
+.articulo_reto_icono_like
+{
+  background-image : url(articulo_reto_icono_like.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 206px;
+  top : 405px;
+  width : 62px;
+  height : 48px;
+}
+.articulo_reto_linea_division
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 0px;
+  position : absolute ;
+  left : 43px;
+  top : 486px;
+  width : 393px;
+  height : 0px;
+}
+.articulo_reto_img
+{
+  background-image : url(articulo_reto_img.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -5px;
+  top : 41px;
+  width : 623px;
+  height : 368px;
+}
+.articulo_reto_icono_reto
+{
+  background-image : url(articulo_reto_icono_reto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 104px;
+  top : 406px;
+  width : 48px;
+  height : 45px;
+}
+.texto_corrido_blanco
+{
+  font-size : 16px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.articulo_reto_foto
+{
+  background-image : url(articulo_reto_foto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 53px;
+  top : 320px;
+  width : 50px;
+  height : 75px;
+}
+.articulo_reto_boton_contenedor_unirmealreto
+{
+  background : #3D2004;
+  background : rgba(61, 32, 4, 1);
+  position : absolute ;
+  left : 91px;
+  top : 1000px;
+  width : 297px;
+  height : 37px;
+  border-radius : 5px;
+  -moz-border-radius : 5px;
+  -webkit-border-radius : 5px;
+}
+.articulo_reto_boton_contenedor_reto
+{
+  background-image : url(articulo_reto_boton_contenedor_reto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 323px;
+  top : 95px;
+  width : 125px;
+  height : 48px;
+}
+.articulo_reto_sombreado_img_participante2
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 60px;
+  top : 1307px;
+  width : 363px;
+  height : 189px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.articulo_reto_sombreado_img_participante1
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 59px;
+  top : 1101px;
+  width : 363px;
+  height : 189px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.texto_icono
+{
+  font-family : Montserrat;
+  font-size : 14px;
+  line-height : 22px;
+}
+.tituloblanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 22px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.articulo_reto_contenedor
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : 16px;
+  top : 79px;
+  width : 448px;
+  height : 1428px;
+  border-radius : 9px;
+  -moz-border-radius : 9px;
+  -webkit-border-radius : 9px;
+}
+.texto_boton_blanco_categoria
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 16px;
+  line-height : 8.85px;
+  letter-spacing : 3.2px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+
+/*SECCION PUBLICAR*/
+
+                    /*CREAR PUBLICACION*/
+
+.publicar_linea_formulario_titulo
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -714px;
+  top : 153px;
+  width : 448px;
+  height : 0px;
+}
+.publicar_contenedor_insertarimg
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : -715px;
+  top : 169px;
+  width : 448px;
+  height : 150px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+.publicar_icono_insertarimg
+{
+  background-image : url(publicar_icono_insertarimg.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -516px;
+  top : 211px;
+  width : 50px;
+  height : 33px;
+}
+
+.titulos_cafes
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+.titulo_blanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 22px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.texto_formularios
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+  opacity : 0.7;
+  filter: alpha(opacity=70) progid:DXImageTransform.Microsoft.Alpha(opacity=70) ;
+}
+.texto_corrido_cafe
+{
+  font-family : Montserrat;
+  font-size : 16px;
+  line-height : 20px;
+  letter-spacing : -0.64px;
+  opacity : 0.7;
+  filter: alpha(opacity=70) progid:DXImageTransform.Microsoft.Alpha(opacity=70) ;
+}
+.pubicar_triangulo_formulario_desplegable_reto
+{
+  background : #3D2004;
+  background : rgba(61, 32, 4, 1);
+  position : absolute ;
+  left : -282px;
+  top : 601px;
+  width : 15px;
+  height : 14px;
+}
+.publicar_linea_formulario_desplegable_reto
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -714px;
+  top : 615px;
+  width : 448px;
+  height : 0px;
+}
+.publicar_contenedor_insertartexto
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : -714px;
+  top : 336px;
+  width : 448px;
+  height : 237px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+.publicar_boton_contenedor_publicar
+{
+  background : #3D2004;
+  background : rgba(61, 32, 4, 1);
+  position : absolute ;
+  left : -611px;
+  top : 658px;
+  width : 241px;
+  height : 37px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+
+                    /*CREAR PUBLICACION DESPLEGADA*/
+.publicar_desplegado_linea_formulario_desplegable_reto
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 747px;
+  top : 615px;
+  width : 448px;
+  height : 0px;
+}
+.publicar_desplegado_formulario_desplegable_linea_division_consejo
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 746px;
+  top : 688px;
+  width : 448px;
+  height : 0px;
+}
+.publicar_desplegado_texto_formulario_desplegable_reto
+{
+  background : #3D2004;
+  background : rgba(61, 32, 4, 1);
+  position : absolute ;
+  left : 1179px;
+  top : 601px;
+  width : 15px;
+  height : 14px;
+}
+.publicar_desplegado_formulario_desplegable_contenedor_seleccionado
+{
+  background : #3D2004;
+  background : rgba(61, 32, 4, 1);
+  position : absolute ;
+  left : 746px;
+  top : 615px;
+  width : 448px;
+  height : 37px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+.publicar_desplegado_formulario_desplegable_contenedor
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : 746px;
+  top : 615px;
+  width : 448px;
+  height : 113px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+
+.texto_corrido_blanco
+{
+  font-family : Montserrat;
+  font-size : 16px;
+}
+.titulos_cafes
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+.texto_formularios
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+  opacity : 0.7;
+  filter: alpha(opacity=70) progid:DXImageTransform.Microsoft.Alpha(opacity=70) ;
+}
+.texto_corrido_cafe
+{
+  font-family : Montserrat;
+  font-size : 16px;
+  line-height : 20px;
+  letter-spacing : -0.64px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+.publicar_desplegado_contenedor_insertartexto
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : 747px;
+  top : 336px;
+  width : 448px;
+  height : 237px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+.publicar_desplegado_icono_insertarimg
+{
+  background-image : url(publicar_desplegado_icono_insertarimg.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 945px;
+  top : 211px;
+  width : 50px;
+  height : 33px;
+}
+.publicar_contenedor_insertarimg_1_
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : 746px;
+  top : 169px;
+  width : 448px;
+  height : 150px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+.publicar_desplegado_linea_formulario_titulo
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 747px;
+  top : 153px;
+  width : 448px;
+  height : 0px;
+}
+
+
+/*SECCION BÚSQUEDA*/
+
+                    /*BÚSQUEDA*/
+.busqueda_opciones_contenedor
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : 1146px;
+  top : 1874px;
+  width : 218px;
+  height : 37px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+.busqueda_contenedor_resultados
+{
+  background : #C2F2C7;
+  background : rgba(194, 242, 199, 1);
+  position : absolute ;
+  left : 1130px;
+  top : 1927px;
+  width : 479px;
+  height : 559px;
+}
+.titulos_cafes
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+
+.busqueda_barra_busqueda_icono_buscar
+{
+  background-image : url(busqueda_barra_busqueda_icono_buscar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 1544px;
+  top : 1827px;
+  width : 24px;
+  height : 23px;
+}
+.busqueda_barra_busqueda_contenedor
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : 1146px;
+  top : 1820px;
+  width : 448px;
+  height : 37px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+
+                    /*BÚSQUEDA PUBLICACIONES*/
+.busqueda_publicaciones_resultado6_img6
+{
+  background-image : url(busqueda_publicaciones_resultado6_img6.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 233px;
+  top : 564px;
+  width : 237px;
+  height : 355px;
+}
+.busqueda_publicaciones_contenedor_resultados
+{
+  background : #C2F2C7;
+  background : rgba(194, 242, 199, 1);
+  position : absolute ;
+  left : 0px;
+  top : 180px;
+  width : 479px;
+  height : 569px;
+}
+.busqueda_publicaciones_resultado1_sombreado_img1
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 17px;
+  top : 181px;
+  width : 214px;
+  height : 186px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.busqueda_publicaciones_barra_busqueda_contenedor
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : 15px;
+  top : 74px;
+  width : 448px;
+  height : 37px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+.busqueda_publicaciones_barra_busqueda_icono_borrar
+{
+  background-image : url(busqueda_publicaciones_barra_busqueda_icono_borrar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 438px;
+  top : 84px;
+  width : 15px;
+  height : 16px;
+}
+.busqueda_publicaciones_resultado6_sombreado
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 247px;
+  top : 587px;
+  width : 215px;
+  height : 186px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.titulos_cafes
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+
+.titulo_blanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 20.87px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.busqueda_publicaciones_resultado3_sombreado_img3
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 17px;
+  top : 381px;
+  width : 215px;
+  height : 188px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.busqueda_publicaciones_resultado4_sombreado_img4
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 248px;
+  top : 383px;
+  width : 215px;
+  height : 186px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.busqueda_publicaciones_resultado2_sombreado_img2
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 248px;
+  top : 181px;
+  width : 216px;
+  height : 186px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.busqueda_publicaciones_resultado3_img3
+{
+  background-image : url(busqueda_publicaciones_resultado3_img3.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 11px;
+  top : 304px;
+  width : 240px;
+  height : 345px;
+}
+.busqueda_publicaciones_resultado2_img2
+{
+  background-image : url(busqueda_publicaciones_resultado2_img2.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 106px;
+  top : 169px;
+  width : 371px;
+  height : 233px;
+}
+.busqueda_publicaciones_opciones_contenedor
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : 245px;
+  top : 127px;
+  width : 218px;
+  height : 37px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+.busqueda_publicaciones_resultado1_img1
+{
+  background-image : url(busqueda_publicaciones_resultado1_img1.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -22px;
+  top : 169px;
+  width : 298px;
+  height : 219px;
+}
+.busqueda_publicaciones_resultado4_img4
+{
+  background-image : url(busqueda_publicaciones_resultado4_img4.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 234px;
+  top : 360px;
+  width : 237px;
+  height : 355px;
+}
+.busqueda_publicaciones_resultado5_img5
+{
+  background-image : url(busqueda_publicaciones_resultado5_img5.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 10px;
+  top : 508px;
+  width : 240px;
+  height : 345px;
+}
+.busqueda_publicaciones_resultado5_sombreado
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 16px;
+  top : 585px;
+  width : 215px;
+  height : 188px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+
+                    /*BÚSQUEDA PPERFILES*/
+.busqueda_perfiles_barra_busqueda_contenedor_1_
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : -531px;
+  top : 74px;
+  width : 448px;
+  height : 37px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+.busqueda_perfiles_barra_busqueda_icono_borrar
+{
+  background-image : url(busqueda_perfiles_barra_busqueda_icono_borrar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -109px;
+  top : 85px;
+  width : 15px;
+  height : 16px;
+}
+.texto_usuarios
+{
+  font-family : Montserrat;
+  font-size : 20px;
+  line-height : 20px;
+  letter-spacing : -0.8px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+.titulos_cafes
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+
+.busqueda_perfiles_contenedor_resultados_1_
+{
+  background : #C2F2C7;
+  background : rgba(194, 242, 199, 1);
+  position : absolute ;
+  left : -548px;
+  top : 181px;
+  width : 479px;
+  height : 559px;
+}
+.busqueda_perfiles_resultado4_img4
+{
+  background-image : url(busqueda_perfiles_resultado4_img4.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -483px;
+  top : 603px;
+  width : 117px;
+  height : 176px;
+}
+.busqueda_perfiles_opciones_contenedor_2_
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : -531px;
+  top : 128px;
+  width : 218px;
+  height : 37px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+.busqueda_perfiles_resultado3_img3
+{
+  background-image : url(busqueda_perfiles_resultado3_img3.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -483px;
+  top : 457px;
+  width : 120px;
+  height : 180px;
+}
+.busqueda_perfiles_resultado1_img1
+{
+  background-image : url(busqueda_perfiles_resultado1_img1.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -484px;
+  top : 195px;
+  width : 121px;
+  height : 121px;
+}
+.busqueda_perfiles_resultado2_img2
+{
+  background-image : url(busqueda_perfiles_resultado2_img2.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -480px;
+  top : 332px;
+  width : 123px;
+  height : 123px;
+}
+
+/*SECCION PERFIL*/
+
+                    /*PERFIL PÚBLICO*/
+
+.perfil_publico_foto
+{
+  background-image : url(perfil_publico_foto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 54px;
+  top : 68px;
+  width : 121px;
+  height : 121px;
+}
+.perfil_publico_icono_nivel
+{
+  background-image : url(perfil_publico_icono_nivel.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 121px;
+  top : 121px;
+  width : 78px;
+  height : 82px;
+}
+.perfil_publico_icono_reto
+{
+  background-image : url(perfil_publico_icono_reto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 54px;
+  top : 284px;
+  width : 49px;
+  height : 45px;
+}
+.perfil_publico_icono_logro
+{
+  background-image : url(perfil_publico_icono_logro.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 224px;
+  top : 281px;
+  width : 26px;
+  height : 45px;
+}
+.perfil_publico_icono_consejo
+{
+  background-image : url(perfil_publico_icono_consejo.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 371px;
+  top : 281px;
+  width : 50px;
+  height : 45px;
+}
+.perfil_publico_linea_division_iconos
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 58px;
+  top : 269px;
+  width : 363px;
+  height : 0px;
+}
+.titulos_cafes
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+.texto_usuarios
+{
+  font-family : Montserrat;
+  font-size : 20px;
+  line-height : 20px;
+  letter-spacing : -0.8px;
+}
+.titulo_blanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 20.87px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.texto_corrido_cafe
+{
+  font-family : Montserrat;
+  font-size : 16px;
+  line-height : 20px;
+  letter-spacing : -0.64px;
+}
+
+.perfil_publico_img2
+{
+  background-image : url(perfil_publico_img2.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 105px;
+  top : 338px;
+  width : 371px;
+  height : 233px;
+}
+.perfil_publico_sombreado_img4
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 247px;
+  top : 552px;
+  width : 215px;
+  height : 186px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.perfil_publico_sombreado_img3
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 16px;
+  top : 550px;
+  width : 215px;
+  height : 188px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.perfil_publico_sombreado_img1
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 16px;
+  top : 350px;
+  width : 214px;
+  height : 186px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.perfil_publico_img4
+{
+  background-image : url(perfil_publico_img4.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 233px;
+  top : 529px;
+  width : 237px;
+  height : 355px;
+}
+.perfil_publico_sombreado_img2
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 247px;
+  top : 350px;
+  width : 216px;
+  height : 186px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.perfil_publico_img3
+{
+  background-image : url(perfil_publico_img3.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 10px;
+  top : 473px;
+  width : 240px;
+  height : 345px;
+}
+.perfil_publico_img1
+{
+  background-image : url(perfil_publico_img1.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -23px;
+  top : 338px;
+  width : 298px;
+  height : 219px;
+}
+
+                    /*PERFIL PRIVADO*/
+
+.texto_usuarios
+{
+  font-family : Montserrat;
+  font-size : 20px;
+  line-height : 20px;
+  letter-spacing : -0.8px;
+}
+.perfil_privado_linea_division_iconos
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 58px;
+  top : 1155px;
+  width : 363px;
+  height : 0px;
+}
+.perfil_privado_icono_configuracion
+{
+  background-image : url(perfil_privado_icono_configuracion.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 374px;
+  top : 1040px;
+  width : 49px;
+  height : 48px;
+}
+.perfil_privado_icono_nivel
+{
+  background-image : url(perfil_privado_icono_nivel.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 121px;
+  top : 1006px;
+  width : 78px;
+  height : 82px;
+}
+.perfil_privado_foto
+{
+  background-image : url(perfil_privado_foto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 56px;
+  top : 944px;
+  width : 119px;
+  height : 178px;
+}
+.perfil_privado_icono_consejo
+{
+  background-image : url(perfil_privado_icono_consejo.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 213px;
+  top : 1170px;
+  width : 50px;
+  height : 45px;
+}
+.perfil_privado_icono_logro
+{
+  background-image : url(perfil_privado_icono_logro.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 145px;
+  top : 1170px;
+  width : 26px;
+  height : 45px;
+}
+.perfil_privado_img3
+{
+  background-image : url(perfil_privado_img3.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 10px;
+  top : 1358px;
+  width : 240px;
+  height : 345px;
+}
+.perfil_privado_icono_reto
+{
+  background-image : url(perfil_privado_icono_reto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 54px;
+  top : 1170px;
+  width : 49px;
+  height : 45px;
+}
+.perfil_privado_icono_guardar
+{
+  background-image : url(perfil_privado_icono_guardar.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 373px;
+  top : 1170px;
+  width : 51px;
+  height : 47px;
+}
+.perfil_privado_sombreado_img2
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 247px;
+  top : 1236px;
+  width : 216px;
+  height : 186px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.perfil_privado_sombreado_img4
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 247px;
+  top : 1438px;
+  width : 215px;
+  height : 186px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.perfil_privado_img4
+{
+  background-image : url(perfil_privado_img4.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 233px;
+  top : 1415px;
+  width : 237px;
+  height : 355px;
+}
+.perfil_privado_icono_like
+{
+  background-image : url(perfil_privado_icono_like.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 287px;
+  top : 1170px;
+  width : 62px;
+  height : 47px;
+}
+.perfil_privado_img1
+{
+  background-image : url(perfil_privado_img1.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -23px;
+  top : 1223px;
+  width : 298px;
+  height : 219px;
+}
+.perfil_privado_sombreado_img3
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 16px;
+  top : 1436px;
+  width : 215px;
+  height : 188px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.perfil_privado_img2
+{
+  background-image : url(perfil_privado_img2.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 105px;
+  top : 1223px;
+  width : 371px;
+  height : 233px;
+}
+.perfil_privado_sombreado_img1
+{
+  background : #1D1D1B;
+  background : rgba(29, 29, 27, 1);
+  opacity : 0.55;
+  position : absolute ;
+  left : 16px;
+  top : 1236px;
+  width : 214px;
+  height : 186px;
+  filter: alpha(opacity=55) progid:DXImageTransform.Microsoft.Alpha(opacity=55) ;
+}
+.titulos_cafes
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+
+.titulo_blanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 20.87px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.texto_corrido_cafe
+{
+  font-family : Montserrat;
+  font-size : 16px;
+  line-height : 20px;
+  letter-spacing : -0.64px;
+}
+
+                    /*CAMBIAR IMAGEN DE PERFIL*/
+
+.perfil_cambiar_imagen_popup_contenedor
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : -722px;
+  top : 1772px;
+  width : 448px;
+  height : 747px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+.perfil_cambiar_imagen_popup_foto
+{
+  background-image : url(perfil_cambiar_imagen_popup_foto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : -670px;
+  top : 1838px;
+  width : 356px;
+  height : 535px;
+}
+.titulos_cafes
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  color : #3D2004;
+  color : rgb(61, 32, 4);
+}
+
+.titulo_blanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 22px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.perfil_cambiar_imagen_popup_boton_contenedor_eleminar
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -613px;
+  top : 2352px;
+  width : 241px;
+  height : 37px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+.perfil_cambiar_imagen_popup_boton_contenedor_elegiralbumes
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -613px;
+  top : 2299px;
+  width : 241px;
+  height : 37px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+.perfil_cambiar_imagen_popup_boton_contenedor_tomarfoto
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : -613px;
+  top : 2246px;
+  width : 241px;
+  height : 37px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+                  
+                    /*EDITAR PERFIL*/
+
+.cuenta_configuracion_triangulo_formulario_despegable_sexo
+{
+  background : #3D2004;
+  background : rgba(61, 32, 4, 1);
+  position : absolute ;
+  left : 407px;
+  top : 441px;
+  width : 15px;
+  height : 14px;
+}
+.texto_corrido_blanco
+{
+  font-family : Montserrat;
+  font-size : 16px;
+  line-height : 20px;
+}
+.cuenta_configuracion_icono_lapiz
+{
+  background-image : url(cuenta_configuracion_icono_lapiz.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 265px;
+  top : 206px;
+  width : 72px;
+  height : 72px;
+}
+.cuenta_configuracion_cambiar_foto
+{
+  background-image : url(cuenta_configuracion_cambiar_foto.png);
+  /*Para crear una imagen a la que se haga referencia en CSS, utilice el comando \'Exportar CSS seleccionado\'.*/
+  background-repeat : no-repeat;
+  position : absolute ;
+  left : 157px;
+  top : 106px;
+  width : 163px;
+  height : 245px;
+}
+.cuenta_configuracion_linea_formulario_correo
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 57px;
+  top : 419px;
+  width : 364px;
+  height : 0px;
+}
+.cuenta_configuracion_linea_division
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 0px;
+  position : absolute ;
+  left : 57px;
+  top : 547px;
+  width : 364px;
+  height : 0px;
+}
+.cuenta_configuracion_linea_formulario_despegable_sexo
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 57px;
+  top : 455px;
+  width : 364px;
+  height : 0px;
+}
+.cuenta_configuracion_linea_formulario_bio
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 57px;
+  top : 383px;
+  width : 364px;
+  height : 0px;
+}
+.cuenta_configuracion_linea_formulario_nombre
+{
+  border-style : Solid;
+  border-color : #3D2004;
+  border-color : rgba(61, 32, 4, 1);
+  border-width : 2px;
+  position : absolute ;
+  left : 57px;
+  top : 310px;
+  width : 364px;
+  height : 0px;
+}
+.tituloblanco
+{
+  font-family : Montserrat;
+  font-weight : bold;
+  font-size : 20px;
+  line-height : 22px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+}
+.cuenta_configuracion_contenedor
+{
+  background : #8CAA88;
+  background : rgba(140, 170, 136, 1);
+  position : absolute ;
+  left : 14px;
+  top : 79px;
+  width : 450px;
+  height : 654px;
+  border-radius : 0px;
+  -moz-border-radius : 0px;
+  -webkit-border-radius : 0px;
+}
+.texto_formulario_blanco
+{
+  font-family : Montserrat;
+  font-size : 16px;
+  line-height : 20px;
+  color : #FFFFFF;
+  color : rgb(255, 255, 255);
+  opacity : 0.7;
+  filter: alpha(opacity=70) progid:DXImageTransform.Microsoft.Alpha(opacity=70) ;
+}
+
+
