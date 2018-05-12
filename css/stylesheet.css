@@ -17,6 +17,10 @@ display: block;
 .hide{
 display: none;
 } 
+::placeholder{
+    font-weight: 400;
+    color : rgba(61, 32, 4, 1);
+  }
 /* login*/
 #login{  
     height: 100%;
@@ -35,7 +39,9 @@ display: none;
     background: none;
     border: none;
     font-size: 250%;
-    text-align: center
+    text-align: center;
+    color : #3D2004;
+    
 }
 .password{
     display: block;
@@ -48,6 +54,7 @@ display: none;
     border: none;
     font-size: 250%;
     text-align: center;
+    color : #3D2004; 
 }
 .btnLogin
 {
@@ -102,3 +109,175 @@ display: none;
     background: none;
     border: none;
 }
+/*end of Login*/
+#register{
+    background-image: url("../img/background/loginCreateProfile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.email{
+    width: 77%;
+    display: block;
+    position: absolute;
+    top: 28%;
+    height: 3%;
+    left: 15%;
+    text-align: center;
+    font-size: 200%;
+    border: none;
+    background: none;
+    color : #3D2004;
+    
+}
+.name{
+    width: 77%;
+    display: block;
+    position: absolute;
+    top: 36%;
+    height: 3%;
+    left: 15%;
+    text-align: center;
+    font-size: 200%;
+    border: none;
+    background: none;
+    color: #3D2004;
+}
+.date{
+    width: 77%;
+    display: block;
+    position: absolute;
+    top: 44%;
+    height: 3%;
+    left: 15%;
+    text-align: center;
+    font-size: 200%;
+    border: none;
+    background: none;
+    color: #3D2004;
+}
+.bio{
+    width: 77%;
+    display: block;
+    position: absolute;
+    top: 52%;
+    height: 3%;
+    left: 15%;
+    text-align: center;
+    font-size: 200%;
+    border: none;
+    background: none;
+    color: #3D2004;
+}
+.regUser{
+    width: 77%;
+    display: block;
+    position: absolute;
+    top: 60%;
+    height: 3%;
+    left: 15%;
+    text-align: center;
+    font-size: 200%;
+    border: none;
+    background: none;
+    color: #3D2004;
+}
+.regPass{
+    width: 77%;
+    display: block;
+    position: absolute;
+    top: 68%;
+    height: 3%;
+    left: 15%;
+    text-align: center;
+    font-size: 200%;
+    border: none;
+    background: none;
+    color: #3D2004;
+}
+.regConfirmPass{
+    width: 77%;
+    display: block;
+    position: absolute;
+    top: 76%;
+    height: 3%;
+    left: 15%;
+    text-align: center;
+    font-size: 200%;
+    border: none;
+    background: none;
+    color: #3D2004;
+}
+.regBtn{
+    border: none;
+    height: 5%;
+    width: 67%;
+    bottom: 13.1%;
+    left: 20%;
+    position: absolute;
+    display: block;
+    background: transparent;
+}
+.regTerms{
+    border: none;
+    height: 3%;
+    width: 55%;
+    bottom: 5.1%;
+    left: 45%;
+    position: absolute;
+    display: block;
+    background: transparent
+}
+.regLogin{
+    border: none;
+    height: 2.5%;
+    width: 19%;
+    bottom: 2.1%;
+    left: 65%;
+    position: absolute;
+    display: block;
+    background: transparent;
+}
+/*end of register*/
+
+/*fogotten password*/
+#forgottenPassword{
+    background-image: url("../img/background/loginForgotPassword.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.forgUser{
+    display: block;
+    position: absolute;
+    top: 38%;
+    width: 78%;
+    height: 3%;
+    left: 16%;
+    font-size: 260%;
+    background: none;
+    border: none;
+    color: #3D2004;
+    font-weight: 400;
+}
+.forgEmail{
+    display: block;
+    position: absolute;
+    top: 54%;
+    width: 78%;
+    height: 3%;
+    left: 16%;
+    font-size: 260%;
+    background: none;
+    border: none;
+    color: #3D2004;
+    font-weight: 400;
+}
+.forgRegBtn{
+    position: absolute;
+    top: 60.5%;
+    width: 66%;
+    height: 5%;
+    left: 20.1%;
+    border: none;
+    background: none;
+}
+/*end of forgotten password*/
