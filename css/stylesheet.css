@@ -1,0 +1,104 @@
+body,html{
+width:  100%;
+height: 100%;
+margin: 0px;
+padding: 0;
+}
+section{
+z-index: 1;
+height: 100%;
+}
+div{
+height: 100%;
+}
+.show{
+display: block;
+}
+.hide{
+display: none;
+} 
+/* login*/
+#login{  
+    height: 100%;
+    background-image: url("../img/background/login.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.username{
+    display: block;
+    position: absolute;
+    top: 48.5%;
+    width: 78%;
+    height: 3%;
+    left: 14%;
+    background: none;
+    border: none;
+    font-size: 250%;
+    text-align: center
+}
+.password{
+    display: block;
+    position: absolute;
+    top: 56.5%;
+    width: 78%;
+    height: 3%;
+    left: 14%;
+    background: none;
+    border: none;
+    font-size: 250%;
+    text-align: center;
+}
+.btnLogin
+{
+    position: absolute;
+    top: 64%;
+    left: 20%;
+    width: 67%;
+    height: 4.7%;
+    background: none;
+    border: none;
+}
+.forgottenPassword{
+    display: block;
+    position: absolute;
+    top: 70%;
+    left: 20%;
+    font-size: 284%;
+    color: #3D2004;
+    height: 4%;
+    font-weight: bolder;
+    width: 62%;
+    border: none;
+    background: transparent
+  }
+.logingFb{
+    height: 5%;
+    width: 34%;
+    display: block;
+    position: absolute;
+    top: 82.5%;
+    left: 13%;
+    border: none;
+    background: none;
+}
+.loginG{
+    height: 5%;
+    width: 34%;
+    display: block;
+    position: absolute;
+    top: 82.5%;
+    right: 6%;
+    border: none;
+    background: none;
+}
+.loginRegister{
+    height: 4%;
+    width: 25%;
+    display: block;
+    position: absolute;
+    bottom: 3%;
+    right: 13%;
+    background: none;
+    border: none;
+}
