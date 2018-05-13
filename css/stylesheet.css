@@ -298,15 +298,15 @@ display: none;
 /*end of forgotten password*/
 
 /*Home*/
-#home{
-    background-image: url("../img/background/homepage.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+.homeBkg{
+   width: 100%;
+   height: 100%;
+   z-index: -1;
 }
 .contentHome{
     height: 81%;
     width: 100%;
-    position: relative;
+    position: absolute;
     top: 12%;
     overflow: scroll;
 }
@@ -408,7 +408,7 @@ div.sharesContent{
 .home{
     position: absolute;
     bottom: 0.5%;
-    left: 9.3%;
+    left: 8%;
     height: 6.3%;
     width: 12%;
     border: none;
@@ -417,7 +417,7 @@ div.sharesContent{
 .homeShare{
     position: absolute;
     bottom: 0.5%;
-    left: 34.3%;
+    left: 32%;
     height: 6.3%;
     width: 12%;
     border: none;
@@ -426,7 +426,7 @@ div.sharesContent{
 .homeSearch{
     position: absolute;
     bottom: 0.5%;
-    left: 60.3%;
+    right: 32%;
     height: 6.3%;
     width: 12%;
     border: none;
@@ -435,7 +435,7 @@ div.sharesContent{
 .homeProfile{
     position: absolute;
     bottom: 0.5%;
-    left: 86.3%;
+    right: 8%;
     height: 6.3%;
     width: 12%;
     border: none;
