@@ -17,10 +17,10 @@ img{
     width: 100%;
 }
 .show{
-display: block;
+display: block !important;
 }
 .hide{
-display: none;
+display: none !important;
 } 
 ::placeholder{
     font-weight: 400;
@@ -718,7 +718,7 @@ div.sharesContent{
     color: rgb(78, 40, 4);
 }
 
-.searchResults{
+.searchPublicationsResults{
     right: 3%;
     position: absolute;
     width: 94%;
@@ -728,9 +728,51 @@ div.sharesContent{
     left: 3%;
     display: inline;
 }
-.result{
+.resultArticle{
     margin: 2.1%;
     height: 30%;
     width: 45%;
+}
+.searchProfileResults{
+    right: 3%;
+    position: absolute;
+    width: 94%;
+    height: 67%;
+    top: 23%;
+    overflow: scroll;
+    left: 3%;
+    display: inline;
+}
+.resultProfile{
+    height: 100%;
+    width: auto;
+    border-radius: 50%;
+    display: inline-block;
+}
+.profileResultContainer{
+    overflow: hidden;
+    width: 72%;
+    height: 25%;
+    margin: 5% auto;
+}
+.searchProfileName{
+    position: relative;
+    bottom: 80%;
+    left: 39%;
+    font-size: 300%;
+    word-wrap: break-word;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(78, 40, 4);
+}
+.searchUserName{
+    display: block;
+    position: relative;
+    bottom: 96%;
+    left: 40%;
+    font-size: 250%;
+    font-weight: 200;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(78, 40, 4);
 }
 /* end of search section*/
