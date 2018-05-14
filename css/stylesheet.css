@@ -776,3 +776,51 @@ div.sharesContent{
     color: rgb(78, 40, 4);
 }
 /* end of search section*/
+
+/*change picture section*/
+.changePicClose{
+    position: absolute;
+    top: 4%;
+    right: 5%;
+    height: 8%;
+    background: transparent;
+    width: 13%;
+    border: none;
+}
+.picToChange{
+    position: absolute;
+    top: 17%;
+    z-index: 1;
+    left: 27%;
+    height: 42%;
+    width: auto;
+    border-radius: 50%;
+}
+.changePicTakePic{
+    position: absolute;
+    bottom: 32%;
+    height: 7%;
+    width: 52%;
+    left: 25%;
+    background: transparent;
+    border: none;
+}
+.changePicSelectFrom{
+    position: absolute;
+    bottom: 25%;
+    height: 7%;
+    width: 52%;
+    left: 25%;
+    background: transparent;
+    border: none;
+}
+.changePicDelete{
+    position: absolute;
+    bottom: 18%;
+    height: 7%;
+    width: 52%;
+    left: 25%;
+    background: transparent;
+    border: none;
+}
+/* end of change picture*/
