@@ -307,6 +307,15 @@ display: none;
     top: 12%;
     overflow: scroll;
 }
+.homeInfo{
+    height: 7%;
+    width: 12%;
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 1%;
+    right: 3%;
+}
 .sharesContent{
     margin: 5%;
 }
@@ -335,17 +344,7 @@ div.sharesContent{
     background-repeat: no-repeat;
     border: none;
 }
-.typeOfContent{
-    position: absolute;
-    height: 20%;
-    width: 20%;
-    top:6%;
-    right: 10%;
-    background: url("../img/buttons/challenge.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none;
-}
+
 .joinChallenge{
     background: rgba(61, 32, 4, 1);
     position: absolute;
@@ -368,9 +367,20 @@ div.sharesContent{
     top: 68%;
     left: 4%
 }
+.challengeContent{
+    position: absolute;
+    height: 6%;
+    width: 20%;
+    top: 7%;
+    right: 10%;
+    background: url("../img/buttons/boton\ reto.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+}
 .content1{
     position: absolute;
-    height: 20%;
+    height: 6%;
     width: 20%;
     top: 80%;
     right: 10%;
@@ -381,7 +391,7 @@ div.sharesContent{
 }
 .content2{
     position: absolute;
-    height: 20%;
+    height: 6%;
     width: 20%;
     top: 134%;
     right: 10%;
@@ -392,9 +402,9 @@ div.sharesContent{
 }
 .content3{
     position: absolute;
-    height: 20%;
+    height: 6%;
     width: 20%;
-    top: 186%;
+    top: 187%;
     right: 10%;
     background: url("../img/buttons/advice.png");
     background-size: contain;
