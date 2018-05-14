@@ -489,3 +489,27 @@ div.sharesContent{
     width: 12%;
 }
 /*End of home*/
+
+/* articles section*/
+.contentArticles{
+    height: 77%;
+    width: 90%;
+    position: absolute;
+    top: 12%;
+    left: 5%;
+    overflow: scroll;
+}
+.articleImg{
+    width: 100%;
+    height: auto;
+}
+.joinChallengeArticle{
+    border: none;
+    height: 8%;
+    width: 70%;
+    position: absolute;
+    top: 133.5%;
+    left: 15%;
+    background: transparent;
+}
+/*end of article section*/
