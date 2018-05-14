@@ -94,6 +94,8 @@
 	<section id="articles" class="hide">
 		<img src="img/background/homepage.png" alt="Home" class="homeBkg">
 		<button id="articleInfo" class="homeInfo"></button>
+		<button id="articleBack" class="homeBack"></button>
+
 		<div id="articleContent" class="contentArticles">
 			<!--Elementos dinamicos dependiendo del contenido se carga o no el boton y se cambia la imagen-->
 			<img src="img/background/articleChallenge.png" alt="content" id="articleImg" class="articleImg">
@@ -105,9 +107,11 @@
 		<button id="articleSearch" class="homeSearch"></button>
 		<button id="articleProfile" class="homeProfile"></button>
 	</section>
-	<section id="publications" class="show">
+	<section id="publications" class="hide">
 		<img src="img/background/createPublication.png" alt="Home" class="homeBkg">
 		<button id="publicationsInfo" class="homeInfo"></button>
+		<button id="publicationsBack" class="homeBack"></button>
+
 		<input type="text" class="publicationTitle" id="publicationTitle" placeholder="Titulo">
 		<textarea name="puclicationContent" id="puclicationContent" class="puclicationContent" placeholder="Ingrese el texto"></textarea>
 		<select required class="categories" name="categorySelector">
@@ -119,6 +123,31 @@
 		<button id="publicationShare" class="homeShare"></button>
 		<button id="publicationSearch" class="homeSearch"></button>
 		<button id="publicacionProfile" class="homeProfile"></button>
+	</section>
+	<section id="profile" class="show">
+		<img src="img/background/profileConfiguration.png" alt="Home" class="homeBkg">
+		<button id="profileInfo" class="homeInfo"></button>
+		<button id="profileBack" class="homeBack"></button>
+		<img src="img/buttons/editG.png" alt="editProfileImg" class="editProfilePic">
+
+		<img src="img/others/8.jpg" alt="editProfileImg" class="profilePic">
+		<input type="text" id="profileName" class="profileName" placeholder="Sandra Gomez">
+		<textarea name="profileDescription" id="profileDescription" class="profileDesc" placeholder="Descripción de la persona..."></textarea>
+		<input type="email" id="profileEmail" class="profileEmail" placeholder="SandraGomez@hotmail.com">
+		<select name="genre" id="profileGenre" class="profileGenre">
+			<option value="Mujer">Mujer</option>
+			<option value="Hombre">Hombre</option>
+		</select>
+
+		<button id="profilePolicy" class="profilePolicy"></button>
+		<button id="profileTerms" class="profileTerms"></button>
+		<button id="profileLogout" class="logout"></button>
+
+
+		<button id="profileHome" class="home"></button>
+		<button id="profileShare" class="homeShare"></button>
+		<button id="profileSearch" class="homeSearch"></button>
+		<button id="profileProfile" class="homeProfile"></button>
 	</section>
 </body>
 

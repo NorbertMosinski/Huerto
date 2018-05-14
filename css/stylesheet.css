@@ -24,7 +24,7 @@ display: none;
 } 
 ::placeholder{
     font-weight: 400;
-    font-size: 130%;
+    font-size: 110%;
     color : rgba(61, 32, 4, 1);
   }
 .generalBkg{
@@ -301,6 +301,15 @@ display: none;
     top: 12%;
     overflow: scroll;
 }
+.homeBack{
+    height: 7%;
+    width: 8%;
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 1%;
+    left: 2%;
+}
 .homeInfo{
     height: 7%;
     width: 12%;
@@ -566,3 +575,98 @@ div.sharesContent{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 /*end of publication content*/
+
+/*Profile section*/
+.editProfilePic{
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    z-index: 1;
+    height: 10%;
+    width: auto;
+    z-index: 2;
+}
+.profilePic{
+    position: absolute;
+    top: 13%;
+    height: 21%;
+    left: 34%;
+    border-radius: 66%;
+    z-index: 1;
+    width: auto;
+}
+.profileName{
+    position: absolute;
+    top: 35%;
+    left: 12%;
+    width: 76%;
+    background: transparent;
+    height: 3%;
+    border: none;
+    font-size: 250%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(78, 40, 4);
+}
+.profileEmail{
+    position: absolute;
+    top: 48%;
+    left: 12%;
+    width: 76%;
+    background: transparent;
+    height: 3%;
+    border: none;
+    font-size: 250%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(78, 40, 4);
+}
+.profileDesc{
+    position: absolute;
+    background: transparent;
+    top: 39%;
+    border: none;
+    height: 7%;
+    left: 12%;
+    width: 75%;
+    font-size: 250%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(78, 40, 4);
+}
+.profileGenre{
+    position: absolute;
+    bottom: 44%;
+    left: 12%;
+    height: 3%;
+    width: 76%;
+    font-size: 250%;
+    background: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(78, 40, 4);
+}
+.profilePolicy{
+    position: absolute;
+    height: 3%;
+    width: 43%;
+    bottom: 36%;
+    left: 10%;
+    border: none;
+    background: transparent;
+}
+.profileTerms{
+    position: absolute;
+    height: 3%;
+    width: 43%;
+    bottom: 33%;
+    left: 10%;
+    border: none;
+    background: transparent;
+}
+.logout{
+    position: absolute;
+    height: 3%;
+    width: 34%;
+    bottom: 28%;
+    left: 9%;
+    border: none;
+    background: transparent;
+}
+/*end of profile section*/
