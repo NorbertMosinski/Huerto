@@ -321,7 +321,7 @@ display: none;
 }
 .challenge{
     margin: 5%;
-    height: 70%;
+    height: 62%;
 }
 div.sharesContent{
     height: 50%;
@@ -348,7 +348,7 @@ div.sharesContent{
 .joinChallenge{
     background: rgba(61, 32, 4, 1);
     position: absolute;
-    top: 58%;
+    top: 54%;
     left: 25%;
     width: 50%;
     height: 5%;
@@ -364,7 +364,7 @@ div.sharesContent{
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    top: 68%;
+    top: 62%;
     left: 4%
 }
 .challengeContent{
