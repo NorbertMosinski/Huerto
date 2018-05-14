@@ -670,3 +670,67 @@ div.sharesContent{
     background: transparent;
 }
 /*end of profile section*/
+
+/* search section */
+.searchProfilesOpt{
+    display: inline-block;
+    position: absolute;
+    top: 16%;
+    left: 3%;
+    height: 5%;
+    width: 44%;
+    font-size: 250%;
+    /*background: rgb(140, 170, 136);*/
+    background: transparent;
+    border: none;
+    border-radius: 10%;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(78, 40, 4);
+}
+.searchArticlesOpt{
+    display: inline-block;
+    position: absolute;
+    top: 16%;
+    right: 4%;
+    height: 5%;
+    width: 44%;
+    font-size: 250%;
+    background: rgb(140, 170, 136);
+    border-radius: 20px;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(78, 40, 4);
+}
+
+.searchText{
+    position: absolute;
+    top: 9.2%;
+    left: 3%;
+    height: 4.5%;
+    width: 93%;
+    font-size: 250%;
+    text-align: center;
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(78, 40, 4);
+}
+
+.searchResults{
+    right: 3%;
+    position: absolute;
+    width: 94%;
+    height: 67%;
+    top: 23%;
+    overflow: scroll;
+    left: 3%;
+    display: inline;
+}
+.result{
+    margin: 2.1%;
+    height: 30%;
+    width: 45%;
+}
+/* end of search section*/
