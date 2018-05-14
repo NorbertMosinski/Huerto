@@ -448,4 +448,33 @@ div.sharesContent{
     border: none;
     background: none;
 }
+#information{
+    overflow: scroll;
+}
+.info{
+    z-index: 1;
+    overflow: scroll;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 90%;
+}
+.infoImg{
+    width: 100%;
+    height: 200%;
+}
+.infoBkg{
+    width: 100%;
+    height: 100%;
+}
+.backFromInfo{
+    position: absolute;
+    top: 1%;
+    background: transparent;
+    height: 5%;
+    border: none;
+    right: 3%;
+    width: 12%;
+}
 /*End of home*/
