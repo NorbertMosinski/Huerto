@@ -7,6 +7,7 @@ padding: 0;
 section{
 z-index: 1;
 height: 100%;
+overflow: hidden;
 }
 div{
 height: 100%;
@@ -37,11 +38,9 @@ display: none;
     filter: alpha(opacity=20) progid:DXImageTransform.Microsoft.Alpha(opacity=20) ;
 }
 /* login*/
-#login{  
+.loginBkg{  
+    width: 100%;
     height: 100%;
-    background-image: url("../img/background/login.png");
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .username{
@@ -50,7 +49,7 @@ display: none;
     top: 48.5%;
     width: 78%;
     height: 3%;
-    left: 14%;
+    left: 11%;
     background: none;
     border: none;
     font-size: 250%;
@@ -64,7 +63,7 @@ display: none;
     top: 56.5%;
     width: 78%;
     height: 3%;
-    left: 14%;
+    left: 11%;
     background: none;
     border: none;
     font-size: 250%;
@@ -75,7 +74,7 @@ display: none;
 {
     position: absolute;
     top: 64%;
-    left: 20%;
+    left: 17%;
     width: 67%;
     height: 4.7%;
     background: none;
@@ -85,7 +84,7 @@ display: none;
     display: block;
     position: absolute;
     top: 70%;
-    left: 20%;
+    left: 17%;
     font-size: 284%;
     color: #3D2004;
     height: 4%;
@@ -100,7 +99,7 @@ display: none;
     display: block;
     position: absolute;
     top: 82.5%;
-    left: 13%;
+    left: 11%;
     border: none;
     background: none;
 }
@@ -110,7 +109,7 @@ display: none;
     display: block;
     position: absolute;
     top: 82.5%;
-    right: 6%;
+    right: 11%;
     border: none;
     background: none;
 }
@@ -120,7 +119,7 @@ display: none;
     display: block;
     position: absolute;
     bottom: 3%;
-    right: 13%;
+    right: 17%;
     background: none;
     border: none;
 }
