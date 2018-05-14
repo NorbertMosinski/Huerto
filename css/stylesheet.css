@@ -26,16 +26,9 @@ display: none;
     font-weight: 400;
     color : rgba(61, 32, 4, 1);
   }
-.background{
-    background : rgba(194, 242, 199, 0.60);
-    background-image : url('../img/background/patron.png');
-    background-size: cover;
-    background-repeat : no-repeat;
-    opacity : 0.3;
-    left : 0px;
-    top : 0px;
+.generalBkg{
     width: 100%;
-    filter: alpha(opacity=20) progid:DXImageTransform.Microsoft.Alpha(opacity=20) ;
+    height: 100%;
 }
 /* login*/
 .loginBkg{  
@@ -460,19 +453,37 @@ div.sharesContent{
     width: 80%;
     height: 90%;
 }
+.policy{
+    z-index: 1;
+    overflow: scroll;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 90%;
+}
 .infoImg{
     width: 100%;
-    height: 200%;
-}
-.infoBkg{
-    width: 100%;
-    height: 100%;
+    height: auto;
 }
 .backFromInfo{
     position: absolute;
     top: 1%;
     background: transparent;
-    height: 5%;
+    height: 7%;
+    border: none;
+    right: 3%;
+    width: 12%;
+}
+.policyImg{
+    width: 100%;
+    height: auto;
+}
+.backFromPolicy{
+    position: absolute;
+    top: 1%;
+    background: transparent;
+    height: 7%;
     border: none;
     right: 3%;
     width: 12%;
