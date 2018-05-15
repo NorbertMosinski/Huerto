@@ -2,7 +2,7 @@
 Profile constructor.
 @param email: String, representing the email of the persons profile.
 @param name: String, representing the name of the persons profile.
-@param birthday: Date, representing the surname of the persons profile.
+@param birthday: Date, representing the birthday of the persons profile.
 @param biography: String, representing the biography of the persons profile.
 @param loginId: String, representing the login ID of the persons profile.
 @param password: String, representing the password of the persons profile.

@@ -74,7 +74,7 @@ Session.prototype.searchProfiles = function(profile)
 Searches for a profile that exists and matches the passed informations.
 @param email: String, representing the email of the persons profile or null, if not relevant.
 @param name: String, representing the name of the persons profile or null, if not relevant.
-@param birthday: Date, representing the surname of the persons profile or null, if not relevant.
+@param birthday: Date, representing the birthday of the persons profile or null, if not relevant.
 @param biography: String, representing the biography of the persons profile.
 @param loginId: String, representing the login ID of the persons profile or null, if not relevant.
 @param password: String, representing the password of the persons profile or null, if not relevant.
