@@ -36,10 +36,9 @@ Adds event listeners to document objects.
 */
 function events()
 {
-	var tmp;
+	var tmp = document.getElementsByTagName('button');
 	
 	//buttons
-	tmp = document.getElementsByTagName('button');
 	for(var i = 0; i < tmp.length; i++)
 		tmp[i].addEventListener("click", function(){
 			handleButtonEvents(this);
