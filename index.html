@@ -1,3 +1,13 @@
+<!--
+TODO:
+-input fields format
+-error page by register error
+-return button by clicking on "forgot password"
+-reset input field by reload 
+-button in home unirme al reto
+-search page
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +19,11 @@
 	<script type="text/javascript" src="js/Adres.js"> </script>
 	<script type="text/javascript" src="js/Date.js"> </script>
 	<script type="text/javascript" src="js/Profile.js"> </script>
+	<script type="text/javascript" src="js/Session.js"> </script>
 </head>
 
 <body>
-	<section id="login" class="hide">
+	<section id="login" class="show">
 		<img src="img/background/login.png" alt="Register" class="loginBkg">
 		<input type="text" id="loginUser" class="username">
 		<input type="password" id="loginPassword" class="password">
@@ -28,7 +39,7 @@
 		<input type="text" name="name" id="registryName" class="name" placeholder="Name">
 		<input type="date" name="email" id="registryDate" class="date" placeholder="Date">
 		<input type="text" name="bio" id="registryBio" class="bio" placeholder="Bio">
-		<input type="email" name="email" id="registryUsername" class="regUser" placeholder="Username">
+		<input type="text" name="email" id="registryUsername" class="regUser" placeholder="Username">
 		<input type="password" name="email" id="registryPassword" class="regPass" placeholder="Password">
 		<input type="password" name="email" id="registryConfirmPass" class="regConfirmPass" placeholder="Confirm password">
 		<button id="registerBtn" class="regBtn"></button>
@@ -77,7 +88,7 @@
 		<button id="homeSearch" class="homeSearch"></button>
 		<button id="homeProfile" class="homeProfile"></button>
 	</section>
-	<section id="infromation" class="hide">
+	<section id="information" class="hide">
 		<img src="img/background/bkgImg.png" alt="information" class="generalBkg">
 		<div class="info">
 			<img src="img/background/info.png" alt="information" class="infoImg">
@@ -88,7 +99,7 @@
 		<img src="img/background/bkgImg.png" alt="policy" class="generalBkg">
 		<div class="policy">
 			<img src="img/background/policy.png" alt="information" class="policyImg">
-			<button id="goBackFromInfo" class="backFromPolicy"></button>
+			<button id="goBackFromPolicy" class="backFromPolicy"></button>
 		</div>
 	</section>
 	<section id="articles" class="hide">
@@ -154,7 +165,7 @@
 	</section>
 	<section id="search" class="hide">
 		<img src="img/background/searchProfile.png" alt="Home" class="homeBkg">
-		<button id="search" class="homeInfo"></button>
+		<button id="searchInfo" class="homeInfo"></button>
 		<button id="searchBack" class="homeBack"></button>
 
 		<input type="text" id="searchText" class="searchText">
@@ -234,7 +245,7 @@
 		<button id="searchSearch" class="homeSearch"></button>
 		<button id="searchProfile" class="homeProfile"></button>
 	</section>
-	<section id="changeProfilePic" class="show">
+	<section id="changeProfilePic" class="hide">
 		<img src="img/background/profileChangePicture.png" alt="Home" class="homeBkg">
 		<button id="changePicClose" class="changePicClose"></button>
 

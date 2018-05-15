@@ -14,3 +14,23 @@ var Adres = function(street, houseNr, city, zipCode, country)
 	this.zipCode = zipCode;
 	this.country = country;
 }
+
+/**
+Checks if the passed adres object equals this one.
+@param ares: Adres to be compared to this one.
+@return true if both are equal, else false.
+*/
+Adres.prototype.equals = function(adres)
+{
+	if(!(this.street === adres.street))
+		return false;
+	if(!(this.houseNr == adres.houseNr))
+		return false;
+	if(!(this.city === adres.city))
+		return false;
+	if(!(this.zipCode == adres.zipCode))
+		return false;
+	if(!(this.country === adres.country))
+		return false;
+	return true;
+}
