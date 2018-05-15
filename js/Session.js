@@ -78,7 +78,7 @@ Searches for a profile that exists and matches the passed informations.
 @param biography: String, representing the biography of the persons profile.
 @param loginId: String, representing the login ID of the persons profile or null, if not relevant.
 @param password: String, representing the password of the persons profile or null, if not relevant.
-@return list containing references to the profiles that match the template or null, if not relevant.
+@return list containing references to the profiles that match the passed informations .
 */
 Session.prototype.searchProfileByAttributes = function(email, name, birthday, biography, loginId, loginPw)
 {

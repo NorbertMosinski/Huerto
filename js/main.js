@@ -1,9 +1,10 @@
 /**
 TODO:
--Profile.equalsByAttributes name comparison improve.
+-Profile.equalsByAttributes name comparison improve
 -main.handleRegisterEvent else case
 -ourLibrary.getSectionId 
 -stack back button, go back from info button
+-sEssion.searchProfileByAttributes set parameter to null if string = ""
 */
 
 //actual session

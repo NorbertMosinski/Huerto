@@ -1,6 +1,6 @@
 /**
-Shows all containers on the main screen u want to switch to.
-@param p_id_new: String. All containers beginning with this string will be shown, all others hidden.
+Shows all sections on the main screen u want to switch to.
+@param p_id_new: String. All sections beginning with this string will be shown, all others hidden.
 */
 function changeMainScreenTo(id_new)
 {
