@@ -16,40 +16,44 @@ var Profile = function(email, name, birthday, biography, loginId, loginPw)
 	this.biography = biography;
 	this.loginId = loginId;
 	this.loginPw = encode64(loginPw);
+	//list of articles
+	this.publications = [];
+	//list of articles
+	this.challenges = [];
+	//list of articles
+	this.comments = [];
 }
 
 /**
-Checks if two profiles are equal comparing just the attributes that are defined in the passed profile.
+Checks if two profiles are equal comparing just the attributes that are defined (and not empty) in the passed profile.
 @param profile: Profile to be compared to this one.
 @return true if profiles are equal considering the checked attributes, else false.
 */
 Profile.prototype.equalsByDefinedAttributes = function(profile)
 {
-	if(null != profile.email && !(this.email === profile.email))
+	if(null != profile.email && profile.email != "" && this.email.toLowerCase() != profile.email.toLowerCase())
 		return false;
-	if(null != profile.name && !(this.name === profile.name))
+	if(null != profile.name && profile.name != "" && this.name.toLowerCase() != profile.name.toLowerCase())
 		return false;
 	if(null != profile.birthday && !(this.birthday.equals(profile.birthday)))
 		return false;
-	if(null != profile.biography && !(this.biography === profile.biography))
+	if(null != profile.biography && profile.biography != "" && this.biography.toLowerCase() != profile.biography.toLowerCase())
 		return false;
-	if(null != profile.loginId && !(this.loginId === profile.loginId))
+	if(null != profile.loginId && profile.loginId != "" && this.loginId !== profile.loginId)
 		return false;
-	if(null != profile.loginPw && !(this.loginPw === profile.loginPw))
+	if(null != profile.loginPw && profile.loginPw != "" && this.loginPw !== profile.loginPw)
 		return false;
 	return true;
 }
 
 /**
-Checks if two profiles are equal. Two profiles are equal, if they match the same email and id.
+Checks if two profiles are equal. Two profiles are equal, if they match the same email OR login ID.
 @param profile: Profile to be compared to this profile.
 @return true if equal, else false.
 */
 Profile.prototype.equals = function(profile)
 {
-	if(!(this.email === profile.email))
-		return false;
-	if(!(this.loginId === profile.loginId))
-		return false;
-	return true;
+	if(this.email.toLowerCase() === profile.email.toLowerCase() || this.loginId === profile.loginId)
+		return true;
+	return false;
 }

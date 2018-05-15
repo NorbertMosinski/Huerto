@@ -23,13 +23,13 @@ function changeMainScreenTo(id_new)
 /**
 @return the id of the section that is currently displayed.
 */
-function getActualSectionId()
+function getActiveSectionId()
 {
-	/*
+	
 	var sections = document.getElementsByTagName("section");
 	for(var i = 0; i < sections.length; i++)
-		if(sections.id.classList)
-			*/
+		if(sections[i].classList.contains("show"))
+			return sections[i].id;	
 }
 /**
 Encodes a string to base 64 format.

@@ -1,14 +1,13 @@
 /**
 TODO:
--Profile.equalsByAttributes name comparison improve
+-main.handlePublishEvent image reference
 -main.handleRegisterEvent else case
--ourLibrary.getSectionId 
--stack back button, go back from info button
--sEssion.searchProfileByAttributes set parameter to null if string = ""
 */
 
-//actual session
+//Session, actual session
 var session;
+//String, previous page id
+var previousPage;
 
 window.onload = function()
 {
@@ -85,22 +84,39 @@ function handleButtonEvents(e)
 			break;
 		case "homeProfile":
 		case "searchProfile":
+		case "articleProfile":
+		case "publicationProfile":
 			changeMainScreenTo("privateProfile");
 			break;
 		case "homeSearch":
-		case "searchSearch":
+		case "articleSearch":
+		case "publicationSearch":
 			changeMainScreenTo("search");
 			break;
 		case "searchHome":
-		case "homeHome":
+		case "articleHome":
+		case "publicationHome":
+		case "publicationBack":
+		case "searchBack":
 			changeMainScreenTo("home");
 			break;
 		case "homeInfo":
 		case "searchInfo":
+		case "articleInfo":
+		case "publicationInfo":
+			previousPage = id.substring(0, id.length-4);
 			changeMainScreenTo("information");
 			break;
 		case "goBackFromInfo":
-			changeMainScreenTo("home");
+			changeMainScreenTo(previousPage);
+			break;
+		case "searchShare":
+		case "homeShare":
+		case "articleShare":
+			changeMainScreenTo("publication");
+			break;
+		case "publicationPublishBtn":
+			handlePublishEvent();
 			break;
 		default:
 			console.log("Unknown event fired!");
@@ -148,4 +164,23 @@ function handleLoginEvent()
 		changeMainScreenTo("home");
 	else
 		console.log("This combination of id and password doesn't exist.");
+}
+
+/**
+Handles publication event.
+*/
+function handlePublishEvent()
+{
+	var title = document.getElementById("publicationTitle").value;
+	var image = null;
+	var description = document.getElementById("publicationContent").value;
+	var pubTypeRef = document.getElementById("publicationType");
+	var owner = session.activeProfile;
+	var article = new Article(title, image, description, owner);
+
+	if(pubTypeRef.options[pubTypeRef.selectedIndex].value == "Reto")
+		owner.challenges.push(article);
+	else
+		owner.publications.push(article);
+	changeMainScreenTo("home");
 }

@@ -1,11 +1,10 @@
 <!--
 TODO:
--input fields format
+-input fields: Font size, input rules and reset after reload the page
+-Buttons: Font size
+-return button on the "forgot password" page se falta
+-return button in home se falta
 -error page by register error
--return button by clicking on "forgot password"
--reset input field by reload 
--button in home unirme al reto
--search page
 -->
 
 <!DOCTYPE html>
@@ -16,10 +15,10 @@ TODO:
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 	<script type="text/javascript" src="js/main.js"> </script>
 	<script type="text/javascript" src="js/ourLibrary.js"> </script>
-	<script type="text/javascript" src="js/Adres.js"> </script>
 	<script type="text/javascript" src="js/Date.js"> </script>
 	<script type="text/javascript" src="js/Profile.js"> </script>
 	<script type="text/javascript" src="js/Session.js"> </script>
+	<script type="text/javascript" src="js/Article.js"> </script>
 </head>
 
 <body>
@@ -118,14 +117,14 @@ TODO:
 		<button id="articleSearch" class="homeSearch"></button>
 		<button id="articleProfile" class="homeProfile"></button>
 	</section>
-	<section id="publications" class="hide">
+	<section id="publication" class="hide">
 		<img src="img/background/createPublication.png" alt="Home" class="homeBkg">
-		<button id="publicationsInfo" class="homeInfo"></button>
-		<button id="publicationsBack" class="homeBack"></button>
+		<button id="publicationInfo" class="homeInfo"></button>
+		<button id="publicationBack" class="homeBack"></button>
 
 		<input type="text" class="publicationTitle" id="publicationTitle" placeholder="Titulo">
-		<textarea name="puclicationContent" id="puclicationContent" class="puclicationContent" placeholder="Ingrese el texto"></textarea>
-		<select required class="categories" name="categorySelector">
+		<textarea name="puclicationContent" id="publicationContent" class="puclicationContent" placeholder="Ingrese el texto"></textarea>
+		<select required class="categories" name="categorySelector" id="publicationType">
 			<option value="Reto">Reto</option>
 			<option value="Consejo">Consejo</option>
 		</select>
@@ -133,7 +132,7 @@ TODO:
 		<button id="publicationHome" class="home"></button>
 		<button id="publicationShare" class="homeShare"></button>
 		<button id="publicationSearch" class="homeSearch"></button>
-		<button id="publicacionProfile" class="homeProfile"></button>
+		<button id="publicationProfile" class="homeProfile"></button>
 	</section>
 	<section id="privateProfile" class="hide">
 
@@ -160,7 +159,8 @@ TODO:
 
 		<button id="profileManagementHome" class="home"></button>
 		<button id="profileManagementShare" class="homeShare"></button>
-		<button id="profileManagementSearch" class="homeSearch"></button>
+		<button id="profileManagement
+		" class="homeSearch"></button>
 		<button id="profileManagementProfile" class="homeProfile"></button>
 	</section>
 	<section id="search" class="hide">
