@@ -6,9 +6,10 @@ Profile constructor.
 @param biography: String, representing the biography of the persons profile.
 @param loginId: String, representing the login ID of the persons profile.
 @param password: String, representing the password of the persons profile.
+@param gender: String, representing the gender of the persons profile.
 NOTE: If you want to add more attributes later, add them at the end of the argument list!
 */
-var Profile = function(email, name, birthday, biography, loginId, loginPw)
+var Profile = function(email, name, birthday, biography, loginId, loginPw, gender)
 {
 	this.email = email;
 	this.name = name;
@@ -16,12 +17,34 @@ var Profile = function(email, name, birthday, biography, loginId, loginPw)
 	this.biography = biography;
 	this.loginId = loginId;
 	this.loginPw = encode64(loginPw);
+	this.gender = gender;
 	//list of articles
 	this.publications = [];
 	//list of articles
 	this.challenges = [];
 	//list of articles
 	this.comments = [];
+}
+
+/**
+Allows an update of current informations. Fields that are null are not going to be updated.
+@param email: String, representing the email of the persons profile.
+@param name: String, representing the name of the persons profile.
+@param birthday: Date, representing the birthday of the persons profile.
+@param biography: String, representing the biography of the persons profile.
+@param loginId: String, representing the login ID of the persons profile.
+@param password: String, representing the password of the persons profile.
+@param gender: String, representing the gender of the persons profile.
+*/
+Profile.prototype.updateData = function(email, name, birthday, biography, loginId, loginPw, gender)
+{
+	this.email = (null != email)? email:this.email;
+	this.name = (null != name)? name:this.name;
+	this.birthday = (null != birthday)? birthday:this.birthday;
+	this.biography = (null != biography)? biography:this.biography;
+	this.loginId = (null != loginId)? loginId:this.loginId;
+	this.loginPw = (null != loginPw)? loginPw:this.loginPw;
+	this.gender = (null != gender)? gender:this.gender;
 }
 
 /**
@@ -42,6 +65,8 @@ Profile.prototype.equalsByDefinedAttributes = function(profile)
 	if(null != profile.loginId && profile.loginId != "" && this.loginId !== profile.loginId)
 		return false;
 	if(null != profile.loginPw && profile.loginPw != "" && this.loginPw !== profile.loginPw)
+		return false;
+	if(null != profile.gender && profile.gender != "" && this.gender.toLowerCase() != profile.gender.toLowerCase())
 		return false;
 	return true;
 }

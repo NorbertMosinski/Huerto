@@ -67,13 +67,16 @@ function handleButtonEvents(e)
 			break;
 		case "loginGoogleBtn":
 			break;
-		case "registerTerms":
+		case "profileManagementPolicy":
+			previousPage = "profileManagement";
 			changeMainScreenTo("policy");
 			break;
 		case "goBackFromPolicy":
-			changeMainScreenTo("register");
+			changeMainScreenTo(previousPage);
 			break;
 		case "registerLogin":
+		case "profileManagementLogout":
+			session.activeProfile = null;
 			changeMainScreenTo("login");
 			break;
 		case "loginForgottenPassword":
@@ -86,11 +89,16 @@ function handleButtonEvents(e)
 		case "searchProfile":
 		case "articleProfile":
 		case "publicationProfile":
-			changeMainScreenTo("privateProfile");
+			changeMainScreenTo("mainProfile");
+			break;
+		case "profileManagementBack":
+			handleProfileManagementBackEvent();
 			break;
 		case "homeSearch":
 		case "articleSearch":
 		case "publicationSearch":
+		case "mainProfileSearch":
+		case "profileManagementSearch":
 			changeMainScreenTo("search");
 			break;
 		case "searchHome":
@@ -98,12 +106,19 @@ function handleButtonEvents(e)
 		case "publicationHome":
 		case "publicationBack":
 		case "searchBack":
+		case "mainProfileBack":
+		case "mainProfileHome":
+		case "profileManagementHome":
 			changeMainScreenTo("home");
+			break;
+		case "mainProfileManagement":
+			changeMainScreenTo("profileManagement");
 			break;
 		case "homeInfo":
 		case "searchInfo":
 		case "articleInfo":
 		case "publicationInfo":
+		case "profileManagementInfo":
 			previousPage = id.substring(0, id.length-4);
 			changeMainScreenTo("information");
 			break;
@@ -113,10 +128,15 @@ function handleButtonEvents(e)
 		case "searchShare":
 		case "homeShare":
 		case "articleShare":
+		case "mainProfileShare":
+		case "profileManagementShare":
 			changeMainScreenTo("publication");
 			break;
 		case "publicationPublishBtn":
 			handlePublishEvent();
+			break;
+		case "profileManagementTerms":
+			previousPage = "profileManagement";
 			break;
 		default:
 			console.log("Unknown event fired!");
@@ -183,4 +203,34 @@ function handlePublishEvent()
 	else
 		owner.publications.push(article);
 	changeMainScreenTo("home");
+}
+
+/**
+Handles the profile management back event.
+*/
+function handleProfileManagementBackEvent()
+{
+	var name = document.getElementById("profileManagementName").value;
+	var bio = document.getElementById("profileManagementDescription").value;
+	var email = document.getElementById("profileManagementEmail").value;
+	var genderTypeRef = document.getElementById("profileManagementGender");
+	var gender = (genderTypeRef.options[genderTypeRef.selectedIndex].value == "Mujer")?"Female":"Male";
+
+	name = (name == "")?null:name;
+	bio = (bio == "")?null:bio;
+	email = (email == "")?null:email;
+
+	if(email != null)
+	{
+		var searchRes = session.searchProfilesByAttributes(email);
+		if(searchRes.length == 0 || searchRes[0].equals(session.activeProfile))
+		{
+			session.activeProfile.updateData(email, name, null, bio, null, null, gender);
+			changeMainScreenTo("mainProfile");
+		}
+		else
+			console.log("An account with this email already exists!");
+	}
+	else
+		changeMainScreenTo("mainProfile");
 }

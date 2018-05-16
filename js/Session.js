@@ -24,7 +24,7 @@ Logins into an existing profile.
 */
 Session.prototype.login = function(id, pw)
 {
-	var profile = this.searchProfileByAttributes(null, null, null, null, id, pw);
+	var profile = this.searchProfilesByAttributes(null, null, null, null, id, pw, null);
 	if(profile.length != 1)
 		return false;
 	this.activeProfile = profile[0];
@@ -78,9 +78,10 @@ Searches for a profile that exists and matches the passed informations.
 @param biography: String, representing the biography of the persons profile or undefined, in not relevant.
 @param loginId: String, representing the login ID of the persons profile or undefined, if not relevant.
 @param loginPw: String, representing the password of the persons profile or undefined, if not relevant.
+@param gender: String, representing the gender of the persons profile or undefined, if not relevant.
 @return list containing references to the profiles that match the passed informations .
 */
-Session.prototype.searchProfileByAttributes = function(email, name, birthday, biography, loginId, loginPw)
+Session.prototype.searchProfilesByAttributes = function(email, name, birthday, biography, loginId, loginPw, gender)
 {
-	return this.searchProfiles(new Profile(email,  name, birthday, biography, loginId, loginPw));
+	return this.searchProfiles(new Profile(email,  name, birthday, biography, loginId, loginPw, gender));
 }
