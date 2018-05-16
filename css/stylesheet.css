@@ -22,9 +22,12 @@ display: block !important;
 .hide{
 display: none !important;
 } 
+.noHeight{
+    height: 0% !important;
+}
 ::placeholder{
     font-weight: 400;
-    font-size: 110%;
+    font-size: small;
     color : rgba(61, 32, 4, 1);
   }
 .generalBkg{
@@ -46,7 +49,7 @@ display: none !important;
     left: 11%;
     background: none;
     border: none;
-    font-size: 250%;
+    font-size: medium;
     text-align: center;
     color : #3D2004;
     
@@ -60,7 +63,7 @@ display: none !important;
     left: 11%;
     background: none;
     border: none;
-    font-size: 250%;
+    font-size: medium;
     text-align: center;
     color : #3D2004; 
 }
@@ -79,7 +82,7 @@ display: none !important;
     position: absolute;
     top: 70%;
     left: 17%;
-    font-size: 284%;
+    font-size: medium;
     color: #3D2004;
     height: 4%;
     font-weight: bolder;
@@ -130,7 +133,7 @@ display: none !important;
     height: 3%;
     left: 12%;
     text-align: center;
-    font-size: 200%;
+    font-size: medium;
     border: none;
     background: none;
     color : #3D2004;
@@ -144,7 +147,7 @@ display: none !important;
     height: 3%;
     left: 12%;
     text-align: center;
-    font-size: 200%;
+    font-size: medium;
     border: none;
     background: none;
     color: #3D2004;
@@ -157,7 +160,7 @@ display: none !important;
     height: 3%;
     left: 12%;
     text-align: center;
-    font-size: 200%;
+    font-size: medium;
     border: none;
     background: none;
     color: #3D2004;
@@ -170,7 +173,7 @@ display: none !important;
     height: 3%;
     left: 12%;
     text-align: center;
-    font-size: 200%;
+    font-size: medium;
     border: none;
     background: none;
     color: #3D2004;
@@ -183,7 +186,7 @@ display: none !important;
     height: 3%;
     left: 12%;
     text-align: center;
-    font-size: 200%;
+    font-size: medium;
     border: none;
     background: none;
     color: #3D2004;
@@ -196,7 +199,7 @@ display: none !important;
     height: 3%;
     left: 12%;
     text-align: center;
-    font-size: 200%;
+    font-size: medium;
     border: none;
     background: none;
     color: #3D2004;
@@ -209,7 +212,7 @@ display: none !important;
     height: 3%;
     left: 12%;
     text-align: center;
-    font-size: 200%;
+    font-size: medium;
     border: none;
     background: none;
     color: #3D2004;
@@ -247,6 +250,15 @@ display: none !important;
 /*end of register*/
 
 /*fogotten password*/
+.goBackForgottenPass{
+    background: transparent;
+    height: 7%;
+    width: auto;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    z-index: 1;
+}
 .forgottenPasswordBkg{
    width: 100%;
    height: 100%;
@@ -258,7 +270,7 @@ display: none !important;
     width: 70%;
     height: 3%;
     left: 16%;
-    font-size: 260%;
+    font-size: medium;
     background: none;
     border: none;
     color: #3D2004;
@@ -271,7 +283,7 @@ display: none !important;
     width: 70%;
     height: 3%;
     left: 16%;
-    font-size: 260%;
+    font-size: medium;
     background: none;
     border: none;
     color: #3D2004;
@@ -319,6 +331,15 @@ display: none !important;
     top: 1%;
     right: 3%;
 }
+.profileManagement{
+    height: 7%;
+    width: 12%;
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 1%;
+    right: 3%;
+}
 .sharesContent{
     margin: 5%;
 }
@@ -355,7 +376,7 @@ div.sharesContent{
     left: 25%;
     width: 50%;
     height: 5%;
-    font-size: 230%;
+    font-size: medium;
     border-radius: 14px;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -532,7 +553,7 @@ div.sharesContent{
     position: absolute;
     top: 43%;
     left: 8.5%;
-    font-size: 130%;
+    font-size: small;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgba(61, 32, 4, 1);
     background: transparent;
@@ -543,7 +564,7 @@ div.sharesContent{
     width: 94%;
     position: absolute;
     top: 15.5%;
-    font-size: 160%;
+    font-size: medium;
     background: transparent;
     left: 3%;
     font-weight: 600;
@@ -557,7 +578,7 @@ div.sharesContent{
     bottom: 23%;
     left: 4%;
     width: 94%;
-    font-size: xx-large;
+    font-size: medium;
     height: 4%;
     background: transparent;
     color: rgb(78, 40, 4);
@@ -576,7 +597,7 @@ div.sharesContent{
 }
 /*end of publication content*/
 
-/*Profile section*/
+/*Profile management section*/
 .editProfilePic{
     position: absolute;
     top: 23%;
@@ -603,7 +624,7 @@ div.sharesContent{
     background: transparent;
     height: 3%;
     border: none;
-    font-size: 250%;
+    font-size: medium;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(78, 40, 4);
 }
@@ -615,7 +636,7 @@ div.sharesContent{
     background: transparent;
     height: 3%;
     border: none;
-    font-size: 250%;
+    font-size: medium;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(78, 40, 4);
 }
@@ -627,7 +648,7 @@ div.sharesContent{
     height: 7%;
     left: 12%;
     width: 75%;
-    font-size: 250%;
+    font-size: medium;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(78, 40, 4);
 }
@@ -637,7 +658,7 @@ div.sharesContent{
     left: 12%;
     height: 3%;
     width: 76%;
-    font-size: 250%;
+    font-size: medium;
     background: transparent;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(78, 40, 4);
@@ -679,7 +700,7 @@ div.sharesContent{
     left: 3%;
     height: 5%;
     width: 44%;
-    font-size: 250%;
+    font-size: medium;
     /*background: rgb(140, 170, 136);*/
     background: transparent;
     border: none;
@@ -695,7 +716,7 @@ div.sharesContent{
     right: 4%;
     height: 5%;
     width: 44%;
-    font-size: 250%;
+    font-size: medium;
     background: rgb(140, 170, 136);
     border-radius: 20px;
     font-weight: 600;
@@ -709,7 +730,7 @@ div.sharesContent{
     left: 3%;
     height: 4.5%;
     width: 93%;
-    font-size: 250%;
+    font-size: medium;
     text-align: center;
     background: transparent;
     border: none;
@@ -730,7 +751,7 @@ div.sharesContent{
 }
 .resultArticle{
     margin: 2.1%;
-    height: 30%;
+    height: 40%;
     width: 45%;
 }
 .searchProfileResults{
@@ -759,7 +780,7 @@ div.sharesContent{
     position: relative;
     bottom: 80%;
     left: 39%;
-    font-size: 300%;
+    font-size: medium;
     word-wrap: break-word;
     font-weight: 600;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -770,7 +791,7 @@ div.sharesContent{
     position: relative;
     bottom: 96%;
     left: 40%;
-    font-size: 250%;
+    font-size: medium;
     font-weight: 200;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(78, 40, 4);
@@ -824,3 +845,117 @@ div.sharesContent{
     border: none;
 }
 /* end of change picture*/
+
+/*-------- profiles section---------------*/
+.mainProfilePic{
+    z-index: 1;
+    position: absolute;
+    top: 11%;
+    left: 13%;
+    height: 17%;
+    width: auto;
+    border-radius: 50%;
+}
+.mainProfileRank{
+    z-index: 1;
+    position: absolute;
+    top: 18%;
+    left: 20%;
+    height: 12%;
+    width: auto;
+}
+.mainProfileName{
+    position: absolute;
+    top: 15%;
+    text-align: right;
+    right: 24%;
+    font-size: medium;
+    width: 30%;
+    height: auto;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(78, 40, 4);
+}
+.mainProfileUserName{
+    position: absolute;
+    top: 17%;
+    text-align: right;
+    right: 24%;
+    font-size: small;
+    width: 30%;
+    height: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(78, 40, 4);
+}
+.mainprofileLikes{
+    position: absolute;
+    top: 18%;
+    text-align: right;
+    right: 24%;
+    font-size: medium;
+    width: 30%;
+    height: auto;
+    font-weight: 900;    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(78, 40, 4);
+}
+.mainProfileDescription{
+    position: absolute;
+    top: 32%;
+    height: 8%;
+    width: 72%;
+    font-size: small;
+    left: 12%;
+    background: none;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(78, 40, 4);
+}
+.mainProfileLine{
+    z-index: 1;
+    position: absolute;
+    top: 36%;
+    width: 73%;
+    left: 12%;
+}
+.iconsContainer{
+    position: absolute;
+    top: 37%;
+    left: 12%;
+    width: 73%;
+    height: 9%;
+}
+.rankIcon{
+    display: inline-block;
+    width: 18.8%;
+    height: auto;
+}
+.likeIcon{
+    display: inline-block;
+    width: 18.8%;
+    height: auto;
+}
+.achievementIcon{
+    display: inline-block;
+    width: 18.8%;
+    height: auto;
+}
+.saveIcon{
+    display: inline-block;
+    width: 18.8%;
+    height: auto;
+}
+.adviceIcon{
+    display: inline-block;
+    width: 18.8%;
+    height: auto;
+}
+.mainProfileContent{
+    position: absolute;
+    top: 46%;
+    height: 46%;
+    width: 90%;
+    left: 5%;
+    overflow: scroll;
+}
+/* end of private profile section*/

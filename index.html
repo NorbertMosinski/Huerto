@@ -1,10 +1,10 @@
 <!--
 TODO:
 -input fields: Font size, input rules and reset after reload the page
--Buttons: Font size
--return button on the "forgot password" page se falta
--return button in home se falta
 -error page by register error
+
+Comments:
+I had not energy to do the error screen i am so sorry :D
 -->
 
 <!DOCTYPE html>
@@ -46,6 +46,7 @@ TODO:
 		<button id="registerLogin" class="regLogin"></button>
 	</section>
 	<section id="forgottenPassword" class="hide">
+		<img src="img/buttons/backY.png" alt="back" class="goBackForgottenPass" id="goBackForgottenPass">
 		<img src="img/background/loginForgotPassword.png" alt="forgottenPassword" class="forgottenPasswordBkg">
 		<input type="text" name="email" id="forgottenUser" class="forgUser" placeholder="Username">
 		<input type="email" name="email" id="forgottenEmail" class="forgEmail" placeholder="Email">
@@ -54,6 +55,8 @@ TODO:
 	<section id="home" class="hide">
 		<img src="img/background/homepage.png" alt="Home" class="homeBkg">
 		<button id="homeInfo" class="homeInfo"></button>
+		<button id="homeBack" class="homeBack"></button>
+
 		<div id="content" class="contentHome">
 			<div class="challenge">
 				<button class="challengeContent"></button>
@@ -133,9 +136,6 @@ TODO:
 		<button id="publicationShare" class="homeShare"></button>
 		<button id="publicationSearch" class="homeSearch"></button>
 		<button id="publicationProfile" class="homeProfile"></button>
-	</section>
-	<section id="privateProfile" class="hide">
-
 	</section>
 	<section id="profileManagement" class="hide">
 		<img src="img/background/profileConfiguration.png" alt="Home" class="homeBkg">
@@ -254,9 +254,60 @@ TODO:
 		<button id="changePicTakePic" class="changePicTakePic	"></button>
 		<button id="changePicSelectFrom" class="changePicSelectFrom"></button>
 		<button id="changePicDelete" class="changePicDelete"></button>
-		
+
 
 	</section>
+	<section id="mainProfile" class="hide">
+		<img src="img/background/pantalla_-perfil_privado.jpg" alt="Home" class="homeBkg">
+		<button id="mainProfileManagement" class="profileManagement"></button>
+		<button id="mainProfileBack" class="homeBack"></button>
+
+		<img src="img/others/8.jpg" alt="profilePic" class="mainProfilePic">
+		<img src="img/buttons/amateurY.png" alt="rank" class="mainProfileRank">
+		<p id="mainProfileName" class="mainProfileName">Sandra Gómez</p>
+		<p id="mainProfileUserName" class="mainProfileUserName">@sandragomez27</p>
+		<p id="mainprofileLikes" class="mainprofileLikes">700 Likes</p>
+
+
+		<textarea name="descriptionArea" id="mainProfileDescription" class="mainProfileDescription">Descripción de la persona tan buena y tan amable que usa la aplicación</textarea>
+
+		<img src="img/others/line.png" alt="line" class="mainProfileLine">
+		<!--There we can have the same id for all the items cause you just have to add the same listener to them, Add a hide class for the icons div it depends on which profile they clicked, the class noHeight is just to ocult the icons that are no shown in public profile-->
+		<div id="iconsPrivateProfile" class="iconsContainer hide">
+			<img src="img/buttons/amateurY.png" alt="rank" class="rankIcon" id="rankIcon">
+			<img src="img/buttons/likeG.png" alt="like" class="likeIcon" id="likeIcon">
+			<img src="img/buttons/icn_logroG.png" alt="achievement" class="achievementIcon" id="achievementIcon">
+			<img src="img/buttons/saveG.png" alt="save" class="saveIcon" id="saveIcon">
+			<img src="img/buttons/icn-_consejoG.png" alt="advice" class="adviceIcon" id="adviceIcon">
+		</div>
+		<div id="iconsPublicProfile" class="iconsContainer show">
+			<img src="img/buttons/amateurY.png" alt="rank" class="rankIcon" id="rankIcon">
+			<img src="img/buttons/likeG.png" alt="like" class="likeIcon noHeight" id="likeIcon">
+			<img src="img/buttons/icn_logroG.png" alt="achievement" class="achievementIcon" id="achievementIcon">
+			<img src="img/buttons/saveG.png" alt="save" class="saveIcon noHeight" id="saveIcon">
+			<img src="img/buttons/icn-_consejoG.png" alt="advice" class="adviceIcon" id="adviceIcon">
+		</div>
+		<div id="mainProfileContent" class="mainProfileContent">
+			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
+			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
+			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
+			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
+			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
+			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
+			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
+			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
+			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
+			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
+			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
+			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
+		</div>
+
+		<button id="mainProfileHome" class="home"></button>
+		<button id="mainProfileShare" class="homeShare"></button>
+		<button id="mainProfileSearch" class="homeSearch"></button>
+		<button id="mainProfileProfile" class="homeProfile"></button>
+	</section>
+
 </body>
 
 </html>
