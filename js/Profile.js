@@ -54,19 +54,19 @@ Checks if two profiles are equal comparing just the attributes that are defined 
 */
 Profile.prototype.equalsByDefinedAttributes = function(profile)
 {
-	if(null != profile.email && profile.email != "" && this.email.toLowerCase() != profile.email.toLowerCase())
+	if(null != profile.email && profile.email != "" && this.email.toLowerCase() !== profile.email.toLowerCase())
 		return false;
-	if(null != profile.name && profile.name != "" && this.name.toLowerCase() != profile.name.toLowerCase())
+	if(null != profile.name && profile.name != "" && this.name.toLowerCase() !== profile.name.toLowerCase())
 		return false;
 	if(null != profile.birthday && !(this.birthday.equals(profile.birthday)))
 		return false;
-	if(null != profile.biography && profile.biography != "" && this.biography.toLowerCase() != profile.biography.toLowerCase())
+	if(null != profile.biography && profile.biography != "" && this.biography.toLowerCase() !== profile.biography.toLowerCase())
 		return false;
-	if(null != profile.loginId && profile.loginId != "" && this.loginId.toLowerCase() != profile.loginId.toLowerCase())
+	if(null != profile.loginId && profile.loginId != "" && this.loginId.toLowerCase() !== profile.loginId.toLowerCase())
 		return false;
 	if(null != profile.loginPw && profile.loginPw != "" && this.loginPw !== profile.loginPw)
 		return false;
-	if(null != profile.gender && profile.gender != "" && this.gender.toLowerCase() != profile.gender.toLowerCase())
+	if(null != profile.gender && profile.gender != "" && this.gender.toLowerCase() !== profile.gender.toLowerCase())
 		return false;
 	return true;
 }
@@ -78,7 +78,7 @@ Checks if two profiles are equal. Two profiles are equal, if they match the same
 */
 Profile.prototype.equals = function(profile)
 {
-	if(this.email.toLowerCase() == profile.email.toLowerCase() || this.loginId.toLowerCase() == profile.loginId.toLowerCase())
+	if(this.email.toLowerCase() === profile.email.toLowerCase() || this.loginId.toLowerCase() === profile.loginId.toLowerCase())
 		return true;
 	return false;
 }
