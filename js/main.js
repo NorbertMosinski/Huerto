@@ -49,7 +49,7 @@ function handleButtonEvents(e) {
 
 	switch (id) {
 		case "goBackFromTerms":
-			changeMainScreenTo("home");
+			changeMainScreenTo(previousPage);
 			break;
 		case "homeBack":
 			document.getElementById("loginUser").value = "";
@@ -79,6 +79,7 @@ function handleButtonEvents(e) {
 			changeMainScreenTo(previousPage);
 			break;
 		case "registerTerms":
+			previousPage = "register";
 			changeMainScreenTo("terms");
 			break;
 		case "registerLogin":
@@ -102,7 +103,7 @@ function handleButtonEvents(e) {
 			changeMainScreenTo("mainProfile");
 			break;
 		case "profileManagementBack":
-			handleProfileManagementBackEvent();
+			handleProfileManagementSaveEvent();
 			break;
 		case "homeSearch":
 		case "articleSearch":
@@ -168,7 +169,7 @@ function handleRegisterEvent() {
 	var pw = document.getElementById("registryPassword").value;
 	var pwConf = document.getElementById("registryConfirmPass").value;
 
-	var profile = new Profile(email, name, birthday, bio, id, pw);
+	var profile = new Profile(email, name, birthday, bio, id, pw, null);
 
 	if (!(pw === pwConf)) {
 		alert("Passwords are different");
@@ -178,7 +179,10 @@ function handleRegisterEvent() {
 	if (session.addProfile(profile))
 		changeMainScreenTo("login");
 	else
+	{
+		console.log("Profile already exists!")
 		alert("Can not create profile. Profile already exists!");
+	}
 }
 
 /**
@@ -214,9 +218,9 @@ function handlePublishEvent() {
 }
 
 /**
-Handles the profile management back event.
+Handles the profile management save event.
 */
-function handleProfileManagementBackEvent() {
+function handleProfileManagementSaveEvent() {
 	var name = document.getElementById("profileManagementName").value;
 	var bio = document.getElementById("profileManagementDescription").value;
 	var email = document.getElementById("profileManagementEmail").value;

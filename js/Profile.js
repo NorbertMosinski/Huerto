@@ -62,7 +62,7 @@ Profile.prototype.equalsByDefinedAttributes = function(profile)
 		return false;
 	if(null != profile.biography && profile.biography != "" && this.biography.toLowerCase() != profile.biography.toLowerCase())
 		return false;
-	if(null != profile.loginId && profile.loginId != "" && this.loginId !== profile.loginId)
+	if(null != profile.loginId && profile.loginId != "" && this.loginId.toLowerCase() != profile.loginId.toLowerCase())
 		return false;
 	if(null != profile.loginPw && profile.loginPw != "" && this.loginPw !== profile.loginPw)
 		return false;
@@ -78,7 +78,7 @@ Checks if two profiles are equal. Two profiles are equal, if they match the same
 */
 Profile.prototype.equals = function(profile)
 {
-	if(this.email.toLowerCase() === profile.email.toLowerCase() || this.loginId === profile.loginId)
+	if(this.email.toLowerCase() == profile.email.toLowerCase() || this.loginId.toLowerCase() == profile.loginId.toLowerCase())
 		return true;
 	return false;
 }

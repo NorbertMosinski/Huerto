@@ -83,5 +83,5 @@ Searches for a profile that exists and matches the passed informations.
 */
 Session.prototype.searchProfilesByAttributes = function(email, name, birthday, biography, loginId, loginPw, gender)
 {
-	return this.searchProfiles(new Profile(email,  name, birthday, biography, loginId, loginPw, gender));
+	return this.searchProfiles(new Profile(email, name, birthday, biography, loginId, loginPw, gender));
 }
