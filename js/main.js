@@ -9,16 +9,14 @@ var session;
 //String, previous page id
 var previousPage;
 
-window.onload = function()
-{
+window.onload = function () {
 	init();
 }
 
 /**
 First initialization.
 */
-function init()
-{
+function init() {
 	variables();
 	events();
 }
@@ -26,21 +24,19 @@ function init()
 /**
 Initializes variables.
 */
-function variables()
-{
+function variables() {
 	session = new Session();
 }
 
 /**
 Adds event listeners to document objects.
 */
-function events()
-{
+function events() {
 	var tmp = document.getElementsByTagName('button');
-	
+
 	//buttons
-	for(var i = 0; i < tmp.length; i++)
-		tmp[i].addEventListener("click", function(){
+	for (var i = 0; i < tmp.length; i++)
+		tmp[i].addEventListener("click", function () {
 			handleButtonEvents(this);
 		});
 }
@@ -48,12 +44,20 @@ function events()
 /**
 Handles the events fired by a button.
 */
-function handleButtonEvents(e)
-{
+function handleButtonEvents(e) {
 	var id = e.id;
 
-	switch(id)
-	{
+	switch (id) {
+		case "goBackFromTerms":
+			changeMainScreenTo("home");
+			break;
+		case "homeBack":
+			document.getElementById("loginUser").value = "";
+			document.getElementById("loginPassword").value = "";
+			session.activeProfile = null;
+			alert("your session has finished");
+			changeMainScreenTo("login");
+			break;
 		case "loginInitSessionBtn":
 			handleLoginEvent();
 			break;
@@ -74,9 +78,15 @@ function handleButtonEvents(e)
 		case "goBackFromPolicy":
 			changeMainScreenTo(previousPage);
 			break;
+		case "registerTerms":
+			changeMainScreenTo("terms");
+			break;
 		case "registerLogin":
 		case "profileManagementLogout":
+			document.getElementById("loginUser").value = "";
+			document.getElementById("loginPassword").value = "";
 			session.activeProfile = null;
+			alert("your session has finished");
 			changeMainScreenTo("login");
 			break;
 		case "loginForgottenPassword":
@@ -119,7 +129,7 @@ function handleButtonEvents(e)
 		case "articleInfo":
 		case "publicationInfo":
 		case "profileManagementInfo":
-			previousPage = id.substring(0, id.length-4);
+			previousPage = id.substring(0, id.length - 4);
 			changeMainScreenTo("information");
 			break;
 		case "goBackFromInfo":
@@ -136,7 +146,7 @@ function handleButtonEvents(e)
 			handlePublishEvent();
 			break;
 		case "profileManagementTerms":
-			previousPage = "profileManagement";
+			changeMainScreenTo("terms")
 			break;
 		default:
 			console.log("Unknown event fired!");
@@ -149,8 +159,7 @@ function handleButtonEvents(e)
 /**
 Handles the register event.
 */
-function handleRegisterEvent()
-{
+function handleRegisterEvent() {
 	var email = document.getElementById("registryEmail").value;
 	var name = document.getElementById("registryName").value;
 	var birthday = document.getElementById("registryDate").value;
@@ -161,36 +170,35 @@ function handleRegisterEvent()
 
 	var profile = new Profile(email, name, birthday, bio, id, pw);
 
-	if(!(pw === pwConf))
-	{
-		console.log("Passwords are different");
+	if (!(pw === pwConf)) {
+		alert("Passwords are different");
 		return;
 	}
 
-	if(session.addProfile(profile))
+	if (session.addProfile(profile))
 		changeMainScreenTo("login");
 	else
-		console.log("Can not create profile. Profile already exists!");
+		alert("Can not create profile. Profile already exists!");
 }
 
 /**
 Handles the login event.
 */
-function handleLoginEvent()
-{
+function handleLoginEvent() {
 	id = document.getElementById("loginUser").value;
 	pw = document.getElementById("loginPassword").value;
-	if(session.login(id, pw))
+	if (session.login(id, pw)) {
+		alert("Welcome");
 		changeMainScreenTo("home");
+	}
 	else
-		console.log("This combination of id and password doesn't exist.");
+		alert("Username or password wrong");
 }
 
 /**
 Handles publication event.
 */
-function handlePublishEvent()
-{
+function handlePublishEvent() {
 	var title = document.getElementById("publicationTitle").value;
 	var image = null;
 	var description = document.getElementById("publicationContent").value;
@@ -198,7 +206,7 @@ function handlePublishEvent()
 	var owner = session.activeProfile;
 	var article = new Article(title, image, description, owner);
 
-	if(pubTypeRef.options[pubTypeRef.selectedIndex].value == "Reto")
+	if (pubTypeRef.options[pubTypeRef.selectedIndex].value == "Reto")
 		owner.challenges.push(article);
 	else
 		owner.publications.push(article);
@@ -208,28 +216,25 @@ function handlePublishEvent()
 /**
 Handles the profile management back event.
 */
-function handleProfileManagementBackEvent()
-{
+function handleProfileManagementBackEvent() {
 	var name = document.getElementById("profileManagementName").value;
 	var bio = document.getElementById("profileManagementDescription").value;
 	var email = document.getElementById("profileManagementEmail").value;
 	var genderTypeRef = document.getElementById("profileManagementGender");
-	var gender = (genderTypeRef.options[genderTypeRef.selectedIndex].value == "Mujer")?"Female":"Male";
+	var gender = (genderTypeRef.options[genderTypeRef.selectedIndex].value == "Mujer") ? "Female" : "Male";
 
-	name = (name == "")?null:name;
-	bio = (bio == "")?null:bio;
-	email = (email == "")?null:email;
+	name = (name == "") ? null : name;
+	bio = (bio == "") ? null : bio;
+	email = (email == "") ? null : email;
 
-	if(email != null)
-	{
+	if (email != null) {
 		var searchRes = session.searchProfilesByAttributes(email);
-		if(searchRes.length == 0 || searchRes[0].equals(session.activeProfile))
-		{
+		if (searchRes.length == 0 || searchRes[0].equals(session.activeProfile)) {
 			session.activeProfile.updateData(email, name, null, bio, null, null, gender);
 			changeMainScreenTo("mainProfile");
 		}
 		else
-			console.log("An account with this email already exists!");
+			alert("An account with this email already exists!");
 	}
 	else
 		changeMainScreenTo("mainProfile");

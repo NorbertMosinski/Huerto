@@ -129,7 +129,7 @@ display: none !important;
     width: 77%;
     display: block;
     position: absolute;
-    top: 28%;
+    top: 27%;
     height: 3%;
     left: 12%;
     text-align: center;
@@ -169,7 +169,7 @@ display: none !important;
     width: 77%;
     display: block;
     position: absolute;
-    top: 52%;
+    top: 51%;
     height: 3%;
     left: 12%;
     text-align: center;
@@ -182,7 +182,7 @@ display: none !important;
     width: 77%;
     display: block;
     position: absolute;
-    top: 60%;
+    top: 59%;
     height: 3%;
     left: 12%;
     text-align: center;
@@ -195,7 +195,7 @@ display: none !important;
     width: 77%;
     display: block;
     position: absolute;
-    top: 68%;
+    top: 67%;
     height: 3%;
     left: 12%;
     text-align: center;
@@ -208,7 +208,7 @@ display: none !important;
     width: 77%;
     display: block;
     position: absolute;
-    top: 76%;
+    top: 75%;
     height: 3%;
     left: 12%;
     text-align: center;
@@ -312,6 +312,7 @@ display: none !important;
     position: absolute;
     top: 12%;
     overflow: scroll;
+    overflow-x: hidden;
 }
 .homeBack{
     height: 7%;
@@ -654,7 +655,7 @@ div.sharesContent{
 }
 .profileGenre{
     position: absolute;
-    bottom: 44%;
+    bottom: 45%;
     left: 12%;
     height: 3%;
     width: 76%;
@@ -866,7 +867,7 @@ div.sharesContent{
 }
 .mainProfileName{
     position: absolute;
-    top: 15%;
+    top: 14%;
     text-align: right;
     right: 24%;
     font-size: medium;
@@ -889,7 +890,7 @@ div.sharesContent{
 }
 .mainprofileLikes{
     position: absolute;
-    top: 18%;
+    top: 19%;
     text-align: right;
     right: 24%;
     font-size: medium;
@@ -901,7 +902,7 @@ div.sharesContent{
 }
 .mainProfileDescription{
     position: absolute;
-    top: 32%;
+    top: 31%;
     height: 8%;
     width: 72%;
     font-size: small;
@@ -922,7 +923,7 @@ div.sharesContent{
     position: absolute;
     top: 37%;
     left: 12%;
-    width: 73%;
+    width: 75%;
     height: 9%;
 }
 .rankIcon{
@@ -959,3 +960,28 @@ div.sharesContent{
     overflow: scroll;
 }
 /* end of private profile section*/
+
+/*terms and conditions section*/
+.terms{
+    z-index: 1;
+    overflow: scroll;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 90%;
+}
+.termsImg{
+    width: 100%;
+    height: auto;
+}
+.backFromTerms{
+    position: absolute;
+    top: 1%;
+    background: transparent;
+    height: 7%;
+    border: none;
+    right: 3%;
+    width: 12%;
+}
+/**/

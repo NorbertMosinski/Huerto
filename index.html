@@ -175,7 +175,7 @@ I had not energy to do the error screen i am so sorry :D
 		<!-- Here just have to add or remove a hide class to the div who you want to search
 		the first div is just for publications the second one is for profiles	
 		-->
-		<div id="searchPublicationsResults" class="searchPublicationsResults hide">
+		<div id="searchPublicationsResults" class="searchPublicationsResults show">
 			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
 			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
 			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
@@ -189,7 +189,7 @@ I had not energy to do the error screen i am so sorry :D
 			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
 			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
 		</div>
-		<div id="searchProfileResults" class="searchProfileResults">
+		<div id="searchProfileResults" class="searchProfileResults hide">
 			<div class="profileResultContainer">
 				<img src="img/others/8.jpg" alt="" class="resultProfile">
 				<h1 class="searchProfileName">Sandra Gómez</h1>
@@ -257,7 +257,7 @@ I had not energy to do the error screen i am so sorry :D
 
 	</section>
 	<section id="mainProfile" class="hide">
-		<img src="img/background/pantalla_-perfil_privado.jpg" alt="Home" class="homeBkg">
+		<img src="img/background/pantalla_perfil_privado.jpg" alt="Home" class="homeBkg">
 		<button id="mainProfileManagement" class="profileManagement"></button>
 		<button id="mainProfileBack" class="homeBack"></button>
 
@@ -272,14 +272,14 @@ I had not energy to do the error screen i am so sorry :D
 
 		<img src="img/others/line.png" alt="line" class="mainProfileLine">
 		<!--There we can have the same id for all the items cause you just have to add the same listener to them, Add a hide class for the icons div it depends on which profile they clicked, the class noHeight is just to ocult the icons that are no shown in public profile-->
-		<div id="iconsPrivateProfile" class="iconsContainer hide">
+		<div id="iconsPrivateProfile" class="iconsContainer show">
 			<img src="img/buttons/amateurY.png" alt="rank" class="rankIcon" id="rankIcon">
 			<img src="img/buttons/likeG.png" alt="like" class="likeIcon" id="likeIcon">
 			<img src="img/buttons/icn_logroG.png" alt="achievement" class="achievementIcon" id="achievementIcon">
 			<img src="img/buttons/saveG.png" alt="save" class="saveIcon" id="saveIcon">
 			<img src="img/buttons/icn-_consejoG.png" alt="advice" class="adviceIcon" id="adviceIcon">
 		</div>
-		<div id="iconsPublicProfile" class="iconsContainer show">
+		<div id="iconsPublicProfile" class="iconsContainer hide">
 			<img src="img/buttons/amateurY.png" alt="rank" class="rankIcon" id="rankIcon">
 			<img src="img/buttons/likeG.png" alt="like" class="likeIcon noHeight" id="likeIcon">
 			<img src="img/buttons/icn_logroG.png" alt="achievement" class="achievementIcon" id="achievementIcon">
@@ -305,6 +305,13 @@ I had not energy to do the error screen i am so sorry :D
 		<button id="mainProfileShare" class="homeShare"></button>
 		<button id="mainProfileSearch" class="homeSearch"></button>
 		<button id="mainProfileProfile" class="homeProfile"></button>
+	</section>
+	<section id="terms" class="hide">
+		<img src="img/background/bkgImg.png" alt="policy" class="generalBkg">
+		<div class="terms">
+			<img src="img/background/terms.png" alt="terms" class="termsImg">
+			<button id="goBackFromTerms" class="backFromTerms"></button>
+		</div>
 	</section>
 
 </body>
