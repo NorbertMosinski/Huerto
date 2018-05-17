@@ -19,6 +19,7 @@ First initialization.
 function init() {
 	variables();
 	events();
+	session.addProfile(new Profile("admin@gmail.com", "Administrator", new Date(01,01,2000), "", "admin", "0000", "Male"));
 }
 
 /**
@@ -50,13 +51,6 @@ function handleButtonEvents(e) {
 	switch (id) {
 		case "goBackFromTerms":
 			changeMainScreenTo(previousPage);
-			break;
-		case "homeBack":
-			document.getElementById("loginUser").value = "";
-			document.getElementById("loginPassword").value = "";
-			session.activeProfile = null;
-			alert("your session has finished");
-			changeMainScreenTo("login");
 			break;
 		case "loginInitSessionBtn":
 			handleLoginEvent();
