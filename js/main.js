@@ -37,7 +37,6 @@ window.onload = function () {
 First initialization.
 */
 function init() {
-	console.log(articles.length);
 	events();
 	variables();
 	loadDynamicContent(articles);
@@ -47,7 +46,6 @@ function init() {
 Initializes variables.
 */
 function variables() {
-	console.log("variables");
 	container = document.getElementById('content');
 
 	session = new Session();
@@ -169,7 +167,7 @@ function ramdomArticleImg() {
  * Function that gives a random category
  */
 function randomCategory() {
-	var randomCategory = Math.floor((Math.random() * categories.length) + 1);
+	var randomCategory = Math.floor((Math.random() * (categories.length - 1)) + 1);
 	return categories[randomCategory]
 }
 /**
@@ -221,6 +219,8 @@ function handleButtonEvents(e) {
 			changeMainScreenTo("terms");
 			break;
 		case "registerLogin":
+			changeMainScreenTo('login');
+			break;
 		case "profileManagementLogout":
 			document.getElementById("loginUser").value = "";
 			document.getElementById("loginPassword").value = "";
