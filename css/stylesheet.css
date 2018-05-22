@@ -398,40 +398,37 @@ div.sharesContent{
     width: 20%;
     top: 7%;
     right: 10%;
-    background: url("../img/buttons/boton\ reto.png");
+    background: url("../img/buttons/challenge.png");
     background-size: contain;
     background-repeat: no-repeat;
     border: none;
 }
-.content1{
+.contentButtonAdvice{
     position: absolute;
     height: 6%;
     width: 20%;
-    top: 80%;
     right: 10%;
     background: url("../img/buttons/advice.png");
     background-size: contain;
     background-repeat: no-repeat;
     border: none;
 }
-.content2{
+.contentButtonChallenge{
     position: absolute;
     height: 6%;
     width: 20%;
-    top: 134%;
+    right: 10%;
+    background: url("../img/buttons/challenge.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+}
+.contentButtonAchievement{
+    position: absolute;
+    height: 6%;
+    width: 20%;
     right: 10%;
     background: url("../img/buttons/achievement.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: none;
-}
-.content3{
-    position: absolute;
-    height: 6%;
-    width: 20%;
-    top: 187%;
-    right: 10%;
-    background: url("../img/buttons/advice.png");
     background-size: contain;
     background-repeat: no-repeat;
     border: none;
@@ -573,6 +570,14 @@ div.sharesContent{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgba(61, 32, 4, 1);   
+}
+.imgPicker{
+    position: absolute;
+    top: 32%;
+    left: 15%;
+    border: none;
+    width: 70%;
+    height: 4%;
 }
 .categories{
     position: absolute;
