@@ -10,6 +10,10 @@ var session;
 var container;
 //Initial Articles
 var articles = [];
+//image picked
+var imgFile = null;
+//position
+var globalTop;
 
 //imagenes de articulos
 const articleImgs = [
@@ -70,7 +74,9 @@ function createArticles() {
  * Function to load dinamicaly the content of the home page
  */
 function loadDynamicContent(articlesToPrint) {
+	//position
 	var top = 22;
+
 	//creating the callenge content
 	var divChallange = document.createElement('div');
 	divChallange.classList.add("challenge");
@@ -104,14 +110,47 @@ function loadDynamicContent(articlesToPrint) {
 
 	articlesToPrint.forEach((art) => {
 		top += 54;
-		var div = document.createElement('div');
-		div.classList.add('sharesContent');
+		createContent(top, art.image, art.category);
+	});
+	globalTop = top;
+}
 
-		var img = document.createElement('img');
-		img.src = art.image;
+/**
+ * Function to create contente dinamically
+ * @param {int} position: position tu put the elements in the html file
+ * @param {string} articleImage: path of the article image 
+ * @param {string} articleCategory: category of the article
+ * @param {Article} publicationArticle: article send from publications section 
+ */
+function createContent(position, articleImage, articleCategory, publicationArticle) {
+	//variables
+	var div = document.createElement('div');
+	var img = document.createElement('img');
+	var topButton = document.createElement('button');
+	var like = document.createElement('button');
+	var save = document.createElement('button');
+	var reader = new FileReader();
+	var pos = position;
 
-		var topButton = document.createElement('button');
-		switch (art.category) {
+	//modifying the style
+	div.classList.add('sharesContent');
+	like.classList.add('like');
+	save.classList.add('save');
+	topButton.style.top = position + "%";
+
+	//checking for the flag
+	if (publicationArticle) {
+		reader.onloadend = function () {
+			img.src = reader.result;
+		}
+
+		if (publicationArticle.image) {
+			reader.readAsDataURL(publicationArticle.image);
+		} else {
+			img.src = "";
+		}
+
+		switch (publicationArticle.category) {
 			case 'Challenge':
 				topButton.classList.add('contentButtonChallenge');
 				break;
@@ -128,24 +167,33 @@ function loadDynamicContent(articlesToPrint) {
 				console.log("Category unkown");
 				break;
 		}
-		topButton.style.top = top + "%";
+	} else {
+		switch (articleCategory) {
+			case 'Challenge':
+				topButton.classList.add('contentButtonChallenge');
+				break;
 
+			case 'Advice':
+				topButton.classList.add('contentButtonAdvice');
 
+				break;
 
-		var like = document.createElement('button');
-		like.classList.add('like');
+			case 'Achievement':
+				topButton.classList.add('contentButtonAchievement');
+				break;
+			default:
+				console.log("Category unkown");
+				break;
+		}
+		img.src = articleImage
+	}
+	div.appendChild(topButton);
+	div.appendChild(img);
+	div.appendChild(like);
+	div.appendChild(save);
+	container.appendChild(div);
 
-		var save = document.createElement('button');
-		save.classList.add('save');
-
-		div.appendChild(topButton);
-		div.appendChild(img);
-		div.appendChild(like);
-		div.appendChild(save);
-		container.appendChild(div);
-	});
 }
-
 /**
  * function to refresh de main content
  */
@@ -170,6 +218,17 @@ function randomCategory() {
 	var randomCategory = Math.floor((Math.random() * (categories.length - 1)) + 1);
 	return categories[randomCategory]
 }
+
+function cleanFields(fieldsToClean) {
+	fieldsToClean.forEach((field) => {
+		try {
+			field.value = "";
+
+		} catch (e) {
+			console.log("algo ocurrio con la limpieza");
+		}
+	});
+}
 /**
 Adds event listeners to document objects.
 */
@@ -177,10 +236,19 @@ function events() {
 	var tmp = document.getElementsByTagName('button');
 
 	//buttons
-	for (var i = 0; i < tmp.length; i++)
+	for (var i = 0; i < tmp.length; i++) {
 		tmp[i].addEventListener("click", function () {
 			handleButtonEvents(this);
 		});
+	}
+
+
+	//input File, file picker
+	var inputFile = document.getElementById('imgPicker');
+	inputFile.onchange = function () {
+		imgFile = inputFile.files[0];
+	}
+
 }
 
 /**
@@ -300,27 +368,32 @@ function handleButtonEvents(e) {
 Handles the register event.
 */
 function handleRegisterEvent() {
-	var email = document.getElementById("registryEmail").value;
-	var name = document.getElementById("registryName").value;
-	var birthday = document.getElementById("registryDate").value;
-	var bio = document.getElementById("registryBio").value;
-	var id = document.getElementById("registryUsername").value;
-	var pw = document.getElementById("registryPassword").value;
-	var pwConf = document.getElementById("registryConfirmPass").value;
+	var email = document.getElementById("registryEmail");
+	var name = document.getElementById("registryName");
+	var birthday = document.getElementById("registryDate");
+	var bio = document.getElementById("registryBio");
+	var id = document.getElementById("registryUsername");
+	var pw = document.getElementById("registryPassword");
+	var pwConf = document.getElementById("registryConfirmPass");
+	var fields = [];
 
-	var profile = new Profile(email, name, birthday, bio, id, pw, null);
+	fields.push(email, name, birthday, bio, id, pw, pwConf);
+	var profile = new Profile(email.value, name.value, birthday.value, bio.value, id.value, pw.value, null);
 
 	if (!(pw === pwConf)) {
 		alert("Passwords are different");
 		return;
 	}
 
-	if (session.addProfile(profile))
+	if (session.addProfile(profile)) {
 		changeMainScreenTo("login");
-	else {
+	} else {
 		console.log("Profile already exists!")
 		alert("Can not create profile. Profile already exists!");
 	}
+
+	cleanFields(fields);
+
 }
 
 /**
@@ -341,18 +414,42 @@ function handleLoginEvent() {
 Handles publication event.
 */
 function handlePublishEvent() {
-	var title = document.getElementById("publicationTitle").value;
-	var image = null;
-	var description = document.getElementById("publicationContent").value;
-	var pubTypeRef = document.getElementById("publicationType");
-	var owner = session.activeProfile;
-	var article = new Article(title, image, description, owner);
+	if (imgFile) {
+		var title = document.getElementById("publicationTitle");
+		var image = imgFile;
+		var description = document.getElementById("publicationContent");
+		var pubTypeRef = document.getElementById("publicationType");
+		var owner = session.activeProfile;
+		var publicationCategory;
+		var newArticlePublication;
 
-	if (pubTypeRef.options[pubTypeRef.selectedIndex].value == "Reto")
-		owner.challenges.push(article);
-	else
-		owner.publications.push(article);
-	changeMainScreenTo("home");
+		var fields = [];
+		fields.push(title, description, document.getElementById('imgPicker'));
+
+		if (pubTypeRef.options[pubTypeRef.selectedIndex].value == "Reto") {
+			publicationCategory = "Challenge";
+			newArticlePublication = new Article(title.value, image, description.value, owner, publicationCategory);
+			owner.challenges.push(newArticlePublication);
+		}
+		else {
+			publicationCategory = "Advice";
+			newArticlePublication = new Article(title.value, image, description.value, owner, publicationCategory);
+			owner.publications.push(newArticlePublication);
+		}
+
+		var newPos = globalTop + 54;
+		globalTop = newPos;
+
+		createContent(newPos, null, null, newArticlePublication);
+
+		changeMainScreenTo("home");
+
+		cleanFields(fields);
+
+	} else {
+		alert("Must select a picture");
+	}
+
 }
 
 /**
