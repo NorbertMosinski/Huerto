@@ -24,8 +24,8 @@ I had not energy to do the error screen i am so sorry :D
 <body>
 	<section id="login" class="show">
 		<img src="img/background/login.png" alt="Register" class="loginBkg">
-		<input type="text" id="loginUser" class="username">
-		<input type="password" id="loginPassword" class="password">
+		<input type="text" id="loginUser" class="username" placeholder="Username">
+		<input type="password" id="loginPassword" class="password" placeholder="Password">
 		<button id="loginInitSessionBtn" class="btnLogin"></button>
 		<button id="loginForgottenPassword" class="forgottenPassword"></button>
 		<button id="loginFacebook" class="logingFb"></button>
@@ -97,7 +97,9 @@ I had not energy to do the error screen i am so sorry :D
 	</section>
 	<section id="publication" class="hide">
 		<img src="img/background/createPublication.png" alt="Home" class="homeBkg">
-		<input type="file" name="img" id="imgPicker" class="imgPicker">
+		<label for="imgPicker" class="imgPickerContainer">Seleccionar archivo
+			<input type="file" name="img" id="imgPicker" class="imgPicker">
+		</label>
 		<button id="publicationInfo" class="homeInfo"></button>
 		<button id="publicationBack" class="homeBack"></button>
 
@@ -118,8 +120,9 @@ I had not energy to do the error screen i am so sorry :D
 		<button id="profileManagementInfo" class="homeInfo"></button>
 		<button id="profileManagementBack" class="homeBack"></button>
 		<img src="img/buttons/editG.png" alt="editProfileManagementImg" class="editProfilePic">
-
-		<img src="img/others/8.jpg" alt="editProfileImg" class="profilePic" id="profileManagementPic">
+		<div class="profilePicContainer">
+			<img src="img/others/8.jpg" alt="editProfileImg" class="profilePic" id="profileManagementPic">
+		</div>
 		<input type="text" id="profileManagementName" class="profileName" placeholder="Sandra Gomez">
 		<textarea name="profileManagementDescription" id="profileManagementDescription" class="profileDesc" placeholder="Descripción de la persona..."></textarea>
 		<input type="email" id="profileManagementEmail" class="profileEmail" placeholder="SandraGomez@hotmail.com">
@@ -148,7 +151,7 @@ I had not energy to do the error screen i am so sorry :D
 		<button id="searchProfilesOpt" class="searchProfilesOpt">Perfiles</button>
 		<button id="searchArticlesOpt" class="searchArticlesOpt">Publicaciones</button>
 
-		<!-- Here just have to add or remove a hide class to the div who you want to search
+		<!-- Here just have to add or remove a hide class to the div that you want to search
 		the first div is just for publications the second one is for profiles	
 		-->
 		<div id="searchPublicationsResults" class="searchPublicationsResults show">
@@ -248,14 +251,14 @@ I had not energy to do the error screen i am so sorry :D
 
 		<img src="img/others/line.png" alt="line" class="mainProfileLine">
 		<!--There we can have the same id for all the items cause you just have to add the same listener to them, Add a hide class for the icons div it depends on which profile they clicked, the class noHeight is just to ocult the icons that are no shown in public profile-->
-		<div id="iconsPrivateProfile" class="iconsContainer show">
+		<div id="iconsPrivateProfile" class="iconsContainer hide">
 			<img src="img/buttons/amateurY.png" alt="rank" class="rankIcon" id="rankIcon">
 			<img src="img/buttons/likeG.png" alt="like" class="likeIcon" id="likeIcon">
 			<img src="img/buttons/icn_logroG.png" alt="achievement" class="achievementIcon" id="achievementIcon">
 			<img src="img/buttons/saveG.png" alt="save" class="saveIcon" id="saveIcon">
 			<img src="img/buttons/icn-_consejoG.png" alt="advice" class="adviceIcon" id="adviceIcon">
 		</div>
-		<div id="iconsPublicProfile" class="iconsContainer hide">
+		<div id="iconsPublicProfile" class="iconsContainer show">
 			<img src="img/buttons/amateurY.png" alt="rank" class="rankIcon" id="rankIcon">
 			<img src="img/buttons/likeG.png" alt="like" class="likeIcon noHeight" id="likeIcon">
 			<img src="img/buttons/icn_logroG.png" alt="achievement" class="achievementIcon" id="achievementIcon">

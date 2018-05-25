@@ -12,8 +12,8 @@ var container;
 var articles = [];
 //image picked
 var imgFile = null;
-//position
-var globalTop;
+//articleId
+var articleId;
 
 //imagenes de articulos
 const articleImgs = [
@@ -41,6 +41,10 @@ window.onload = function () {
 First initialization.
 */
 function init() {
+	if (!localStorage.getItem("idCounter")) {
+		localStorage.setItem("idCounter", 0);
+	}
+	articleId = parseInt(localStorage.getItem("idCounter"));
 	events();
 	variables();
 	loadDynamicContent(articles);
@@ -63,10 +67,11 @@ function variables() {
  */
 function createArticles() {
 	var newArticles = [];
+	var category = randomCategory();
 	for (var i = 0; i < 5; i++) {
-		newArticles[i] = new Article(
-			"articulo" + i, ramdomArticleImg(), "Articulo de prueba", session.profiles[0], randomCategory()
-		)
+		newArticles[i] = new Article(articleId + "_" + category + "_" + session.profiles[0].email, "articulo" + i, ramdomArticleImg(), "Articulo de prueba", session.profiles[0], category
+		);
+		articleId += 1
 	}
 	return newArticles;
 }
@@ -74,8 +79,6 @@ function createArticles() {
  * Function to load dinamicaly the content of the home page
  */
 function loadDynamicContent(articlesToPrint) {
-	//position
-	var top = 22;
 
 	//creating the callenge content
 	var divChallange = document.createElement('div');
@@ -109,20 +112,18 @@ function loadDynamicContent(articlesToPrint) {
 
 
 	articlesToPrint.forEach((art) => {
-		top += 54;
-		createContent(top, art.image, art.category);
+		createContent(art.id, art.image, art.category);
 	});
-	globalTop = top;
 }
 
 /**
  * Function to create contente dinamically
- * @param {int} position: position tu put the elements in the html file
+ * @param {string} id: article identifier
  * @param {string} articleImage: path of the article image 
  * @param {string} articleCategory: category of the article
  * @param {Article} publicationArticle: article send from publications section 
  */
-function createContent(position, articleImage, articleCategory, publicationArticle) {
+function createContent(id, articleImage, articleCategory, publicationArticle) {
 	//variables
 	var div = document.createElement('div');
 	var img = document.createElement('img');
@@ -130,13 +131,20 @@ function createContent(position, articleImage, articleCategory, publicationArtic
 	var like = document.createElement('button');
 	var save = document.createElement('button');
 	var reader = new FileReader();
-	var pos = position;
 
 	//modifying the style
 	div.classList.add('sharesContent');
+	if (id) {
+		div.id = id;
+	} else {
+		div.id = publicationArticle.id
+	}
+	div.addEventListener("click", function () {
+		//pasar el id como parametro para la expancion
+		alert(div.id);
+	})
 	like.classList.add('like');
 	save.classList.add('save');
-	topButton.style.top = position + "%";
 
 	//checking for the flag
 	if (publicationArticle) {
@@ -251,6 +259,34 @@ function events() {
 
 }
 
+function changeButton(idButton) {
+	var button;
+	var profileResults = document.getElementById("searchProfileResults");
+	var publicationResults = document.getElementById("searchPublicationsResults")
+
+	console.log(profileResults);
+	console.log(publicationResults);
+
+	if (idButton === "searchProfilesOpt") {
+		button = document.getElementById("searchArticlesOpt");
+		button.style.background = "transparent";
+		document.getElementById("searchProfilesOpt").style.background = "rgb(140, 170, 136)";
+		publicationResults.classList.remove("show");
+		publicationResults.classList.add("hide");
+		profileResults.classList.remove("hide");
+		profileResults.classList.add("show");
+
+	} else {
+		button = document.getElementById("searchProfilesOpt");
+		button.style.background = "transparent";
+		document.getElementById("searchArticlesOpt").style.background = "rgb(140, 170, 136)";
+		profileResults.classList.remove("show");
+		profileResults.classList.add("hide");
+		publicationResults.classList.remove("hide");
+		publicationResults.classList.add("show");
+
+	}
+}
 /**
 Handles the events fired by a button.
 */
@@ -258,6 +294,12 @@ function handleButtonEvents(e) {
 	var id = e.id;
 
 	switch (id) {
+		case "searchProfilesOpt":
+			changeButton(id);
+			break;
+		case "searchArticlesOpt":
+			changeButton(id);
+			break;
 		case "goBackFromTerms":
 			refreshHomeContent();
 			changeMainScreenTo(previousPage);
@@ -400,14 +442,19 @@ function handleRegisterEvent() {
 Handles the login event.
 */
 function handleLoginEvent() {
-	id = document.getElementById("loginUser").value;
+	idUser = document.getElementById("loginUser").value;
 	pw = document.getElementById("loginPassword").value;
-	if (session.login(id, pw)) {
-		alert("Welcome");
-		changeMainScreenTo("home");
+	if (idUser && pw) {
+		if (session.login(idUser, pw)) {
+			alert("Welcome");
+			changeMainScreenTo("home");
+		}
+		else
+			alert("Username or password wrong");
+	} else {
+		alert("Should try typing your data");
 	}
-	else
-		alert("Username or password wrong");
+
 }
 
 /**
@@ -428,19 +475,16 @@ function handlePublishEvent() {
 
 		if (pubTypeRef.options[pubTypeRef.selectedIndex].value == "Reto") {
 			publicationCategory = "Challenge";
-			newArticlePublication = new Article(title.value, image, description.value, owner, publicationCategory);
+			newArticlePublication = new Article(articleId + "_" + publicationCategory + "_" + session.activeProfile.email, title.value, image, description.value, owner, publicationCategory);
 			owner.challenges.push(newArticlePublication);
 		}
 		else {
 			publicationCategory = "Advice";
-			newArticlePublication = new Article(title.value, image, description.value, owner, publicationCategory);
+			newArticlePublication = new Article(articleId + "_" + publicationCategory + "_" + session.activeProfile.email, title.value, image, description.value, owner, publicationCategory);
 			owner.publications.push(newArticlePublication);
 		}
 
-		var newPos = globalTop + 54;
-		globalTop = newPos;
-
-		createContent(newPos, null, null, newArticlePublication);
+		createContent(null, null, null, newArticlePublication);
 
 		changeMainScreenTo("home");
 

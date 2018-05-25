@@ -345,11 +345,11 @@ display: none !important;
     right: 3%;
 }
 .sharesContent{
-    margin: 5%;
+    margin: 2% 5%;
 }
 .challenge{
     margin: 5%;
-    height: 62%;
+    height: 60%;
 }
 div.sharesContent{
     height: 50%;
@@ -379,11 +379,12 @@ div.sharesContent{
     top: 54%;
     left: 25%;
     width: 50%;
-    height: 5%;
-    font-size: medium;
+    height: 6%;
+    border: none;
+    font-size: small;
     border-radius: 14px;
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
 }
 .separator{
     height: 2%;
@@ -408,10 +409,10 @@ div.sharesContent{
 }
 .contentButtonAdvice{
     position: absolute;
+    margin: 5% 65%;
     height: 6%;
     width: 20%;
-    right: 10%;
-    background: url("../img/buttons/advice.png");
+    background: url(../img/buttons/advice.png);
     background-size: contain;
     background-repeat: no-repeat;
     border: none;
@@ -420,7 +421,7 @@ div.sharesContent{
     position: absolute;
     height: 6%;
     width: 20%;
-    right: 10%;
+    margin: 5% 65%;    
     background: url("../img/buttons/challenge.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -430,7 +431,7 @@ div.sharesContent{
     position: absolute;
     height: 6%;
     width: 20%;
-    right: 10%;
+    margin: 5% 65%;        
     background: url("../img/buttons/achievement.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -555,7 +556,7 @@ div.sharesContent{
     top: 43%;
     left: 8.5%;
     font-size: small;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
     color: rgba(61, 32, 4, 1);
     background: transparent;
 }
@@ -571,16 +572,25 @@ div.sharesContent{
     font-weight: 600;
     border: none;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
     color: rgba(61, 32, 4, 1);   
 }
-.imgPicker{
+.imgPickerContainer {
     position: absolute;
     top: 32%;
-    left: 15%;
+    left: 4%;
     border: none;
-    width: 70%;
-    height: 4%;
+    text-align: center;
+    width: 92%;
+    height: 7%;
+    font-family: Montserrat;
+    font-size: small;
+    color: #3D2004;
+}
+
+.imgPickerContainer [type=file] {
+    cursor: inherit;
+    opacity: 0;
 }
 .categories{
     position: absolute;
@@ -602,7 +612,7 @@ div.sharesContent{
     left: 24%;
     border: none;
     background: transparent;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
 }
 /*end of publication content*/
 
@@ -616,14 +626,22 @@ div.sharesContent{
     width: auto;
     z-index: 2;
 }
-.profilePic{
+.profilePicContainer{
     position: absolute;
-    top: 13%;
-    height: 21%;
-    left: 34%;
+    top: 14%;
+    height: 19%;
+    left: 31%;
     border-radius: 66%;
     z-index: 1;
-    width: auto;
+    width: 36%
+}
+.profilePic{
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    border-radius: 66%;
+    z-index: 1;
+    width: 100%;
 }
 .profileName{
     position: absolute;
@@ -634,7 +652,7 @@ div.sharesContent{
     height: 3%;
     border: none;
     font-size: medium;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
     color: rgb(78, 40, 4);
 }
 .profileEmail{
@@ -646,7 +664,7 @@ div.sharesContent{
     height: 3%;
     border: none;
     font-size: medium;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
     color: rgb(78, 40, 4);
 }
 .profileDesc{
@@ -658,7 +676,7 @@ div.sharesContent{
     left: 12%;
     width: 75%;
     font-size: medium;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
     color: rgb(78, 40, 4);
 }
 .profileGenre{
@@ -666,10 +684,11 @@ div.sharesContent{
     bottom: 45%;
     left: 12%;
     height: 3%;
+    border: none;
     width: 76%;
     font-size: medium;
     background: transparent;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
     color: rgb(78, 40, 4);
 }
 .profilePolicy{
@@ -710,12 +729,12 @@ div.sharesContent{
     height: 5%;
     width: 44%;
     font-size: medium;
-    /*background: rgb(140, 170, 136);*/
     background: transparent;
     border: none;
     border-radius: 10%;
     font-weight: 600;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    font-family: Montserrat;
     color: rgb(78, 40, 4);
 }
 .searchArticlesOpt{
@@ -729,7 +748,8 @@ div.sharesContent{
     background: rgb(140, 170, 136);
     border-radius: 20px;
     font-weight: 600;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    font-family: Montserrat;
     color: rgb(78, 40, 4);
 }
 
@@ -744,7 +764,7 @@ div.sharesContent{
     background: transparent;
     border: none;
     font-weight: 600;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
     color: rgb(78, 40, 4);
 }
 
@@ -792,7 +812,7 @@ div.sharesContent{
     font-size: medium;
     word-wrap: break-word;
     font-weight: 600;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
     color: rgb(78, 40, 4);
 }
 .searchUserName{
@@ -802,7 +822,7 @@ div.sharesContent{
     left: 40%;
     font-size: medium;
     font-weight: 200;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
     color: rgb(78, 40, 4);
 }
 /* end of search section*/
@@ -882,7 +902,7 @@ div.sharesContent{
     width: 30%;
     height: auto;
     font-weight: 900;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
     color: rgb(78, 40, 4);
 }
 .mainProfileUserName{
@@ -893,7 +913,7 @@ div.sharesContent{
     font-size: small;
     width: 30%;
     height: auto;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
     color: rgb(78, 40, 4);
 }
 .mainprofileLikes{
@@ -905,7 +925,7 @@ div.sharesContent{
     width: 30%;
     height: auto;
     font-weight: 900;    
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
     color: rgb(78, 40, 4);
 }
 .mainProfileDescription{
@@ -917,7 +937,7 @@ div.sharesContent{
     left: 12%;
     background: none;
     border: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Montserrat;
     color: rgb(78, 40, 4);
 }
 .mainProfileLine{

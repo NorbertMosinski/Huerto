@@ -6,7 +6,7 @@ Article constructor.
 @param owner: Profile, representing the owner of this article.
 @param category: Represents the group of the publication.
 */
-var Article = function (title, image, description, owner, category) {
+var Article = function (id, title, image, description, owner, category) {
 	this.title = title;
 	this.image = image;
 	this.description = description;
@@ -15,6 +15,7 @@ var Article = function (title, image, description, owner, category) {
 	this.articles = [];
 	this.likes = 0;
 	this.category = category;
+	this.id = id;
 }
 
 /**
