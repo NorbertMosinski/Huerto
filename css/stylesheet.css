@@ -317,6 +317,9 @@ display: none !important;
     overflow: scroll;
     overflow-x: hidden;
 }
+.imgContentHome{
+    height: 90%;
+}
 .homeBack{
     height: 7%;
     width: 8%;
@@ -346,6 +349,9 @@ display: none !important;
 }
 .sharesContent{
     margin: 2% 5%;
+}
+.shareContentImg{
+    height: 100%;
 }
 .challenge{
     margin: 5%;
@@ -613,6 +619,120 @@ div.sharesContent{
     border: none;
     background: transparent;
     font-family: Montserrat;
+}
+.publicationBodyContainer{
+    position: absolute;
+    top: 10%;
+    width: 84%;
+    height: 80%;
+    left: 8%;
+    background: rgb(140, 170, 136);
+}
+.imgPublicationBodyContainer{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40%;
+    opacity: 0.8;
+}
+.imgback{
+    height: 100%;
+}
+.ownerPub{
+    position: absolute;
+    top: 27%;
+    left: 4%;
+    background-image: url("../img/others/8.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 10%;
+    width: 18%;
+    border-radius: 50%;
+}
+.pubTitle{
+    height: 5%;
+    text-align: left;
+    position: absolute;
+    top: 29%;
+    width: 66%;
+    font-size: medium;
+    left: 25%;
+    color: white;
+}
+.pubAdviceType{
+    position: absolute;
+    top: 4%;
+    height: 6%;
+    width: 20%;
+    background: url(../img/buttons/advice.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    right: 7%;
+}
+.pubAchievementType{
+    position: absolute;
+    top: 4%;
+    height: 6%;
+    width: 20%;
+    background: url(../img/buttons/achievement.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    right: 7%;
+}
+.pubChallengeType{
+    position: absolute;
+    top: 4%;
+    height: 6%;
+    width: 20%;
+    background: url(../img/buttons/challenge.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    right: 7%;
+}
+.pubLike{
+    height: 9%;
+    width: 16%;
+    position: absolute;
+    top: 42%;
+    background:transparent;        
+    background-image: url("../img/buttons/likeY.png");
+    background-size: cover;
+    left: 32%;
+    border: none;
+}
+.pubSave{
+    height: 9%;
+    width: 16%;
+    position: absolute;
+    top: 42%;
+    right: 31%;
+    background:transparent;
+    background-image: url("../img/buttons/saveY.png");
+    background-size: cover;
+    border: none;    
+}
+.pubSeparator{
+    position: absolute;
+    top: 52%;
+    left: 7%;
+    height: 1%;
+    z-index: 2;
+    width: 86%
+}
+.pubDescription{
+    color: #3D2004;
+    font-size: small;
+    height: 45.3%;
+    width: 80%;
+    background: transparent;
+    position: absolute;
+    overflow-x: hidden;
+    top: 54%;
+    overflow-y: scroll;
+    left: 10%;
+    border: none;
 }
 /*end of publication content*/
 

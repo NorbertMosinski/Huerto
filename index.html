@@ -1,12 +1,3 @@
-<!--
-TODO:
--input fields: Font size, input rules and reset after reload the page
--error page by register error
-
-Comments:
-I had not energy to do the error screen i am so sorry :D
--->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -115,6 +106,27 @@ I had not energy to do the error screen i am so sorry :D
 		<button id="publicationSearch" class="homeSearch"></button>
 		<button id="publicationProfile" class="homeProfile"></button>
 	</section>
+	<section id="publicationBody" class="hide">
+		<img src="img/background/homepage.png" alt="Home" class="homeBkg">
+		<button id="publicationBodyInfo" class="homeInfo"></button>
+		<button id="publicationBodyBack" class="homeBack"></button>
+		<div class="publicationBodyContainer">
+			<div class="imgPublicationBodyContainer" id="imgPublicationBodyContainer">
+				<img alt="imgBackground" id="imgback">
+			</div>
+			<div class="ownerPub" id="ownerPub"></div>
+			<button id="pubBtnType"></button>
+			<h1 id="pubTitle" class="pubTitle">Titulo de la publicacion</h1>
+			<button id="pubLike" class="pubLike"></button>
+			<button id="pubSave" class="pubSave"></button>
+			<img src="img/others/line.png" alt="separatorPub" class="pubSeparator">
+			<textarea name="pubDescriptionName" id="pubDescription" class="pubDescription" readonly>Descripción</textarea>
+		</div>
+		<button id="publicationBodyHome" class="home"></button>
+		<button id="publicationBodyShare" class="homeShare"></button>
+		<button id="publicationBodySearch" class="homeSearch"></button>
+		<button id="publicationBodyprofile" class="homeProfile"></button>
+	</section>
 	<section id="profileManagement" class="hide">
 		<img src="img/background/profileConfiguration.png" alt="Home" class="homeBkg">
 		<button id="profileManagementInfo" class="homeInfo"></button>
@@ -151,9 +163,7 @@ I had not energy to do the error screen i am so sorry :D
 		<button id="searchProfilesOpt" class="searchProfilesOpt">Perfiles</button>
 		<button id="searchArticlesOpt" class="searchArticlesOpt">Publicaciones</button>
 
-		<!-- Here just have to add or remove a hide class to the div that you want to search
-		the first div is just for publications the second one is for profiles	
-		-->
+
 		<div id="searchPublicationsResults" class="searchPublicationsResults show">
 			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
 			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
@@ -251,34 +261,21 @@ I had not energy to do the error screen i am so sorry :D
 
 		<img src="img/others/line.png" alt="line" class="mainProfileLine">
 		<!--There we can have the same id for all the items cause you just have to add the same listener to them, Add a hide class for the icons div it depends on which profile they clicked, the class noHeight is just to ocult the icons that are no shown in public profile-->
-		<div id="iconsPrivateProfile" class="iconsContainer hide">
+		<div id="iconsPrivateProfile" class="iconsContainer show">
 			<img src="img/buttons/amateurY.png" alt="rank" class="rankIcon" id="rankIcon">
 			<img src="img/buttons/likeG.png" alt="like" class="likeIcon" id="likeIcon">
 			<img src="img/buttons/icn_logroG.png" alt="achievement" class="achievementIcon" id="achievementIcon">
 			<img src="img/buttons/saveG.png" alt="save" class="saveIcon" id="saveIcon">
 			<img src="img/buttons/icn-_consejoG.png" alt="advice" class="adviceIcon" id="adviceIcon">
 		</div>
-		<div id="iconsPublicProfile" class="iconsContainer show">
+		<div id="iconsPublicProfile" class="iconsContainer hide">
 			<img src="img/buttons/amateurY.png" alt="rank" class="rankIcon" id="rankIcon">
 			<img src="img/buttons/likeG.png" alt="like" class="likeIcon noHeight" id="likeIcon">
 			<img src="img/buttons/icn_logroG.png" alt="achievement" class="achievementIcon" id="achievementIcon">
 			<img src="img/buttons/saveG.png" alt="save" class="saveIcon noHeight" id="saveIcon">
 			<img src="img/buttons/icn-_consejoG.png" alt="advice" class="adviceIcon" id="adviceIcon">
 		</div>
-		<div id="mainProfileContent" class="mainProfileContent">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-		</div>
+		<div id="mainProfileContent" class="mainProfileContent"></div>
 
 		<button id="mainProfileHome" class="home"></button>
 		<button id="mainProfileShare" class="homeShare"></button>

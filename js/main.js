@@ -14,12 +14,21 @@ var articles = [];
 var imgFile = null;
 //articleId
 var articleId;
+//lorem
+var lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum lectus odio. Quisque id magna sit amet risus fermentum luctus sed et ipsum. Etiam ut mi elit. Etiam nec fermentum odio. Phasellus egestas nulla sit amet purus pellentesque interdum. Suspendisse dictum est ipsum, nec pretium nibh egestas sed. Nulla nec vehicula arcu, condimentum semper justo. Cras ut facilisis ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In efficitur fermentum tellus, et ultricies libero auctor eu. Phasellus neque nisi, sollicitudin consequat leo sit amet, posuere feugiat augue. Aenean varius tortor nec nibh efficitur feugiat. Vestibulum ut turpis at dui hendrerit lobortis. Nullam est quam, cursus sed magna eu, convallis efficitur velit. Vestibulum rutrum vitae elit fermentum imperdiet. Sed tincidunt augue id arcu dignissim molestie.
 
+Curabitur ut dolor tellus. Morbi mollis mauris augue, a fringilla eros rutrum euismod. Nulla laoreet nisl nisi, sed mollis odio suscipit at. Cras rhoncus, purus id egestas faucibus, elit risus lacinia nulla, nec pellentesque lectus libero quis ligula. Aliquam at enim fermentum, vulputate nisi a, lacinia dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque mollis massa vitae ex pulvinar fermentum. Proin dolor ipsum, vulputate et magna sed, gravida varius tellus. Ut porttitor iaculis purus vitae aliquam. Proin sapien purus, finibus non velit id, vestibulum eleifend sapien.
+
+Vivamus rutrum mi tortor, vel eleifend nunc faucibus vel. Ut porta nisi rhoncus tellus aliquam fringilla. Quisque scelerisque sapien nec ligula ultrices eleifend. Aenean cursus enim vitae tellus lacinia eleifend. Donec maximus velit dui, interdum fermentum massa laoreet quis. Proin sed dui nunc. Sed venenatis, ligula at porttitor fringilla, magna felis faucibus nulla, a bibendum mi orci blandit justo. Sed nec lacinia nibh.`
 //imagenes de articulos
 const articleImgs = [
-	"img/background/share.PNG",
-	"img/background/shareAchievement.PNG",
-	"img/background/shareAdvice.PNG"
+	"img/flowers/flor1.jpg",
+	"img/flowers/flor2.jpg",
+	"img/flowers/flor3.jpg",
+	"img/flowers/flor4.jpg",
+	"img/flowers/flor5.jpg",
+	"img/flowers/flor6.jpg",
+	"img/flowers/flor7.jpg"
 ];
 
 //categories
@@ -57,7 +66,7 @@ function variables() {
 	container = document.getElementById('content');
 
 	session = new Session();
-	session.addProfile(new Profile("admin@gmail.com", "Administrator", new Date(01, 01, 2000), "", "admin", "0000", "Male"));
+	session.addProfile(new Profile("admin@gmail.com", "Administrator", new Date(01, 01, 2000), "", "admin", "0000", "Male", "/img/others/8.jpg"));
 
 	articles = createArticles();
 }
@@ -67,13 +76,96 @@ function variables() {
  */
 function createArticles() {
 	var newArticles = [];
-	var category = randomCategory();
-	for (var i = 0; i < 5; i++) {
-		newArticles[i] = new Article(articleId + "_" + category + "_" + session.profiles[0].email, "articulo" + i, ramdomArticleImg(), "Articulo de prueba", session.profiles[0], category
+	var category;
+	for (var i = 0; i < 15; i++) {
+		category = randomCategory();
+		newArticles[i] = new Article(articleId + "_" + category + "_" + session.profiles[0].email, "articulo" + i, ramdomArticleImg(), lorem, session.profiles[0], category
 		);
 		articleId += 1
+		switch (category) {
+			case "Advice":
+				session.profiles[0].publications.push(newArticles[i]);
+				break;
+			case "Achievement":
+				session.profiles[0].comments.push(newArticles[i]);
+				break;
+			case "Challenge":
+				session.profiles[0].challenges.push(newArticles[i]);
+				break;
+		}
 	}
 	return newArticles;
+}
+function loadPersonalPub() {
+	var personalArticles = [];
+	session.activeProfile.publications.forEach((publication) => {
+		personalArticles.push(publication);
+	});
+	session.activeProfile.challenges.forEach((challenge) => {
+		personalArticles.push(challenge);
+	});
+	session.activeProfile.comments.forEach((advice) => {
+		personalArticles.push(advice);
+	});
+
+	printPersonalArticles(personalArticles);
+
+}
+function printPersonalArticles(personalArticlesToPrint) {
+	var container = document.getElementById("mainProfileContent");
+	personalArticlesToPrint.forEach((article) => {
+		var img = document.createElement("img");
+		img.classList.add("resultArticle");
+		img.src = article.image;
+		img.id = article.id;
+		img.addEventListener('click', function () {
+			var pub = img.id;
+			var pubItems = pub.split("_");
+			var pubSection = document.getElementById("publicationBody");
+			var section = document.getElementById(img.parentNode.parentNode.id);
+			var articleFound;
+			section.classList.remove("show");
+			section.classList.add("hide");
+			pubSection.classList.remove("hide");
+			pubSection.classList.add("show");
+
+			var pubOwner = session.searchProfilesByAttributes(pubItems[2]);
+			switch (pubItems[1]) {
+				case "Advice":
+					pubOwner[0].publications.forEach((item) => {
+						var artiParts = item.id.split("_");
+						var idArti = artiParts[0];
+						if (idArti === pubItems[0]) {
+							articleFound = item;
+						}
+					})
+					break;
+				case "Achievement":
+					pubOwner[0].comments.forEach((item) => {
+						var artiParts = item.id.split("_");
+						var idArti = artiParts[0];
+						if (idArti === pubItems[0]) {
+							articleFound = item;
+						}
+					})
+					break;
+				case "Challenge":
+					pubOwner[0].challenges.forEach((item) => {
+						var artiParts = item.id.split("_");
+						var idArti = artiParts[0];
+						if (idArti === pubItems[0]) {
+							articleFound = item;
+						}
+					})
+					break;
+			}
+
+			printArticleSection(pubOwner[0], articleFound);
+		});
+
+		container.appendChild(img);
+	})
+
 }
 /**
  * Function to load dinamicaly the content of the home page
@@ -116,6 +208,69 @@ function loadDynamicContent(articlesToPrint) {
 	});
 }
 
+function createNewPersonalArticle(newPersonalArticle) {
+	var container = document.getElementById("mainProfileContent");
+	var img = document.createElement("img");
+	var reader = new FileReader();
+	img.classList.add("resultArticle");
+	img.id = newPersonalArticle.id;
+	reader.onloadend = function () {
+		img.src = reader.result;
+	}
+
+	if (newPersonalArticle.image) {
+		reader.readAsDataURL(newPersonalArticle.image);
+	} else {
+		img.src = "";
+	}
+
+	img.addEventListener('click', function () {
+		var pub = img.id;
+		var pubItems = pub.split("_");
+		var pubSection = document.getElementById("publicationBody");
+		var section = document.getElementById(img.parentNode.parentNode.id);
+		var articleFound;
+		section.classList.remove("show");
+		section.classList.add("hide");
+		pubSection.classList.remove("hide");
+		pubSection.classList.add("show");
+
+		var pubOwner = session.searchProfilesByAttributes(pubItems[2]);
+		switch (pubItems[1]) {
+			case "Advice":
+				pubOwner[0].publications.forEach((item) => {
+					var artiParts = item.id.split("_");
+					var idArti = artiParts[0];
+					if (idArti === pubItems[0]) {
+						articleFound = item;
+					}
+				})
+				break;
+			case "Achievement":
+				pubOwner[0].comments.forEach((item) => {
+					var artiParts = item.id.split("_");
+					var idArti = artiParts[0];
+					if (idArti === pubItems[0]) {
+						articleFound = item;
+					}
+				})
+				break;
+			case "Challenge":
+				pubOwner[0].challenges.forEach((item) => {
+					var artiParts = item.id.split("_");
+					var idArti = artiParts[0];
+					if (idArti === pubItems[0]) {
+						articleFound = item;
+					}
+				})
+				break;
+		}
+
+		printArticleSection(pubOwner[0], articleFound);
+	});
+
+	container.appendChild(img);
+}
 /**
  * Function to create contente dinamically
  * @param {string} id: article identifier
@@ -133,6 +288,7 @@ function createContent(id, articleImage, articleCategory, publicationArticle) {
 	var reader = new FileReader();
 
 	//modifying the style
+	img.classList.add("imgContentHome");
 	div.classList.add('sharesContent');
 	if (id) {
 		div.id = id;
@@ -140,8 +296,49 @@ function createContent(id, articleImage, articleCategory, publicationArticle) {
 		div.id = publicationArticle.id
 	}
 	div.addEventListener("click", function () {
-		//pasar el id como parametro para la expancion
-		alert(div.id);
+		var pub = div.id;
+		var pubItems = pub.split("_");
+		var pubSection = document.getElementById("publicationBody");
+		var section = document.getElementById(div.parentNode.parentNode.id);
+		var articleFound;
+		section.classList.remove("show");
+		section.classList.add("hide");
+		pubSection.classList.remove("hide");
+		pubSection.classList.add("show");
+
+		var pubOwner = session.searchProfilesByAttributes(pubItems[2]);
+		switch (pubItems[1]) {
+			case "Advice":
+				pubOwner[0].publications.forEach((item) => {
+					var artiParts = item.id.split("_");
+					var idArti = artiParts[0];
+					if (idArti === pubItems[0]) {
+						articleFound = item;
+					}
+				})
+				break;
+			case "Achievement":
+				pubOwner[0].comments.forEach((item) => {
+					var artiParts = item.id.split("_");
+					var idArti = artiParts[0];
+					if (idArti === pubItems[0]) {
+						articleFound = item;
+					}
+				})
+				break;
+			case "Challenge":
+				pubOwner[0].challenges.forEach((item) => {
+					var artiParts = item.id.split("_");
+					var idArti = artiParts[0];
+					if (idArti === pubItems[0]) {
+						articleFound = item;
+					}
+				})
+				break;
+		}
+
+		printArticleSection(pubOwner[0], articleFound);
+
 	})
 	like.classList.add('like');
 	save.classList.add('save');
@@ -165,7 +362,6 @@ function createContent(id, articleImage, articleCategory, publicationArticle) {
 
 			case 'Advice':
 				topButton.classList.add('contentButtonAdvice');
-
 				break;
 
 			case 'Achievement':
@@ -202,6 +398,49 @@ function createContent(id, articleImage, articleCategory, publicationArticle) {
 	container.appendChild(div);
 
 }
+
+/**
+ * Function just to print de article body section
+ * @param {object} articleOwner 
+ * @param {object} articleFoundByUser 
+ */
+function printArticleSection(articleOwner, articleFoundByUser) {
+	var type = typeof (articleFoundByUser.image);
+	var img = document.getElementById("imgback");
+	img.classList.add("imgback");
+	if (type === 'string') {
+		img.src = articleFoundByUser.image;
+	} else {
+		var reader = new FileReader();
+		reader.onloadend = function () {
+			img.src = reader.result;
+		}
+
+		if (articleFoundByUser.image) {
+			reader.readAsDataURL(articleFoundByUser.image);
+		} else {
+			articleFoundByUser.image = "";
+		}
+	}
+	var urlUser = 'url(.' + articleOwner.image + ')';
+
+	document.getElementById("ownerPub").style.backgroundImage = urlUser;
+	document.getElementById("pubTitle").textContent = articleFoundByUser.title;
+	document.getElementById("pubDescription").textContent = articleFoundByUser.description;
+	var buttonTypeOfPub = document.getElementById("pubBtnType");
+	switch (articleFoundByUser.category) {
+		case "Advice":
+			buttonTypeOfPub.classList.add("pubAdviceType")
+			break;
+		case "Achievement":
+			buttonTypeOfPub.classList.add("pubAchievementType")
+			break;
+		case "Challenge":
+			buttonTypeOfPub.classList.add("pubChallengeType")
+			break;
+	}
+}
+
 /**
  * function to refresh de main content
  */
@@ -263,9 +502,6 @@ function changeButton(idButton) {
 	var button;
 	var profileResults = document.getElementById("searchProfileResults");
 	var publicationResults = document.getElementById("searchPublicationsResults")
-
-	console.log(profileResults);
-	console.log(publicationResults);
 
 	if (idButton === "searchProfilesOpt") {
 		button = document.getElementById("searchArticlesOpt");
@@ -348,6 +584,7 @@ function handleButtonEvents(e) {
 		case "searchProfile":
 		case "articleProfile":
 		case "publicationProfile":
+		case "publicationBodyprofile":
 			changeMainScreenTo("mainProfile");
 			break;
 		case "profileManagementBack":
@@ -358,6 +595,7 @@ function handleButtonEvents(e) {
 		case "publicationSearch":
 		case "mainProfileSearch":
 		case "profileManagementSearch":
+		case "publicationBodySearch":
 			changeMainScreenTo("search");
 			break;
 		case "searchHome":
@@ -368,6 +606,8 @@ function handleButtonEvents(e) {
 		case "mainProfileBack":
 		case "mainProfileHome":
 		case "profileManagementHome":
+		case "publicationBodyHome":
+		case "publicationBodyBack":
 			changeMainScreenTo("home");
 			break;
 		case "mainProfileManagement":
@@ -378,6 +618,7 @@ function handleButtonEvents(e) {
 		case "articleInfo":
 		case "publicationInfo":
 		case "profileManagementInfo":
+		case "publicationBodyInfo":
 			previousPage = id.substring(0, id.length - 4);
 			changeMainScreenTo("information");
 			break;
@@ -389,6 +630,7 @@ function handleButtonEvents(e) {
 		case "articleShare":
 		case "mainProfileShare":
 		case "profileManagementShare":
+		case "publicationBodyShare":
 			changeMainScreenTo("publication");
 			break;
 		case "publicationPublishBtn":
@@ -447,6 +689,7 @@ function handleLoginEvent() {
 	if (idUser && pw) {
 		if (session.login(idUser, pw)) {
 			alert("Welcome");
+			loadPersonalPub();
 			changeMainScreenTo("home");
 		}
 		else
@@ -485,7 +728,7 @@ function handlePublishEvent() {
 		}
 
 		createContent(null, null, null, newArticlePublication);
-
+		createNewPersonalArticle(newArticlePublication);
 		changeMainScreenTo("home");
 
 		cleanFields(fields);
