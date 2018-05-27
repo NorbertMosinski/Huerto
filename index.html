@@ -15,8 +15,8 @@
 <body>
 	<section id="login" class="show">
 		<img src="img/background/login.png" alt="Register" class="loginBkg">
-		<input type="text" id="loginUser" class="username" placeholder="Username">
-		<input type="password" id="loginPassword" class="password" placeholder="Password">
+		<input type="text" id="loginUser" class="username" placeholder="Username" required>
+		<input type="password" id="loginPassword" class="password" placeholder="Password" required>
 		<button id="loginInitSessionBtn" class="btnLogin"></button>
 		<button id="loginForgottenPassword" class="forgottenPassword"></button>
 		<button id="loginFacebook" class="logingFb"></button>
@@ -24,14 +24,14 @@
 		<button id="loginRegisterBtn" class="loginRegister"></button>
 	</section>
 	<section id="register" class="hide">
-		<img src="img/background/loginCreateProfile.png" alt="Register" class="registerBkg">
-		<input type="email" name="email" id="registryEmail" class="email" placeholder="Email">
-		<input type="text" name="name" id="registryName" class="name" placeholder="Name">
-		<input type="date" name="email" id="registryDate" class="date" placeholder="Date">
-		<input type="text" name="bio" id="registryBio" class="bio" placeholder="Bio">
-		<input type="text" name="email" id="registryUsername" class="regUser" placeholder="Username">
-		<input type="password" name="email" id="registryPassword" class="regPass" placeholder="Password">
-		<input type="password" name="email" id="registryConfirmPass" class="regConfirmPass" placeholder="Confirm password">
+		<img src="img/background/loginCreateProfile.png" alt="Register" class="registerBkg" required>
+		<input type="email" name="email" id="registryEmail" class="email" placeholder="Email" required>
+		<input type="text" name="name" id="registryName" class="name" placeholder="Name" required>
+		<input type="date" name="email" id="registryDate" class="date" placeholder="Date" required>
+		<input type="text" name="bio" id="registryBio" class="bio" placeholder="Bio" required>
+		<input type="text" name="email" id="registryUsername" class="regUser" placeholder="Username" required>
+		<input type="password" name="email" id="registryPassword" class="regPass" placeholder="Password" required>
+		<input type="password" name="email" id="registryConfirmPass" class="regConfirmPass" placeholder="Confirm password" required>
 		<button id="registerBtn" class="regBtn"></button>
 		<button id="registerTerms" class="regTerms"></button>
 		<button id="registerLogin" class="regLogin"></button>
@@ -114,9 +114,12 @@
 			<div class="imgPublicationBodyContainer" id="imgPublicationBodyContainer">
 				<img alt="imgBackground" id="imgback">
 			</div>
-			<div class="ownerPub" id="ownerPub"></div>
+			<div class="ownerPubCoContainer">
+				<div class="ownerPubContainer" id="ownerPub">
+				</div>
+				<h1 id="pubTitle" class="pubTitle">Titulo de la publicacion</h1>
+			</div>
 			<button id="pubBtnType"></button>
-			<h1 id="pubTitle" class="pubTitle">Titulo de la publicacion</h1>
 			<button id="pubLike" class="pubLike"></button>
 			<button id="pubSave" class="pubSave"></button>
 			<img src="img/others/line.png" alt="separatorPub" class="pubSeparator">
@@ -135,9 +138,9 @@
 		<div class="profilePicContainer">
 			<img src="img/others/8.jpg" alt="editProfileImg" class="profilePic" id="profileManagementPic">
 		</div>
-		<input type="text" id="profileManagementName" class="profileName" placeholder="Sandra Gomez">
-		<textarea name="profileManagementDescription" id="profileManagementDescription" class="profileDesc" placeholder="Descripción de la persona..."></textarea>
-		<input type="email" id="profileManagementEmail" class="profileEmail" placeholder="SandraGomez@hotmail.com">
+		<input type="text" id="profileManagementName" class="profileName">
+		<textarea name="profileManagementDescription" id="profileManagementDescription" class="profileDesc"></textarea>
+		<input type="email" id="profileManagementEmail" class="profileEmail">
 		<select name="gender" id="profileManagementGender" class="profileGenre">
 			<option value="Mujer">Mujer</option>
 			<option value="Hombre">Hombre</option>
@@ -165,66 +168,8 @@
 
 
 		<div id="searchPublicationsResults" class="searchPublicationsResults show">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
-			<img src="img/background/shareAdvice.PNG" alt="" class="resultArticle">
 		</div>
 		<div id="searchProfileResults" class="searchProfileResults hide">
-			<div class="profileResultContainer">
-				<img src="img/others/8.jpg" alt="" class="resultProfile">
-				<h1 class="searchProfileName">Sandra Gómez</h1>
-				<label class="searchUserName">@SandraGómez27</label>
-			</div>
-			<div class="profileResultContainer">
-				<img src="img/others/8.jpg" alt="" class="resultProfile">
-				<h1 class="searchProfileName">Sandra Gómez</h1>
-				<label class="searchUserName">@SandraGómez27</label>
-			</div>
-			<div class="profileResultContainer">
-				<img src="img/others/8.jpg" alt="" class="resultProfile">
-				<h1 class="searchProfileName">Sandra Gómez</h1>
-				<label class="searchUserName">@SandraGómez27</label>
-			</div>
-			<div class="profileResultContainer">
-				<img src="img/others/8.jpg" alt="" class="resultProfile">
-				<h1 class="searchProfileName">Sandra Gómez</h1>
-				<label class="searchUserName">@SandraGómez27</label>
-			</div>
-			<div class="profileResultContainer">
-				<img src="img/others/8.jpg" alt="" class="resultProfile">
-				<h1 class="searchProfileName">Sandra Gómez</h1>
-				<label class="searchUserName">@SandraGómez27</label>
-			</div>
-			<div class="profileResultContainer">
-				<img src="img/others/8.jpg" alt="" class="resultProfile">
-				<h1 class="searchProfileName">Sandra Gómez</h1>
-				<label class="searchUserName">@SandraGómez27</label>
-			</div>
-			<div class="profileResultContainer">
-				<img src="img/others/8.jpg" alt="" class="resultProfile">
-				<h1 class="searchProfileName">Sandra Gómez</h1>
-				<label class="searchUserName">@SandraGómez27</label>
-			</div>
-			<div class="profileResultContainer">
-				<img src="img/others/8.jpg" alt="" class="resultProfile">
-				<h1 class="searchProfileName">Sandra Gómez</h1>
-				<label class="searchUserName">@SandraGómez27</label>
-			</div>
-			<div class="profileResultContainer">
-				<img src="img/others/8.jpg" alt="" class="resultProfile">
-				<h1 class="searchProfileName">Sandra Gómez</h1>
-				<label class="searchUserName">@SandraGómez27</label>
-			</div>
-
 		</div>
 
 
@@ -249,15 +194,20 @@
 		<img src="img/background/pantalla_perfil_privado.jpg" alt="Home" class="homeBkg">
 		<button id="mainProfileManagement" class="profileManagement"></button>
 		<button id="mainProfileBack" class="homeBack"></button>
+		<div id="profileRefence">
+			<div class="mainProfilePicContainer">
+				<img alt="profilePic" class="mainProfilePic" id="mainProfilePic" src="img/others/8.jpg">
+			</div>
+			<p id="mainProfileName" class="mainProfileName">gerghewrger</p>
+			<p id="mainProfileUserName" class="mainProfileUserName">gewrgwegwregwe</p>
+		</div>
 
-		<img src="img/others/8.jpg" alt="profilePic" class="mainProfilePic">
 		<img src="img/buttons/amateurY.png" alt="rank" class="mainProfileRank">
-		<p id="mainProfileName" class="mainProfileName">Sandra Gómez</p>
-		<p id="mainProfileUserName" class="mainProfileUserName">@sandragomez27</p>
-		<p id="mainprofileLikes" class="mainprofileLikes">700 Likes</p>
+
+		<p id="mainprofileLikes" class="mainprofileLikes"></p>
 
 
-		<textarea name="descriptionArea" id="mainProfileDescription" class="mainProfileDescription">Descripción de la persona tan buena y tan amable que usa la aplicación</textarea>
+		<textarea name="descriptionArea" id="mainProfileDescription" class="mainProfileDescription"></textarea>
 
 		<img src="img/others/line.png" alt="line" class="mainProfileLine">
 		<!--There we can have the same id for all the items cause you just have to add the same listener to them, Add a hide class for the icons div it depends on which profile they clicked, the class noHeight is just to ocult the icons that are no shown in public profile-->

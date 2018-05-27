@@ -3,13 +3,17 @@ TODO:
 -main.handlePublishEvent image reference
 -main.handleRegisterEvent else case
 */
-
+//flags
+var pubSearchFlag = false;
+var profSearchFlag = false;
 //Session, actual session
 var session;
 //container home
 var container;
 //Initial Articles
 var articles = [];
+var personalArticles = [];
+var publicArticles = [];
 //image picked
 var imgFile = null;
 //articleId
@@ -22,13 +26,16 @@ Curabitur ut dolor tellus. Morbi mollis mauris augue, a fringilla eros rutrum eu
 Vivamus rutrum mi tortor, vel eleifend nunc faucibus vel. Ut porta nisi rhoncus tellus aliquam fringilla. Quisque scelerisque sapien nec ligula ultrices eleifend. Aenean cursus enim vitae tellus lacinia eleifend. Donec maximus velit dui, interdum fermentum massa laoreet quis. Proin sed dui nunc. Sed venenatis, ligula at porttitor fringilla, magna felis faucibus nulla, a bibendum mi orci blandit justo. Sed nec lacinia nibh.`
 //imagenes de articulos
 const articleImgs = [
+	"img/others/6.jpg",
+	"img/others/7.jpg",
 	"img/flowers/flor1.jpg",
 	"img/flowers/flor2.jpg",
 	"img/flowers/flor3.jpg",
 	"img/flowers/flor4.jpg",
 	"img/flowers/flor5.jpg",
 	"img/flowers/flor6.jpg",
-	"img/flowers/flor7.jpg"
+	"img/flowers/flor7.jpg",
+
 ];
 
 //categories
@@ -53,6 +60,7 @@ function init() {
 	if (!localStorage.getItem("idCounter")) {
 		localStorage.setItem("idCounter", 0);
 	}
+
 	articleId = parseInt(localStorage.getItem("idCounter"));
 	events();
 	variables();
@@ -64,10 +72,13 @@ Initializes variables.
 */
 function variables() {
 	container = document.getElementById('content');
-
+	previousPage = "home";
 	session = new Session();
-	session.addProfile(new Profile("admin@gmail.com", "Administrator", new Date(01, 01, 2000), "", "admin", "0000", "Male", "/img/others/8.jpg"));
-
+	session.addProfile(new Profile("admin@gmail.com", "Administrator", new Date(01, 01, 2000), "Descripción", "admin", "0000", "Male", "img/others/3.jpg"));
+	session.addProfile(new Profile("Annie@gmail.com", "Annie C", new Date(01, 01, 2000), "Descripción", "Annie", "0000", "Female", "img/others/2.jpg"));
+	session.addProfile(new Profile("Sara@gmail.com", "Sara R", new Date(01, 01, 2000), "Descripción", "Sara", "0000", "Female", "img/others/4.jpg"));
+	session.addProfile(new Profile("Valen@gmail.com", "Valen L", new Date(01, 01, 2000), "Descripción", "Valen", "0000", "Female", "img/others/8.jpg"));
+	session.addProfile(new Profile("Arleys@gmail.com", "Arleys F", new Date(01, 01, 2000), "Descripción", "Arleys", "0000", "Female", "img/others/4.jpg"));
 	articles = createArticles();
 }
 
@@ -77,27 +88,53 @@ function variables() {
 function createArticles() {
 	var newArticles = [];
 	var category;
-	for (var i = 0; i < 15; i++) {
+	for (var i = 0; i < 50; i++) {
+		var ownerNumber = Math.floor((Math.random() * 5) + 0);
 		category = randomCategory();
-		newArticles[i] = new Article(articleId + "_" + category + "_" + session.profiles[0].email, "articulo" + i, ramdomArticleImg(), lorem, session.profiles[0], category
+		newArticles[i] = new Article(articleId + "_" + category + "_" + session.profiles[ownerNumber].email, "articulo" + i, ramdomArticleImg(), lorem, session.profiles[ownerNumber], category
 		);
 		articleId += 1
 		switch (category) {
 			case "Advice":
-				session.profiles[0].publications.push(newArticles[i]);
+				session.profiles[ownerNumber].publications.push(newArticles[i]);
 				break;
 			case "Achievement":
-				session.profiles[0].comments.push(newArticles[i]);
+				session.profiles[ownerNumber].comments.push(newArticles[i]);
 				break;
 			case "Challenge":
-				session.profiles[0].challenges.push(newArticles[i]);
+				session.profiles[ownerNumber].challenges.push(newArticles[i]);
 				break;
 		}
 	}
 	return newArticles;
 }
+
+function loadPersonalData() {
+	publicArticles = [];
+	var likes = Math.floor((Math.random() * 1000) + 0);
+
+	document.getElementById("mainProfilePic").src = session.activeProfile.image;
+	document.getElementById("mainProfileDescription").textContent = session.activeProfile.biography;
+	document.getElementById("mainProfileName").textContent = session.activeProfile.name;
+	document.getElementById("mainProfileUserName").textContent = session.activeProfile.email;
+	document.getElementById("mainprofileLikes").textContent = likes + " Likes";
+
+	document.getElementById("iconsPublicProfile").classList.remove("show");
+	document.getElementById("iconsPublicProfile").classList.add("hide");
+	document.getElementById("iconsPrivateProfile").classList.remove("hide");
+	document.getElementById("iconsPrivateProfile").classList.add("show");
+
+	document.getElementById("profileManagementPic").src = session.activeProfile.image;
+	document.getElementById("profileManagementName").placeholder = session.activeProfile.name;
+	document.getElementById("profileManagementDescription").placeholder = session.activeProfile.biography;
+	document.getElementById("profileManagementEmail").placeholder = session.activeProfile.email;
+}
+
+/**
+ * Function to load the personal articles
+ */
 function loadPersonalPub() {
-	var personalArticles = [];
+	personalArticles = [];
 	session.activeProfile.publications.forEach((publication) => {
 		personalArticles.push(publication);
 	});
@@ -111,12 +148,32 @@ function loadPersonalPub() {
 	printPersonalArticles(personalArticles);
 
 }
+/**
+ * Function to print all the personal articles
+ * @param {object} personalArticlesToPrint List of articles to print
+ */
 function printPersonalArticles(personalArticlesToPrint) {
 	var container = document.getElementById("mainProfileContent");
+	container.innerHTML = "";
 	personalArticlesToPrint.forEach((article) => {
+		var typeImg = typeof (article.image);
+		var reader = new FileReader();
+
 		var img = document.createElement("img");
 		img.classList.add("resultArticle");
-		img.src = article.image;
+		if (typeImg === "string") {
+			img.src = article.image;
+		} else {
+			reader.onloadend = function () {
+				img.src = reader.result;
+			}
+
+			if (article.image) {
+				reader.readAsDataURL(article.image);
+			} else {
+				img.src = "";
+			}
+		}
 		img.id = article.id;
 		img.addEventListener('click', function () {
 			var pub = img.id;
@@ -162,13 +219,12 @@ function printPersonalArticles(personalArticlesToPrint) {
 
 			printArticleSection(pubOwner[0], articleFound);
 		});
-
 		container.appendChild(img);
 	})
 
 }
 /**
- * Function to load dinamicaly the content of the home page
+ * Function to load dinamically the content of the home page
  */
 function loadDynamicContent(articlesToPrint) {
 
@@ -285,58 +341,66 @@ function createContent(id, articleImage, articleCategory, publicationArticle) {
 	var topButton = document.createElement('button');
 	var like = document.createElement('button');
 	var save = document.createElement('button');
+	var contrastDiv = document.createElement("div");
+	contrastDiv.classList.add("contrastOwner");
+	var title = document.createElement("h1");
 	var reader = new FileReader();
+	var pubItems;
+	var articleFound;
 
 	//modifying the style
 	img.classList.add("imgContentHome");
 	div.classList.add('sharesContent');
 	if (id) {
 		div.id = id;
+		pubItems = div.id.split("_");
 	} else {
-		div.id = publicationArticle.id
+		pubItems = div.id.split("_");
 	}
+	var pubOwner = session.searchProfilesByAttributes(pubItems[2]);
+
+	switch (pubItems[1]) {
+		case "Advice":
+			pubOwner[0].publications.forEach((item) => {
+				var artiParts = item.id.split("_");
+				var idArti = artiParts[0];
+				if (idArti === pubItems[0]) {
+					articleFound = item;
+				}
+			})
+
+			break;
+		case "Achievement":
+
+			pubOwner[0].comments.forEach((item) => {
+				var artiParts = item.id.split("_");
+				var idArti = artiParts[0];
+				if (idArti === pubItems[0]) {
+					articleFound = item;
+				}
+			})
+
+			break;
+		case "Challenge":
+
+			pubOwner[0].challenges.forEach((item) => {
+				var artiParts = item.id.split("_");
+				var idArti = artiParts[0];
+				if (idArti === pubItems[0]) {
+					articleFound = item;
+				}
+			})
+			break;
+	}
+	title.textContent = articleFound.title;
+	title.classList.add("homeContrasTitle");
 	div.addEventListener("click", function () {
-		var pub = div.id;
-		var pubItems = pub.split("_");
 		var pubSection = document.getElementById("publicationBody");
 		var section = document.getElementById(div.parentNode.parentNode.id);
-		var articleFound;
 		section.classList.remove("show");
 		section.classList.add("hide");
 		pubSection.classList.remove("hide");
 		pubSection.classList.add("show");
-
-		var pubOwner = session.searchProfilesByAttributes(pubItems[2]);
-		switch (pubItems[1]) {
-			case "Advice":
-				pubOwner[0].publications.forEach((item) => {
-					var artiParts = item.id.split("_");
-					var idArti = artiParts[0];
-					if (idArti === pubItems[0]) {
-						articleFound = item;
-					}
-				})
-				break;
-			case "Achievement":
-				pubOwner[0].comments.forEach((item) => {
-					var artiParts = item.id.split("_");
-					var idArti = artiParts[0];
-					if (idArti === pubItems[0]) {
-						articleFound = item;
-					}
-				})
-				break;
-			case "Challenge":
-				pubOwner[0].challenges.forEach((item) => {
-					var artiParts = item.id.split("_");
-					var idArti = artiParts[0];
-					if (idArti === pubItems[0]) {
-						articleFound = item;
-					}
-				})
-				break;
-		}
-
 		printArticleSection(pubOwner[0], articleFound);
 
 	})
@@ -395,6 +459,8 @@ function createContent(id, articleImage, articleCategory, publicationArticle) {
 	div.appendChild(img);
 	div.appendChild(like);
 	div.appendChild(save);
+	contrastDiv.appendChild(title);
+	div.appendChild(contrastDiv);
 	container.appendChild(div);
 
 }
@@ -405,6 +471,7 @@ function createContent(id, articleImage, articleCategory, publicationArticle) {
  * @param {object} articleFoundByUser 
  */
 function printArticleSection(articleOwner, articleFoundByUser) {
+	document.getElementById("ownerPub").innerHTML = "";
 	var type = typeof (articleFoundByUser.image);
 	var img = document.getElementById("imgback");
 	img.classList.add("imgback");
@@ -422,9 +489,11 @@ function printArticleSection(articleOwner, articleFoundByUser) {
 			articleFoundByUser.image = "";
 		}
 	}
-	var urlUser = 'url(.' + articleOwner.image + ')';
 
-	document.getElementById("ownerPub").style.backgroundImage = urlUser;
+	var ownerPubImg = document.createElement("img");
+	ownerPubImg.src = articleOwner.image;
+	ownerPubImg.classList.add("ownerPubImg");
+	document.getElementById("ownerPub").appendChild(ownerPubImg);
 	document.getElementById("pubTitle").textContent = articleFoundByUser.title;
 	document.getElementById("pubDescription").textContent = articleFoundByUser.description;
 	var buttonTypeOfPub = document.getElementById("pubBtnType");
@@ -501,7 +570,8 @@ function events() {
 function changeButton(idButton) {
 	var button;
 	var profileResults = document.getElementById("searchProfileResults");
-	var publicationResults = document.getElementById("searchPublicationsResults")
+	var publicationResults = document.getElementById("searchPublicationsResults");
+	var contentToSearch = document.getElementById("searchText").value;
 
 	if (idButton === "searchProfilesOpt") {
 		button = document.getElementById("searchArticlesOpt");
@@ -511,6 +581,7 @@ function changeButton(idButton) {
 		publicationResults.classList.add("hide");
 		profileResults.classList.remove("hide");
 		profileResults.classList.add("show");
+		goSearchContent(contentToSearch, profileResults);
 
 	} else {
 		button = document.getElementById("searchProfilesOpt");
@@ -520,7 +591,166 @@ function changeButton(idButton) {
 		profileResults.classList.add("hide");
 		publicationResults.classList.remove("hide");
 		publicationResults.classList.add("show");
+		goSearchContent(contentToSearch, publicationResults);
+	}
+}
+/**
+ * function to search content in all app
+ * @param {string} contentToSearchInData data capture from input text
+ * @param {object} divToModify div to modify
+ */
+function goSearchContent(contentToSearchInData, divToModify) {
+	var articlesFound = [];
+	if (divToModify.id === "searchPublicationsResults") {
+		if (!!contentToSearchInData) {
+			articles.forEach((article) => {
+				if (article.title.toLowerCase().includes(contentToSearchInData.toLowerCase())) {
+					articlesFound.push(article);
+				}
+			});
+			personalArticles.forEach((personalArticle) => {
+				if (personalArticle.title.toLowerCase().includes(contentToSearchInData.toLowerCase())) {
+					articlesFound.push(personalArticle);
+				}
+			});
+			printSearchResults(articlesFound, divToModify.id);
 
+		} else {
+			printSearchResults(articles, divToModify.id);
+		}
+	} else {
+		if (!!contentToSearchInData) {
+			var profilesFound = [];
+			session.profiles.forEach((profile) => {
+				if (profile.name.toLowerCase().includes(contentToSearchInData.toLowerCase()) || profile.email.toLowerCase().includes(contentToSearchInData)) {
+					profilesFound.push(profile);
+				}
+				printSearchResults(profilesFound, divToModify.id);
+			});
+		} else {
+			printSearchResults(session.profiles, divToModify.id);
+		}
+	}
+
+}
+
+function printSearchResults(infoToPrint, divId) {
+	document.getElementById(divId).innerHTML = "";
+	if (divId === "searchPublicationsResults") {
+		infoToPrint.forEach((element) => {
+			var img = document.createElement("img");
+			img.classList.add("resultArticle");
+			img.id = element.id;
+			img.src = element.image;
+			img.addEventListener('click', function () {
+				var pub = img.id;
+				var pubItems = pub.split("_");
+				var pubSection = document.getElementById("publicationBody");
+				var section = document.getElementById(img.parentNode.parentNode.id);
+				var articleFound;
+				section.classList.remove("show");
+				section.classList.add("hide");
+				pubSection.classList.remove("hide");
+				pubSection.classList.add("show");
+				document.getElementById("searchPublicationsResults").innerHTML = "";
+				var pubOwner = session.searchProfilesByAttributes(pubItems[2]);
+				switch (pubItems[1]) {
+					case "Advice":
+						pubOwner[0].publications.forEach((item) => {
+							var artiParts = item.id.split("_");
+							var idArti = artiParts[0];
+							if (idArti === pubItems[0]) {
+								articleFound = item;
+							}
+						})
+						break;
+					case "Achievement":
+						pubOwner[0].comments.forEach((item) => {
+							var artiParts = item.id.split("_");
+							var idArti = artiParts[0];
+							if (idArti === pubItems[0]) {
+								articleFound = item;
+							}
+						})
+						break;
+					case "Challenge":
+						pubOwner[0].challenges.forEach((item) => {
+							var artiParts = item.id.split("_");
+							var idArti = artiParts[0];
+							if (idArti === pubItems[0]) {
+								articleFound = item;
+							}
+						})
+						break;
+				}
+				printArticleSection(pubOwner[0], articleFound);
+			});
+			document.getElementById(divId).appendChild(img);
+		});
+	} else {
+		infoToPrint.forEach((element) => {
+			var divRestProfileContainer = document.createElement("div");
+			var divRestImgContainer = document.createElement("div");
+			var img = document.createElement("img");
+			var h1 = document.createElement("h1");
+			var label = document.createElement("label");
+
+			divRestProfileContainer.classList.add("profileResultContainer");
+			divRestImgContainer.classList.add("resultImgContainer");
+			h1.classList.add("searchProfileName");
+			h1.textContent = element.name;
+			label.classList.add("searchUserName");
+			label.textContent = element.email;
+			img.classList.add("resultProfile");
+			img.id = encode64(element.email);
+			img.src = element.image;
+
+			img.addEventListener('click', function () {
+
+				var publicProfile = session.searchProfilesByAttributes(decode64(img.id));
+				if (!!publicProfile) {
+					previousPage = "search";
+					var likes = Math.floor((Math.random() * 1000) + 0);
+					publicProfile[0].publications.forEach((publication) => {
+						publicArticles.push(publication);
+					});
+					publicProfile[0].challenges.forEach((challenge) => {
+						publicArticles.push(challenge);
+					});
+					publicProfile[0].comments.forEach((advice) => {
+						publicArticles.push(advice);
+					});
+					printPersonalArticles(publicArticles);
+
+
+					document.getElementById("iconsPrivateProfile").classList.remove("show");
+					document.getElementById("iconsPrivateProfile").classList.add("hide");
+					document.getElementById("iconsPublicProfile").classList.remove("hide");
+					document.getElementById("iconsPublicProfile").classList.add("show");
+
+					document.getElementById("mainProfilePic").src = publicProfile[0].image;
+					document.getElementById("mainProfileDescription").textContent = publicProfile[0].biography;
+					document.getElementById("mainProfileName").textContent = publicProfile[0].name;
+					document.getElementById("mainProfileUserName").textContent = publicProfile[0].email;
+					document.getElementById("mainprofileLikes").textContent = likes + " Likes";
+
+					document.getElementById("search").classList.remove("show");
+					document.getElementById("search").classList.add("hide");
+					document.getElementById("mainProfile").classList.remove("hide");
+					document.getElementById("mainProfile").classList.add("show");
+					document.getElementById("searchProfileResults").innerHTML = "";
+				} else {
+					"Error loading this profile data";
+				}
+
+
+			});
+			divRestImgContainer.appendChild(img);
+			divRestProfileContainer.appendChild(divRestImgContainer);
+			divRestProfileContainer.appendChild(h1);
+			divRestProfileContainer.appendChild(label);
+			document.getElementById(divId).appendChild(divRestProfileContainer);
+		});
 	}
 }
 /**
@@ -571,6 +801,7 @@ function handleButtonEvents(e) {
 			document.getElementById("loginUser").value = "";
 			document.getElementById("loginPassword").value = "";
 			session.activeProfile = null;
+			personalArticles = [];
 			alert("your session has finished");
 			changeMainScreenTo("login");
 			break;
@@ -584,7 +815,10 @@ function handleButtonEvents(e) {
 		case "searchProfile":
 		case "articleProfile":
 		case "publicationProfile":
+		case "mainProfileProfile":
 		case "publicationBodyprofile":
+			loadPersonalData();
+			loadPersonalPub();
 			changeMainScreenTo("mainProfile");
 			break;
 		case "profileManagementBack":
@@ -596,18 +830,23 @@ function handleButtonEvents(e) {
 		case "mainProfileSearch":
 		case "profileManagementSearch":
 		case "publicationBodySearch":
+		case "publicationBodyBack":
 			changeMainScreenTo("search");
+			break;
+		case "mainProfileBack":
+			loadPersonalData();
+			loadPersonalPub();
+			changeMainScreenTo(previousPage);
+			previousPage = "home";
 			break;
 		case "searchHome":
 		case "articleHome":
 		case "publicationHome":
 		case "publicationBack":
 		case "searchBack":
-		case "mainProfileBack":
 		case "mainProfileHome":
 		case "profileManagementHome":
 		case "publicationBodyHome":
-		case "publicationBodyBack":
 			changeMainScreenTo("home");
 			break;
 		case "mainProfileManagement":
@@ -662,21 +901,24 @@ function handleRegisterEvent() {
 	var fields = [];
 
 	fields.push(email, name, birthday, bio, id, pw, pwConf);
-	var profile = new Profile(email.value, name.value, birthday.value, bio.value, id.value, pw.value, null);
+	var profile = new Profile(email.value, name.value, birthday.value, bio.value, id.value, pw.value, "", "img/others/profileEmpty.jpg");
+	if (!!email.value && !!name.value && !!birthday.value && bio.value && !!id.value && !!pw.value && !!pwConf.value) {
+		if (!(pw.value === pwConf.value)) {
+			alert("Passwords are different");
+			return;
+		}
+		if (session.addProfile(profile)) {
+			changeMainScreenTo("login");
+		} else {
+			console.log("Profile already exists!")
+			alert("Can not create profile. Profile already exists!");
+		}
 
-	if (!(pw === pwConf)) {
-		alert("Passwords are different");
-		return;
-	}
-
-	if (session.addProfile(profile)) {
-		changeMainScreenTo("login");
+		cleanFields(fields);
 	} else {
-		console.log("Profile already exists!")
-		alert("Can not create profile. Profile already exists!");
+		alert("All fields are required");
 	}
 
-	cleanFields(fields);
 
 }
 
@@ -689,6 +931,7 @@ function handleLoginEvent() {
 	if (idUser && pw) {
 		if (session.login(idUser, pw)) {
 			alert("Welcome");
+			loadPersonalData();
 			loadPersonalPub();
 			changeMainScreenTo("home");
 		}
@@ -704,17 +947,17 @@ function handleLoginEvent() {
 Handles publication event.
 */
 function handlePublishEvent() {
-	if (imgFile) {
-		var title = document.getElementById("publicationTitle");
-		var image = imgFile;
-		var description = document.getElementById("publicationContent");
-		var pubTypeRef = document.getElementById("publicationType");
-		var owner = session.activeProfile;
-		var publicationCategory;
-		var newArticlePublication;
+	var title = document.getElementById("publicationTitle");
+	var image = imgFile;
+	var description = document.getElementById("publicationContent");
+	var pubTypeRef = document.getElementById("publicationType");
+	var owner = session.activeProfile;
+	var publicationCategory;
+	var newArticlePublication;
 
-		var fields = [];
-		fields.push(title, description, document.getElementById('imgPicker'));
+	var fields = [];
+	fields.push(title, description, document.getElementById('imgPicker'));
+	if (!!imgFile && !!title.value && !!description.value) {
 
 		if (pubTypeRef.options[pubTypeRef.selectedIndex].value == "Reto") {
 			publicationCategory = "Challenge";
@@ -734,7 +977,7 @@ function handlePublishEvent() {
 		cleanFields(fields);
 
 	} else {
-		alert("Must select a picture");
+		alert("Must complete all the information");
 	}
 
 }
