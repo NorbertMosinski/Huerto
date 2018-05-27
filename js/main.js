@@ -65,6 +65,9 @@ function init() {
 	events();
 	variables();
 	loadDynamicContent(articles);
+	document.getElementById("goBackForgottenPass").addEventListener('click', function () {
+		changeMainScreenTo("login");
+	});
 }
 
 /**
@@ -392,7 +395,6 @@ function createContent(id, articleImage, articleCategory, publicationArticle) {
 			})
 			break;
 	}
-	title.textContent = articleFound.title;
 	title.classList.add("homeContrasTitle");
 	div.addEventListener("click", function () {
 		var pubSection = document.getElementById("publicationBody");
@@ -409,6 +411,7 @@ function createContent(id, articleImage, articleCategory, publicationArticle) {
 
 	//checking for the flag
 	if (publicationArticle) {
+		title.textContent = publicationArticle.title;
 		reader.onloadend = function () {
 			img.src = reader.result;
 		}
@@ -436,6 +439,7 @@ function createContent(id, articleImage, articleCategory, publicationArticle) {
 				break;
 		}
 	} else {
+		title.textContent = articleFound.title;
 		switch (articleCategory) {
 			case 'Challenge':
 				topButton.classList.add('contentButtonChallenge');
@@ -754,12 +758,31 @@ function printSearchResults(infoToPrint, divId) {
 	}
 }
 /**
+ * Function to send mail just to retrieve de password
+ */
+function sendMail() {
+	var user = document.getElementById("forgottenUser").value;
+	var userEmail = document.getElementById("forgottenEmail").value;
+	if (!!user) {
+		alert("A mail is going to be send to the Email account registered for this Username");
+		changeMainScreenTo("login");
+	} else if (!!userEmail) {
+		alert("A mail is going to be send to the Email account given");
+		changeMainScreenTo("login");
+	} else {
+		alert("Please fill any field to recieve the email.");
+	}
+}
+/**
 Handles the events fired by a button.
 */
 function handleButtonEvents(e) {
 	var id = e.id;
 
 	switch (id) {
+		case "forgRegisterBtn":
+			sendMail();
+			break;
 		case "searchProfilesOpt":
 			changeButton(id);
 			break;
@@ -847,6 +870,7 @@ function handleButtonEvents(e) {
 		case "mainProfileHome":
 		case "profileManagementHome":
 		case "publicationBodyHome":
+		case "closeThanks":
 			changeMainScreenTo("home");
 			break;
 		case "mainProfileManagement":
@@ -972,7 +996,7 @@ function handlePublishEvent() {
 
 		createContent(null, null, null, newArticlePublication);
 		createNewPersonalArticle(newArticlePublication);
-		changeMainScreenTo("home");
+		changeMainScreenTo("thanksPub");
 
 		cleanFields(fields);
 
