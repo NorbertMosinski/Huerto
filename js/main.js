@@ -996,7 +996,7 @@ function handlePublishEvent() {
 
 		createContent(null, null, null, newArticlePublication);
 		createNewPersonalArticle(newArticlePublication);
-		changeMainScreenTo("thanksPub");
+		changeMainScreenTo("thathanksPubnks");
 
 		cleanFields(fields);
 
